@@ -1,0 +1,825 @@
+ AV Block 
+ Ablatio Retina 
+ Abortus 
+ Abrasi Kornea 
+ Abrasi dan Erosi Gigi 
+ Abrupsio Plasenta 
+ Abses Apendiks 
+ Abses Gigi 
+ Abses Hati Amuba 
+ Abses Otak 
+ Abses Paru 
+ Abses Perianal 
+ Abses Peritonsilar 
+ Abses Tuboovarium 
+ Achondroplasia 
+ Acne Vulgaris 
+ Acute Limb Ischemia 
+ Acute Respiratory Distress Syndrome (ARDS) 
+ Addison Disease 
+ Adenoma Pituitari 
+ Adolescent Idiopathic Scoliosis 
+ Agnosia 
+ Agorafobia 
+ Akalasia 
+ Akantosis Nigrikans 
+ Alcohol Use Disorder 
+ Alergi Makanan 
+ Alopecia Androgenetik pada Pria 
+ Alopecia Androgenetik pada Wanita 
+ Alopecia Areata 
+ Alzheimer 
+ Amblyopia 
+ Amebiasis 
+ Amphetamine and Cocaine Use Disorder 
+ Anafilaksis 
+ Anemia Aplastik 
+ Anemia Defisiensi Besi 
+ Anemia Hemolitik 
+ Anemia Megaloblastik 
+ Anemia Sel Sabit 
+ Anemia Sideroblastik 
+ Anensefali 
+ Aneurisma Aorta 
+ Angina Ludwig 
+ Angina Pektoris 
+ Angioedema 
+ Ankilostomiasis 
+ Ankle Sprain 
+ Anoreksia Nervosa 
+ Anthrax 
+ Antiphospholipid Syndrome 
+ Appendicitis 
+ Aritmia 
+ Arteritis Temporal 
+ Asbestosis 
+ Askariasis 
+ Asma 
+ Aspergillosis 
+ Astigmatisme 
+ Ataksia 
+ Atelektasis 
+ Aterosklerosis 
+ Atresia Ani 
+ Atresia Bilier 
+ Atresia Esofagus 
+ Atresia Intestinal 
+ Atrial Fibrilasi 
+ Atrial Flutter 
+ Atrial Septal Defect 
+ Attention Deficit Hyperactivity Disorder (ADHD) 
+ Autism Spectrum Disorder 
+ Azoospermia 
+ Bakterial Vaginosis 
+ Balanitis 
+ Balanoposthitis 
+ Barotrauma 
+ Batu Ginjal 
+ Bayi Prematur 
+ Bell's Palsy 
+ Benign Prostatic Hyperplasia 
+ Benzodiazepine Use Disorder 
+ Berat Badan Lahir Rendah 
+ Binge Eating Disorder 
+ Blefaritis 
+ Botulisme 
+ Bradikardia 
+ Bronkiektasis 
+ Bronkiolitis 
+ Bronkitis Akut 
+ Brucellosis 
+ Bruxism 
+ Bulimia Nervosa 
+ Bunion 
+ Bursitis 
+ COVID-19 (Coronavirus Disease 2019) 
+ Cacar Monyet 
+ Campak 
+ Cannabis Use Disorder 
+ Carpal Tunnel Syndrome 
+ Cedera Hamstring 
+ Cedera Mata 
+ Cedera Otak Traumatik 
+ Cedera Petir 
+ Cedera Tersengat Listrik 
+ Cegukan 
+ Cephalopelvic Disproportion 
+ Cerebral Palsy 
+ Cheilitis 
+ Chikungunya 
+ Chilblains (Pernio) 
+ Chlamydia 
+ Chondrosarcoma 
+ Chronic Fatigue Syndrome 
+ Clostridium Difficile Colitis 
+ Club Foot 
+ Cluster Type Headache 
+ Collodion Baby Syndrome 
+ Common Cold 
+ Cor Pulmonale 
+ Cracked Nipple dan Inverted Nipple 
+ Crohn's Disease 
+ Croup 
+ Cushing Disease 
+ Cutaneous Larva Migrans 
+ Cystic Fibrosis 
+ Dakrioadenitis 
+ Dakriosistitis 
+ Dakriostenosis 
+ Deep Vein Thrombosis 
+ Defisiensi Faktor X 
+ Defisiensi Glukosa-6-Fosfat-Dehidrogenase (G6PD) 
+ Defisiensi Vitamin A 
+ Degenerasi Makula 
+ Dehidrasi 
+ Delirium 
+ Demam Dengue 
+ Demam Reumatik 
+ Demam Tifoid 
+ Demam pada Bayi 
+ Dementia 
+ Depresi 
+ Depresi Postpartum 
+ Dermatitis Atopik 
+ Dermatitis Kontak Alergi 
+ Dermatitis Kontak Iritan 
+ Dermatitis Seboroik 
+ Deviasi Septum Nasal 
+ Diabetes Gestasional 
+ Diabetes Insipidus 
+ Diabetes Mellitus Tipe 1 
+ Diabetes Mellitus Tipe 2 
+ Diastasis Recti 
+ Difteri 
+ Diplopia 
+ Diseksi Aorta 
+ Disentri 
+ Disfagia 
+ Disfungsi Ereksi 
+ Disleksia 
+ Dislipidemia 
+ Dislokasi Bahu 
+ Dislokasi Lensa 
+ Dislokasi Temporomandibular Joint (TMJ) 
+ Dismenore 
+ Dispareunia 
+ Disseminated Intravascular Coagulation (DIC) 
+ Distosia 
+ Distosia Bahu 
+ Distrofi Otot 
+ Divertikulitis 
+ Divertikulum Meckel 
+ Down Syndrome 
+ Dry Eye Syndrome 
+ Duchenne Muscular Dystrophy (DMD) 
+ Dyshidrotic Eczema 
+ Ebola 
+ Edema Otak 
+ Edema Paru Akut 
+ Efusi Pleura 
+ Eklamsia 
+ Emboli Paru 
+ Emfisema 
+ Emfisema Subkutis 
+ Endoftalmitis 
+ Endokarditis 
+ Endometriosis 
+ Endometritis 
+ Ensefalitis 
+ Enterobiasis 
+ Eosinofilia 
+ Epididimitis 
+ Epilepsi 
+ Episkleritis 
+ Epispadia 
+ Epistaksis 
+ Erisipelas 
+ Eritema Multiforme 
+ Eritrasma 
+ Erupsi Obat 
+ Ewing Sarcoma 
+ Faringitis 
+ Fatty Liver 
+ Fenilketonuria 
+ Fenomena Raynaud 
+ Fetal Alcohol Syndrome 
+ Fever of Unknown Origin 
+ Fibrilasi Ventrikel 
+ Fibroadenoma Mammae (FAM) 
+ Fibroma 
+ Fibromyalgia Syndrome 
+ Fibrosarkoma 
+ Fibrosis Paru Idiopatik 
+ Fibrosis Paru Non-Idiopatik 
+ Filariasis 
+ Fimosis 
+ Fistula Ani 
+ Flu Babi 
+ Flu Burung 
+ Fluorosis Gigi 
+ Fobia Spesifik 
+ Folikulitis 
+ Folikulitis Malassezia (Fungal Acne) 
+ Fraktur Gigi 
+ Fraktur Impresi Kalvaria 
+ Fraktur Klavikula 
+ Fraktur Leher Femur 
+ Fraktur Mandibula 
+ Fraktur Pelvis 
+ Fraktur Radius Distal 
+ Fraktur Temporal 
+ Fraktur Terbuka 
+ Fraktur Tulang Rusuk 
+ Fraktur dan Dislokasi Tulang Belakang 
+ Frostbite 
+ Frozen Shoulder 
+ Furunkel Hidung 
+ Furunkulosis 
+ GERD 
+ Gagal Ginjal Akut 
+ Gagal Hati 
+ Gagal Jantung 
+ Gagal Jantung Akut 
+ Gagal Napas 
+ Gagal Tumbuh 
+ Galactorrhea 
+ Gangguan Bipolar 
+ Gangguan Cemas Menyeluruh 
+ Gangguan Cemas pada Anak dan Remaja 
+ Gangguan Ejakulasi 
+ Gangguan Gait 
+ Gangguan Keinginan dan Gairah Seksual 
+ Gangguan Kepribadian Narsistik 
+ Gangguan Makan (overview) 
+ Gangguan Mood 
+ Gangguan Obsesif Kompulsif 
+ Gangguan Panik 
+ Gangguan Perdarahan Nonhemofilia 
+ Gangguan Psikotik Akut 
+ Gangguan Refraksi 
+ Gangguan Skizoafektif 
+ Gangguan Stres Akut 
+ Gangguan Tic 
+ Gangguan Tidur 
+ Gangguan Waham Menetap 
+ Gastritis 
+ Gastroenteritis 
+ Gastroesophageal Reflux Bayi 
+ Gastroparesis 
+ Gastroschisis 
+ Genu Valgum 
+ Genu Varum 
+ Giardiasis 
+ Gigantisme dan Akromegali 
+ Gigitan Hewan 
+ Gigitan Manusia 
+ Gigitan Serangga 
+ Gigitan Ular 
+ Ginekomastia 
+ Gingivitis 
+ Ginjal Polikistik 
+ Glaukoma 
+ Glomerulonefritis 
+ Glukosuria 
+ Gondongan 
+ Gonorrhea 
+ Gout 
+ Graft Versus Host Disease 
+ Granuloma Piogenik 
+ Granuloma Umbilikal 
+ Grave's Disease 
+ HIV 
+ Hairy Tongue (Lingua Villosa) 
+ Halitosis 
+ Hammertoe dan Claw Toe 
+ Heat Stroke 
+ Hemangioma 
+ Hematoma Aurikula 
+ Hematuria 
+ Hemofilia 
+ Hemoglobinopati 
+ Hemoroid 
+ Hemothorax 
+ Henoch-Schonlein Purpura 
+ Henti Jantung Mendadak 
+ Hepatitis A 
+ Hepatitis B 
+ Hepatitis C 
+ Hepatitis D 
+ Hepatitis E 
+ Hernia Diafragma 
+ Hernia Epigastrik 
+ Hernia Hiatus 
+ Hernia Inguinalis 
+ Hernia Nukleus Pulposus 
+ Hernia Umbilikalis 
+ Herpes Genital 
+ Herpes Simpleks 
+ Herpes Zoster 
+ Hidradenitis Suppurativa 
+ Hidrokel 
+ Hifema 
+ Hiperbilirubinemia 
+ Hiperemesis Gravidarum 
+ Hiperhidrosis 
+ Hiperkalemia 
+ Hipermetropia 
+ Hipernatremia 
+ Hiperparatiroid 
+ Hiperpigmentasi Pascainflamasi 
+ Hiperplasia Endometrium 
+ Hiperprolaktinemia 
+ Hipertensi 
+ Hipertensi Dalam Kehamilan 
+ Hipertensi Perioperatif 
+ Hipertensi Portal 
+ Hipertensi Pulmonal 
+ Hipertiroid 
+ Hipertrofi Adenoid 
+ Hiperurisemia 
+ Hipoalbuminemia 
+ Hipoglikemia 
+ Hipogonadisme 
+ Hipokalemia 
+ Hiponatremia 
+ Hipoparatiroid 
+ Hipopigmentasi Pascainflamasi 
+ Hipospadia 
+ Hipotensi Ortostatik 
+ Hipotiroid 
+ Hipotiroid Kongenital 
+ Hirschsprung Disease 
+ Hirsutism 
+ Hordeolum 
+ Human Papillomavirus (HPV) 
+ Hydrocephalus 
+ Ikterus Neonatorum Fisiologis 
+ Iktiosis Vulgaris 
+ Ileus Obstruktif 
+ Ileus Paralitik 
+ Immune Thrombocytopenic Purpura 
+ Impetigo 
+ Infark Miokard Akut 
+ Infark Paru 
+ Infeksi CMV 
+ Infeksi Helicobacter Pylori 
+ Infeksi Saluran Kemih 
+ Infeksi Saluran Pernapasan Atas (ISPA) 
+ Infeksi Saluran Pernapasan Bawah (ISPB) 
+ Infeksi Tindik Telinga 
+ Infeksi Virus Nipah 
+ Infeksi Virus Zika 
+ Infertilitas Pria 
+ Infertilitas Wanita 
+ Inflammatory Bowel Disease 
+ Influenza 
+ Ingrown nails 
+ Inhalant Use Disorder 
+ Inkompatibilitas ABO 
+ Inkompatibilitas Rhesus 
+ Inkompetensi Serviks 
+ Inkontinensia Alvi 
+ Inkontinensia Urine 
+ Insufisiensi Vena Kronik 
+ Intoleransi Laktosa 
+ Intoleransi Makanan 
+ Intra Uterine Fetal Death (IUFD) 
+ Intrauterine Growth Restriction (IUGR) 
+ Intususepsi 
+ Inversio Uterus 
+ Iritis 
+ Irritable Bowel Syndrome (IBS) 
+ Juvenile Idiopathic Arthritis 
+ Kaki Gajah 
+ Kalazion 
+ Kandidiasis Mukokutan 
+ Kandidiasis Oral 
+ Kandidiasis Vulvovaginal 
+ Kanker Endometrium 
+ Kanker Esofagus 
+ Kanker Kolon 
+ Kanker Kolorektal 
+ Kanker Lambung 
+ Kanker Ovarium 
+ Kanker Pankreas 
+ Kanker Paru 
+ Kanker Payudara 
+ Kanker Prostat 
+ Kanker Rektum 
+ Kanker Serviks 
+ Kanker Sinonasal 
+ Kanker Tiroid 
+ Kardiomiopati 
+ Kardiomiopati Takotsubo 
+ Karies Gigi 
+ Karsinoma Kulit Nonmelanoma 
+ Karsinoma Laring 
+ Karsinoma Nasofaring 
+ Karsinoma Sel Basal 
+ Karsinoma Sel Renal 
+ Karsinoma Sel Skuamosa 
+ Karsinoma Urotelial 
+ Katarak 
+ Kehamilan Ektopik 
+ Kehamilan Postterm 
+ Kejang Demam 
+ Kelainan Katup Jantung 
+ Keloid 
+ Keracunan Arsenik 
+ Keracunan Makanan 
+ Keracunan Methanol 
+ Keracunan Sianida 
+ Keratitis 
+ Keratosis Aktinik 
+ Keratosis Pilaris 
+ Keratosis Seboroik 
+ Kernikterus 
+ Ketoasidosis Diabetik 
+ Ketuban Pecah Dini 
+ Kista Dan Abses Kelenjar Bartholin 
+ Kista Epidermoid 
+ Kista Ganglion 
+ Kista Ovarium 
+ Klaudikasio Intermiten 
+ Kleptomania 
+ Koarktasio Aorta 
+ Kolangiokarsinoma 
+ Kolelitiasis 
+ Kolera 
+ Kolesistitis 
+ Kolesteatoma 
+ Kolitis Ulseratif 
+ Kondiloma Akuminata 
+ Konjungtivitis 
+ Konjungtivitis Neonatal 
+ Konstipasi 
+ Korioamnionitis 
+ Kram Otot Kaki 
+ Kraniosinostosis 
+ Krisis Adrenal 
+ Krisis Hipertensi 
+ Laringitis 
+ Leiomyoma 
+ Leiomyosarcoma 
+ Leismaniasis 
+ Lepra 
+ Leptospirosis 
+ Leukemia 
+ Leukorrhea 
+ Liken Planus 
+ Limfadenitis 
+ Limfadenopati 
+ Limfangitis 
+ Limfoma Hodgkin 
+ Limfoma Non Hodgkin 
+ Lipoma 
+ Liposarkoma 
+ Luka Bakar 
+ Luka Bakar Pada Anak 
+ Luka Tembak 
+ Lupus Eritematosus Sistemik 
+ Lymphedema 
+ Makrognatia 
+ Malaria 
+ Malaria Serebral 
+ Malignant Hyperthermia 
+ Malnutrisi 
+ Malpresentasi 
+ Malrotasi Intestinal 
+ Mastitis 
+ Mastoiditis 
+ Mata Merah 
+ Melanoma 
+ Melasma 
+ Meningitis 
+ Menopause 
+ Menorrhagia 
+ Mesothelioma 
+ Methicillin-resistant Staphylococcus aureus (MRSA) 
+ Micrognathia 
+ Micropenis 
+ Middle East Respiratory Syndrome (MERS) 
+ Migren 
+ Mikrosefali 
+ Miliaria 
+ Miokarditis 
+ Mioma Uteri 
+ Miringitis Bulosa 
+ Mola Hidatidosa 
+ Moluskum Kontagiosum 
+ Mononukleosis EBV 
+ Motion Sickness 
+ Mucocele Rongga Mulut 
+ Multiple Myeloma 
+ Multiple Sclerosis 
+ Mutisme Selektif 
+ Myasthenia Gravis 
+ Narkolepsi 
+ Necrotizing Enterocolitis 
+ Nefritis Lupus 
+ Nekrosis Tubular Akut 
+ Neoplasma Hepar 
+ Neural Tube Defect 
+ Neuritis Optik 
+ Neuroblastoma 
+ Neurodermatitis 
+ Neurofibromatosis Tipe 1 
+ Neurofibromatosis Tipe 2 
+ Neuropati Ulnar 
+ Neutropenia 
+ Nevus Pigmentosus 
+ Nevus Sebaceous 
+ Nightmare Disorder 
+ Nodul Tiroid 
+ Noise Induced Hearing Loss (NIHL) 
+ Nokturnal Enuresis 
+ Non Alcoholic Fatty Liver 
+ Norovirus 
+ Nyeri Punggung Bawah 
+ Obesitas 
+ Obstructive Sleep Apnea 
+ Oklusi Arteri Retina Sentral 
+ Oligospermia 
+ Oliguria 
+ Omfalitis 
+ Omfalokel 
+ Opioid Use Disorder 
+ Orchitis Mumps 
+ Osteoarthritis 
+ Osteochondroma 
+ Osteomyelitis 
+ Osteoporosis 
+ Osteosarkoma 
+ Otitis Eksterna 
+ Otitis Media 
+ Otomikosis 
+ Otosklerosis 
+ Overactive Bladder 
+ Pankreatitis Akut 
+ Parafimosis 
+ Paraplegia 
+ Parasomnia 
+ Parkinson 
+ Partus Lama 
+ Parut Hipertrofik 
+ Patent Ductus Arteriosus 
+ Pedikulosis 
+ Pemfigus Vulgaris 
+ Penyakit Behcet 
+ Penyakit Buerger 
+ Penyakit Celiac 
+ Penyakit Ginjal Kronis 
+ Penyakit Hashimoto 
+ Penyakit Huntington’s 
+ Penyakit Jantung Bawaan 
+ Penyakit Jantung Rematik 
+ Penyakit Kawasaki 
+ Penyakit Lyme 
+ Penyakit Meniere 
+ Penyakit Paget Payudara 
+ Penyakit Paget Tulang 
+ Penyakit Paru Obstruktif Kronik 
+ Penyakit Radang Panggul (PID) 
+ Penyakit Tangan, Kaki, dan Mulut 
+ Penyakit Von Willebrand 
+ Perdarahan Intrakranial 
+ Perdarahan Postpartum 
+ Perdarahan Subaraknoid Spontan 
+ Perdarahan Subkonjungtiva 
+ Perdarahan Uterus Abnormal 
+ Perdarahan Vitreus 
+ Perforasi Intestinal 
+ Perforasi Membran Timpani 
+ Perikarditis 
+ Periodontitis 
+ Peripheral Artery Disease 
+ Peritonitis 
+ Persalinan Preterm 
+ Pertusis 
+ Pityriasis Alba 
+ Pityriasis Rosea 
+ Plantar Fasciitis 
+ Plasenta Previa 
+ Pleuritis 
+ Pneumonia Aspirasi 
+ Pneumonia Komuniti 
+ Pneumonia Nosokomial 
+ Pneumothorax 
+ Poliomielitis 
+ Polip Nasal 
+ Polip Serviks 
+ Polisitemia 
+ Pollen Allergy 
+ Polyarthralgia 
+ Polyhidramnion 
+ Porfiria 
+ Post Traumatic Stress Disorder (PTSD) 
+ Preeklampsia 
+ Presbikusis 
+ Presbiopi 
+ Priapismus 
+ Proktitis 
+ Prolaktinoma 
+ Prolaps Rektum 
+ Prolaps Tali Pusat 
+ Prolaps Uterus 
+ Prostatitis 
+ Protein-Losing Enteropathy 
+ Psikosomatis 
+ Psoriasis 
+ Pterygium 
+ Pubertas Prekoks 
+ Pulpitis 
+ Pyelonephritis 
+ Pyoderma 
+ Rabies 
+ Radikulopati Lumbar 
+ Rakitis 
+ Rambut Rontok 
+ Ramsay Hunt Syndrome 
+ Recurrent Aphthous Stomatitis 
+ Refeeding Syndrome 
+ Restless Legs Syndrome 
+ Retardasi Mental 
+ Retensio Plasenta 
+ Retinitis Pigmentosa 
+ Retinoblastoma 
+ Retinopathy of Prematurity 
+ Retinopati 
+ Retinopati Diabetik 
+ Rhabdomyolysis 
+ Rhabdomyosarcoma 
+ Rheumatoid Arthritis 
+ Rhinitis Alergi 
+ Rhinitis Kronik 
+ Rhinitis Vasomotor 
+ Rosacea 
+ Roseola 
+ Ruam Popok 
+ Rubella 
+ Ruptur Esofagus 
+ Ruptur Ginjal 
+ Ruptur Hepar 
+ Ruptur Limpa 
+ Ruptur Perineum 
+ Ruptur Serviks 
+ Ruptur Tendon Achilles 
+ Ruptur Uretra 
+ Ruptur Uteri 
+ Ruptur Vesika 
+ Salmonellosis 
+ Salpingitis 
+ Sarcopenia 
+ Sarkoidosis 
+ Sarkoma Kaposi 
+ Scabies 
+ Scarlet Fever 
+ Schistosomiasis 
+ Schizophrenia 
+ Selulitis 
+ Seminoma Testis 
+ Sepsis 
+ Serumen Prop 
+ Servisitis 
+ Severe Acute Respiratory Syndrome (SARS) 
+ Shigellosis 
+ Sialolithiasis 
+ Sifilis 
+ Sindrom Asperger 
+ Sindrom Brugada 
+ Sindrom Cauda Equina 
+ Sindrom Guillain-Barré 
+ Sindrom Kompartemen 
+ Sindrom Koroner Akut 
+ Sindrom Marfan 
+ Sindrom Metabolik 
+ Sindrom Nefrotik 
+ Sindrom Nyeri Miofasial 
+ Sindrom Ovarium Polikistik 
+ Sindrom Reye 
+ Sindrom Serotonin 
+ Sindrom Sjogren 
+ Sindrom Stevens-Johnson 
+ Sindrom Tourette 
+ Sindrom Turner 
+ Sindroma Nefritik 
+ Sinus Preaurikular 
+ Sinusitis 
+ Sirosis Hepatis 
+ Skleritis 
+ Skrofuloderma 
+ Spermatokel 
+ Spider Nevus 
+ Spina Bifida 
+ Spinal Cord Injury 
+ Spine Curvature Disorder 
+ Splenomegali 
+ Spondilitis TB 
+ Spondilolisis 
+ Spondylolisthesis 
+ Staphylococcal Scalded Skin Syndrome 
+ Stenosis Pilorus Pediatrik 
+ Strabismus 
+ Stretch Mark 
+ Striktur Uretra 
+ Stroke 
+ Stroke pada Anak 
+ Strongyloidiasis 
+ Stunting 
+ Subluksasi Kaput Radius 
+ Sumbing 
+ Supraventricular Extrasystole 
+ Supraventricular Tachycardia 
+ Syok Hemoragik 
+ Syok Hipovolemik 
+ Syok Kardiogenik 
+ Syok Neurogenik 
+ Syok Sepsis 
+ TB MDR 
+ Taeniasis 
+ Tarsal Tunnel Syndrome 
+ Temporomandibular Joint Disorder (TMD) 
+ Tendinitis Achilles 
+ Tendinopati Achilles 
+ Tenggelam 
+ Tenosynovitis 
+ Tenosynovitis de Quervain 
+ Tension Type Headache 
+ Teratoma Ovarium 
+ Teratoma Testis 
+ Tetanus 
+ Tetanus Neonatorum 
+ Tetralogy of Fallot 
+ Thalassemia 
+ Tinea Barbae 
+ Tinea Corporis 
+ Tinea Cruris 
+ Tinea Fasialis 
+ Tinea Kapitis 
+ Tinea Manus 
+ Tinea Pedis 
+ Tinea Unguium 
+ Tinea Versicolor 
+ Tiroiditis 
+ Tirotoksikosis 
+ Tobacco Use Disorder 
+ Tongue-Tie (Ankyloglossia) 
+ Tonsilitis 
+ Torsio Testis 
+ Torsio dan Ruptur Kista Ovarium 
+ Tortikolis 
+ Torus Palatinus dan Torus Mandibularis 
+ Toxic Epidermal Necrolysis 
+ Toxoplasmosis 
+ Trachoma 
+ Transient Ischemic Attack (TIA) 
+ Transient Tachypnea of the Newborn 
+ Trauma Akustik Akut 
+ Trauma Aurikula 
+ Trigeminal Neuralgia 
+ Trigger Finger 
+ Trikomoniasis 
+ Tromboflebitis 
+ Trombositopenia 
+ Trombositosis 
+ Tuberculous Osteomyelitis 
+ Tuberkulosis Paru 
+ Tuberkulosis Paru pada Anak 
+ Tuli 
+ Tumor Filodes 
+ Tumor Ganas Kavitas Nasal 
+ Tumor Karsinoid 
+ Tumor Mediastinum 
+ Tumor Otak 
+ Tumor Pituitari 
+ Tympanosclerosis 
+ Uban Prematur 
+ Ulkus Dekubitus 
+ Ulkus Diabetikum 
+ Ulkus Kornea 
+ Ulkus Mole 
+ Ulkus Peptikum 
+ Undesensus Testis 
+ Uretritis Non-gonore 
+ Urolithiasis 
+ Urtikaria 
+ Uveitis 
+ Vaginitis 
+ Varicella 
+ Varikokel 
+ Varises 
+ Varises Esofagus 
+ Vasculitis 
+ Ventilator-Associated Pneumonia 
+ Ventricular Extrasystole 
+ Ventricular Septal Defect 
+ Ventricular Tachycardia 
+ Vertigo 
+ Veruka Vulgaris 
+ Vestibular Papillomatosis 
+ Vitiligo 
+ Vulvitis 
+ Wilms Tumor (Nefroblastoma) 
+ Xanthelasma 
+ Xanthoma 
+ Xerostomia 
