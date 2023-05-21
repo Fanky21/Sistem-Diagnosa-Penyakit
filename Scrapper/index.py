@@ -1,15 +1,15 @@
-import requests
 from bs4 import BeautifulSoup
 
-# Mengirim permintaan GET ke halaman web
-url = "https://www.alomedika.com/penyakit"
-response = requests.get(url)
+# Membaca file HTML lokal
+html_file = "data.htm"
+with open(html_file, "r") as file:
+    html_data = file.read()
 
 # Membuat objek BeautifulSoup
-soup = BeautifulSoup(response.text, "html.parser")
+soup = BeautifulSoup(html_data, "html.parser")
 
-# Mencari elemen <a> yang berada dalam <li class="page_item index-item">
-links = soup.select('li.page_item.index-item a.title-az-results')
+# Mencari elemen <a> yang berada dalam <li class="index-item" style="display:block"><a href>
+links = soup.select('li.index-item[style="display:block"] a[href]')
 
 # Menyimpan data dalam file teks
 output_file = "output.txt"
