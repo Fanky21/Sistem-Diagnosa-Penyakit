@@ -55,8 +55,8 @@ public class Main {
 
                     System.out.println("Login berhasil");
 
-                    // MainMenu mainmenu = new MainMenu();
-                    // mainmenu.main(args);
+                    MainMenu mainmenu = new MainMenu();
+                    mainmenu.main(args);
 
                 } else {
                     

@@ -23,9 +23,9 @@ sheet = workbook.active
 # Looping untuk setiap baris di Excel, dimulai dari baris kedua (indeks 2)
 for row in sheet.iter_rows(min_row=2, values_only=True):
     kode_penyakit = generate_random_code(6)
-    nama_penyakit = row[0]
-    deskripsi_penyakit = row[1]
-    gejala_penyakit = row[2]
+    nama_penyakit = row[0] if row[0] else "Tidak ada data"
+    deskripsi_penyakit = row[1] if row[1] else "Tidak ada data"
+    gejala_penyakit = row[2] if row[2] else "Tidak ada data"
 
     try:
         # Eksekusi query SQL untuk memasukkan data ke tabel penyakit
