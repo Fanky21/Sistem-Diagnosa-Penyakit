@@ -9,6 +9,8 @@ public class Main {
     static final String password = "pbo331";
 
     public static void main(String[] args) throws Exception {
+
+        Connection conn = DriverManager.getConnection(mysql_url, username, password);
         
         System.out.println("Selamat Datang!\n"
                 + "Pilih Menu:\n"
@@ -39,12 +41,6 @@ public class Main {
 
             if (confirmation.equals("1")) {
 
-                System.out.println("Preparing connection");
-
-                Connection conn = DriverManager.getConnection(mysql_url, username, password);
-
-                System.out.println("Connection success!");
-
                 PreparedStatement syntax = conn.prepareStatement("SELECT * FROM akun WHERE username = ? AND password = ?");
                 syntax.setString(1, inputUsername);
                 syntax.setString(2, inputPassword);
@@ -59,8 +55,8 @@ public class Main {
 
                     System.out.println("Login berhasil");
 
-                    // MainMenu mainmenu = new MainMenu();
-                    // mainmenu.main(args);
+                    MainMenu mainmenu = new MainMenu();
+                    mainmenu.main(args);
 
                 } else {
                     

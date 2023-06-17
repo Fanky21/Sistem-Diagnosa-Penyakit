@@ -1,2 +1,2 @@
-python index.py
+python import_to_database.py
 pause
