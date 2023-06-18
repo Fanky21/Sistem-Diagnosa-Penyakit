@@ -8,14 +8,14 @@ import java.awt.Color;
 
 /**
  *
- * @author Zenith
+ * @author Fakhrizal
  */
-public class LoginForm extends javax.swing.JFrame {
+public class RegisterForm extends javax.swing.JFrame {
 
     /**
-     * Creates new form LoginForm
+     * Creates new form RegisterForm
      */
-    public LoginForm() {
+    public RegisterForm() {
         initComponents();
     }
 
@@ -28,14 +28,41 @@ public class LoginForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        Login = new javax.swing.JButton();
         inputUsername = new javax.swing.JTextField();
         inputPassword = new javax.swing.JTextField();
-        Login = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\Back.png")); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\logingreen.png")); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 719, -1, -1));
+
+        Login.setBackground(new java.awt.Color(255, 255, 255));
+        Login.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\Registerbttn.png")); // NOI18N
+        Login.setBorder(null);
+        Login.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LoginMouseClicked(evt);
+            }
+        });
+        Login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LoginActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 610, 300, 60));
 
         inputUsername.setBackground(new java.awt.Color(255, 255, 255));
         inputUsername.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
@@ -83,62 +110,29 @@ public class LoginForm extends javax.swing.JFrame {
         });
         getContentPane().add(inputPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 280, 50));
 
-        Login.setBackground(new java.awt.Color(255, 255, 255));
-        Login.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\Loginbttn.png")); // NOI18N
-        Login.setBorder(null);
-        Login.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LoginMouseClicked(evt);
-            }
-        });
-        Login.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LoginActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 610, 300, 60));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\create one.png")); // NOI18N
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
-            }
-        });
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 720, -1, -1));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\Login.png")); // NOI18N
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 800));
+        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\Register.png")); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void inputUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputUsernameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputUsernameActionPerformed
-
-    private void inputPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputPasswordActionPerformed
-
-    private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_LoginActionPerformed
 
     private void inputUsernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_inputUsernameFocusGained
         if(inputUsername.getText().equals("Username")){
             inputUsername.setText("");
-            inputUsername.setForeground(new Color(0, 0, 0));
+            inputUsername.setForeground(Color(0, 0, 0));
         }
     }//GEN-LAST:event_inputUsernameFocusGained
 
     private void inputUsernameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_inputUsernameFocusLost
         if(inputUsername.getText().equals("")){
             inputUsername.setText("Username");
-            inputUsername.setForeground(new Color(0, 0, 0));
+            inputUsername.setForeground(Color(0, 0, 0));
         }
     }//GEN-LAST:event_inputUsernameFocusLost
+
+    private void inputUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputUsernameActionPerformed
 
     private void inputPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_inputPasswordFocusGained
         // TODO add your handling code here:
@@ -156,14 +150,22 @@ public class LoginForm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_inputPasswordFocusLost
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+    private void inputPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel1MouseClicked
+    }//GEN-LAST:event_inputPasswordActionPerformed
 
     private void LoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginMouseClicked
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_LoginMouseClicked
+
+    private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LoginActionPerformed
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -182,20 +184,20 @@ public class LoginForm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoginForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegisterForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoginForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegisterForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoginForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegisterForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LoginForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegisterForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LoginForm().setVisible(true);
+                new RegisterForm().setVisible(true);
             }
         });
     }
@@ -206,5 +208,10 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JTextField inputUsername;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
+
+    private Color Color(int i, int i0, int i1) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
