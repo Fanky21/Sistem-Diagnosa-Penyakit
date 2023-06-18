@@ -5,9 +5,13 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JFrame;
 
 import javax.swing.JOptionPane;
+import java.awt.Window;
 
+import com.neverlands.siskesdig.programs.Graphic.LoginForm;
+import com.neverlands.siskesdig.programs.Graphic.MainmenuForm;
 import com.neverlands.siskesdig.programs.controller.config;
 
 public class LoginRegist {
@@ -31,6 +35,9 @@ public class LoginRegist {
 
             JOptionPane.showMessageDialog(null,"Selamat Datang " + Username , "Login success!",1,null);
 
+            MainmenuForm MainmenuForm = new MainmenuForm();
+            MainmenuForm.setVisible(true);
+
         } else {
 
             JOptionPane.showMessageDialog(null, "FAILED, FATAL ERROR!", "Login failed!", 1, null);
@@ -38,16 +45,13 @@ public class LoginRegist {
         }
     }
     
-    public void register() throws SQLException{
+    public void register(String Username, String Password) throws SQLException{
         PreparedStatement syntax = conn.prepareStatement("INSERT INTO akun (username, password) VALUES (?, ?)");
         syntax.setString(1, Username);
         syntax.setString(2, Password);
         syntax.executeUpdate();
 
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-
-        System.out.println("Akun berhasil dibuat, silahkan login!");
+        JOptionPane.showMessageDialog(null,"Akun berhasil dibuat!" + Username , "Success!",1,null);
     }
 }
 
