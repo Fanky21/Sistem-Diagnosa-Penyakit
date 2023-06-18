@@ -7,7 +7,15 @@ package com.neverlands.siskesdig.programs.Graphic;
 =======
 
 import java.awt.Color;
+<<<<<<< HEAD
 >>>>>>> 0091df13becce244749196e64e792edcff012e36
+=======
+import java.sql.SQLException;
+
+import javax.swing.*;
+
+import com.neverlands.siskesdig.programs.LoginRegist;
+>>>>>>> 691d8fc8d1a66175e8c4fe985a11471ce9014ab0
 
 /**
  *
@@ -70,6 +78,7 @@ public class RegisterForm extends javax.swing.JFrame {
         inputPassword.setForeground(new java.awt.Color(0, 0, 0));
         inputPassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         inputPassword.setText("Password");
+        inputPassword.setToolTipText("");
         inputPassword.setBorder(null);
         inputPassword.setCaretColor(new java.awt.Color(0, 0, 0));
         inputPassword.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -92,7 +101,12 @@ public class RegisterForm extends javax.swing.JFrame {
         Login.setBorder(null);
         Login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LoginActionPerformed(evt);
+                try {
+                    LoginActionPerformed(evt);
+                } catch (SQLException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
             }
         });
         getContentPane().add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 610, 300, 60));
@@ -106,6 +120,11 @@ public class RegisterForm extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 720, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Back.png"))); // NOI18N
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Register.png"))); // NOI18N
@@ -113,6 +132,7 @@ public class RegisterForm extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 800));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void inputUsernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_inputUsernameFocusGained
@@ -153,13 +173,43 @@ public class RegisterForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_inputPasswordActionPerformed
 
-    private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
+    private void LoginActionPerformed(java.awt.event.ActionEvent evt) throws SQLException {//GEN-FIRST:event_LoginActionPerformed
         // TODO add your handling code here:
+
+        String Username = inputUsername.getText();
+        String Password = inputPassword.getText();
+
+        LoginRegist LoginRegist = new LoginRegist();
+        
+        try {
+            LoginRegist.register(Username, Password);
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        
+
     }//GEN-LAST:event_LoginActionPerformed
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         // TODO add your handling code here:
+
+        LoginForm LoginForm = new LoginForm();
+        LoginForm.setVisible(true);
+
+        dispose();
+
     }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        // TODO add your handling code here:
+
+        LoginForm LoginForm = new LoginForm();
+        LoginForm.setVisible(true);
+
+        dispose();
+
+    }//GEN-LAST:event_jLabel3MouseClicked
 
     /**
      * @param args the command line arguments

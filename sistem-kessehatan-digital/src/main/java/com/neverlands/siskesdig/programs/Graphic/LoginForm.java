@@ -121,6 +121,7 @@ public class LoginForm extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 800));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void inputUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputUsernameActionPerformed
@@ -134,13 +135,13 @@ public class LoginForm extends javax.swing.JFrame {
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) throws SQLException {//GEN-FIRST:event_LoginActionPerformed
         // TODO add your handling code here:
 
-        Connection conn = DriverManager.getConnection(config.MYSQL_url, config.MYSQL_username, config.MYSQL_password);
         String Username = inputUsername.getText();
         String Password = inputPassword.getText();
 
         LoginRegist loginRegist = new LoginRegist();
         try {
             loginRegist.login(Username, Password);
+            dispose();
         } catch (SQLException e) {
             // Handle any exceptions
             e.printStackTrace();
@@ -181,6 +182,12 @@ public class LoginForm extends javax.swing.JFrame {
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         // TODO add your handling code here:
+
+        RegisterForm RegisterForm = new RegisterForm();
+        RegisterForm.setVisible(true);
+
+        dispose();
+
     }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
