@@ -2,7 +2,7 @@ package com.neverlands.siskesdig.programs;
 import com.neverlands.siskesdig.programs.controller.config;
 import java.sql.*;
 
-public class DataBasePenyakit {
+public class DatabasePenyakit {
     private String inputKode;
     private String inputPenyakit;
     private String inputDeskripsi;
@@ -10,7 +10,7 @@ public class DataBasePenyakit {
     
     Connection conn;
     
-    public DataBasePenyakit(String inputKode, String inputPenyakit, String inputDeskripsi, String inputGejala) throws SQLException{
+    public DatabasePenyakit(String inputKode, String inputPenyakit, String inputDeskripsi, String inputGejala) throws SQLException{
         this.conn = DriverManager.getConnection(config.MYSQL_url,config.MYSQL_username ,config.MYSQL_password);
         this.inputKode = inputKode;
         this.inputPenyakit = inputPenyakit;
