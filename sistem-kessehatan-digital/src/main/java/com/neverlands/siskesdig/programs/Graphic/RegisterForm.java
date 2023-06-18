@@ -3,6 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.neverlands.siskesdig.programs.Graphic;
+<<<<<<< HEAD
+=======
+
+import java.awt.Color;
+>>>>>>> 0091df13becce244749196e64e792edcff012e36
 
 /**
  *

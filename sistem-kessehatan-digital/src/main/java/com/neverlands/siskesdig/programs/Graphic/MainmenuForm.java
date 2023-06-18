@@ -119,4 +119,9 @@ public class MainmenuForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     // End of variables declaration//GEN-END:variables
+<<<<<<< HEAD
 }
+=======
+
+}
+>>>>>>> 0091df13becce244749196e64e792edcff012e36
