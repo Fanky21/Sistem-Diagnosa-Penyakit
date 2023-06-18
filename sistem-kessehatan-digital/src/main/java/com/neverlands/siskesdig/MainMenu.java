@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class MainMenu {
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         System.out.println("Selamat Datang" + Main.username + 
         "\nPilih Menu dibawah ini\n"+
         "1. Diagnosa Penyakit\n"+
@@ -19,14 +19,9 @@ public class MainMenu {
 
         String pilihan = scanner.nextLine();
 
-<<<<<<< HEAD
         if(pilihan.equals(1)){
             DiagnosaPenyakit.main(args);
-=======
-        if(pilihan.equals("1")){
-            System.out.println("Silahkan masukan gejala anda dengan jelas!");
-            String inputGejala = scanner.nextLine();
->>>>>>> 89b851029f854fc8f2d291b31de57ee93210ed0d
+
         }
 
         else if(pilihan.equals("2")){
@@ -41,7 +36,7 @@ public class MainMenu {
         }
 
         else if(pilihan.equals("4")){
-            System.out.println("Database Penyakit:");
+            DatabasePenyakit.main(args);
         }
 
         else if(pilihan.equals("5")){

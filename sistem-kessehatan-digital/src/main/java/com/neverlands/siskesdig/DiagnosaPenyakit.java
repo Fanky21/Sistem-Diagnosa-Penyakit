@@ -26,7 +26,9 @@ public class DiagnosaPenyakit {
             }
         }
 
-        System.out.println(filteredWords.toString());
+        String output = filteredWords.toString();
+
+
 
     }
     
