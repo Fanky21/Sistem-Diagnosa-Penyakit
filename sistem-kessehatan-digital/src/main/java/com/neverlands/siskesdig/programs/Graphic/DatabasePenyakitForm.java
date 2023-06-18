@@ -67,23 +67,23 @@ public class DatabasePenyakitForm extends javax.swing.JFrame {
         });
         getContentPane().add(Nama_Penyakit, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 330, 35));
 
-        Delete.setIcon(new javax.swing.ImageIcon("F:\\ITK\\Semester 2\\PBO\\Sistem Diagnosa Penyakit GUI Picture\\Delete.png")); // NOI18N
+        Delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Delete.png"))); // NOI18N
         Delete.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DeleteMouseClicked(evt);
             }
         });
-        getContentPane().add(Delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 620, -1, -1));
+        getContentPane().add(Delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 630, -1, -1));
 
-        Add.setIcon(new javax.swing.ImageIcon("F:\\ITK\\Semester 2\\PBO\\Sistem Diagnosa Penyakit GUI Picture\\Add.png")); // NOI18N
+        Add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Add.png"))); // NOI18N
         Add.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 AddMouseClicked(evt);
             }
         });
-        getContentPane().add(Add, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, -1, -1));
+        getContentPane().add(Add, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 520, -1, -1));
 
-        Back.setIcon(new javax.swing.ImageIcon("F:\\ITK\\Semester 2\\PBO\\Sistem Diagnosa Penyakit GUI Picture\\Back.png")); // NOI18N
+        Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Back.png"))); // NOI18N
         Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BackMouseClicked(evt);
@@ -91,7 +91,7 @@ public class DatabasePenyakitForm extends javax.swing.JFrame {
         });
         getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("F:\\ITK\\Semester 2\\PBO\\Sistem Diagnosa Penyakit GUI Picture\\Database Penyakit.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Database Penyakit.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();

@@ -27,12 +27,12 @@ public class RiwayatPenyakitForm extends javax.swing.JFrame {
     private void initComponents() {
 
         Back = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Back.setIcon(new javax.swing.ImageIcon("F:\\ITK\\Semester 2\\PBO\\Sistem Diagnosa Penyakit GUI Picture\\Back.png")); // NOI18N
+        Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Back.png"))); // NOI18N
         Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BackMouseClicked(evt);
@@ -40,8 +40,8 @@ public class RiwayatPenyakitForm extends javax.swing.JFrame {
         });
         getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("F:\\ITK\\Semester 2\\PBO\\Sistem Diagnosa Penyakit GUI Picture\\Riwayat Penyakit.jpg")); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Riwayat Penyakit.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -87,6 +87,6 @@ public class RiwayatPenyakitForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Back;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
