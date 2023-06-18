@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class MainMenu {
     
     public static void main(String[] args) throws Exception {
-        System.out.println("Selamat Datang" + Main.username + 
+        System.out.println("Selamat Datang" + 
         "\nPilih Menu dibawah ini\n"+
         "1. Diagnosa Penyakit\n"+
         "2. Daftar Penyakit\n"+
@@ -35,7 +35,7 @@ public class MainMenu {
         }
 
         else if(pilihan.equals("4")){
-            DatabasePenyakit.main(args);
+            
         }
 
         else if(pilihan.equals("5")){
