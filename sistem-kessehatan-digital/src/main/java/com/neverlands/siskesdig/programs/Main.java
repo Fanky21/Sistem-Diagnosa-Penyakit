@@ -1,16 +1,16 @@
-package com.neverlands.siskesdig;
+package com.neverlands.siskesdig.programs;
+
 import java.util.Scanner;
+
+import com.neverlands.siskesdig.programs.controller.config;
+
 import java.sql.*;
 
 public class Main {
 
-    static final String mysql_url = "jdbc:mysql://51.161.134.32/sistem_kesehatan";
-    static final String username = "database_pbo";
-    static final String password = "pbo331";
-
     public static void main(String[] args) throws Exception {
 
-        Connection conn = DriverManager.getConnection(mysql_url, username, password);
+        Connection conn = DriverManager.getConnection(config.MYSQL_url, config.MYSQL_username, config.MYSQL_password);
 
         System.out.print("\033[H\033[2J");
         System.out.flush();

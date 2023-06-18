@@ -1,4 +1,4 @@
-package com.neverlands.siskesdig;
+package com.neverlands.siskesdig.programs;
 
 import java.util.Scanner;
 
@@ -21,7 +21,6 @@ public class MainMenu {
 
         if(pilihan.equals("1")){
             
-
         }
 
         else if(pilihan.equals("2")){

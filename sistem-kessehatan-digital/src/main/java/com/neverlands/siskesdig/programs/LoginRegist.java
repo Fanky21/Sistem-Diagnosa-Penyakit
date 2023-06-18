@@ -1,4 +1,4 @@
-package com.neverlands.siskesdig;
+package com.neverlands.siskesdig.programs;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
