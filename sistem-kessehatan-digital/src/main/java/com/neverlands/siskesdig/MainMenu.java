@@ -13,6 +13,9 @@ public class MainMenu {
         "5. Riwayat Penyakit");
 
         Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Pilihan: ");
+
         String pilihan = scanner.nextLine();
 
         if(pilihan.equals(1)){
