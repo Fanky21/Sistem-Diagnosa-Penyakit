@@ -3,19 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.neverlands.siskesdig.programs.Graphic;
-<<<<<<< HEAD
-=======
 
 import java.awt.Color;
-<<<<<<< HEAD
->>>>>>> 0091df13becce244749196e64e792edcff012e36
-=======
 import java.sql.SQLException;
 
 import javax.swing.*;
 
 import com.neverlands.siskesdig.programs.LoginRegist;
->>>>>>> 691d8fc8d1a66175e8c4fe985a11471ce9014ab0
 
 /**
  *
