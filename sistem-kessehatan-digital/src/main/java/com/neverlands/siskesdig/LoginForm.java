@@ -31,7 +31,7 @@ public class LoginForm extends javax.swing.JFrame {
         inputUsername = new javax.swing.JTextField();
         inputPassword = new javax.swing.JTextField();
         Login = new javax.swing.JButton();
-        create = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -44,6 +44,7 @@ public class LoginForm extends javax.swing.JFrame {
         inputUsername.setToolTipText("");
         inputUsername.setBorder(null);
         inputUsername.setCaretColor(new java.awt.Color(0, 0, 0));
+        inputUsername.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         inputUsername.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 inputUsernameFocusGained(evt);
@@ -90,16 +91,13 @@ public class LoginForm extends javax.swing.JFrame {
         });
         getContentPane().add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 610, 300, 60));
 
-        create.setBackground(new java.awt.Color(255, 255, 255));
-        create.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\create one.png")); // NOI18N
-        create.setBorder(null);
-        create.setBorderPainted(false);
-        create.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                createActionPerformed(evt);
+        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\create one.png")); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
             }
         });
-        getContentPane().add(create, new org.netbeans.lib.awtextra.AbsoluteConstraints(305, 711, 100, 30));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 720, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\Login.png")); // NOI18N
         jLabel2.setText("jLabel2");
@@ -119,10 +117,6 @@ public class LoginForm extends javax.swing.JFrame {
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_LoginActionPerformed
-
-    private void createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_createActionPerformed
 
     private void inputUsernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_inputUsernameFocusGained
         if(inputUsername.getText().equals("Username")){
@@ -153,6 +147,10 @@ public class LoginForm extends javax.swing.JFrame {
             inputPassword.setForeground(new Color(0, 0, 0));
         }
     }//GEN-LAST:event_inputPasswordFocusLost
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -191,9 +189,9 @@ public class LoginForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Login;
-    private javax.swing.JButton create;
     private javax.swing.JTextField inputPassword;
     private javax.swing.JTextField inputUsername;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
