@@ -3,6 +3,7 @@ package com.neverlands.siskesdig;
 import java.util.Scanner;
 
 public class MainMenu {
+    
     public static void main(String[] args) {
         System.out.println("Selamat Datang" + Main.username + 
         "\nPilih Menu dibawah ini\n"+
@@ -19,8 +20,7 @@ public class MainMenu {
         String pilihan = scanner.nextLine();
 
         if(pilihan.equals(1)){
-            System.out.println("Silahkan masukan gejala anda dengan jelas!");
-            String inputGejala = scanner.nextLine();
+            DiagnosaPenyakit.main(args);
         }
 
         else if(pilihan.equals(2)){
