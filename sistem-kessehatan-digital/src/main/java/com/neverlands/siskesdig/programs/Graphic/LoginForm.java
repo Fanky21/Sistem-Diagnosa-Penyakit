@@ -5,6 +5,16 @@
 package com.neverlands.siskesdig.programs.Graphic;
 
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.swing.JOptionPane;
+
+import com.neverlands.siskesdig.programs.LoginRegist;
+import com.neverlands.siskesdig.programs.controller.config;
 
 /**
  *
@@ -88,12 +98,17 @@ public class LoginForm extends javax.swing.JFrame {
         Login.setBorder(null);
         Login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LoginActionPerformed(evt);
+                try {
+                    LoginActionPerformed(evt);
+                } catch (SQLException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
             }
         });
         getContentPane().add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 610, 300, 60));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/create one.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/create_one.png"))); // NOI18N
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
@@ -116,8 +131,22 @@ public class LoginForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_inputPasswordActionPerformed
 
-    private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
+    private void LoginActionPerformed(java.awt.event.ActionEvent evt) throws SQLException {//GEN-FIRST:event_LoginActionPerformed
         // TODO add your handling code here:
+
+        Connection conn = DriverManager.getConnection(config.MYSQL_url, config.MYSQL_username, config.MYSQL_password);
+        String Username = inputUsername.getText();
+        String Password = inputPassword.getText();
+
+        LoginRegist loginRegist = new LoginRegist();
+        try {
+            loginRegist.login(Username, Password);
+        } catch (SQLException e) {
+            // Handle any exceptions
+            e.printStackTrace();
+        }
+
+
     }//GEN-LAST:event_LoginActionPerformed
 
     private void inputUsernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_inputUsernameFocusGained

@@ -6,54 +6,42 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.swing.JOptionPane;
+
+import com.neverlands.siskesdig.programs.controller.config;
+
 public class LoginRegist {
 
-    static final String mysql_url = "jdbc:mysql://51.161.134.32/sistem_kesehatan";
-    static final String username = "database_pbo";
-    static final String password = "pbo331";
+    private Connection conn;
+    private String Username;
+    private String Password;
     
-    private String inputUsername;
-    private String inputPassword;
-    
-    Connection conn;
-    
-    public LoginRegist(String inputUsername, String inputPassword) throws SQLException{
-        this.conn = DriverManager.getConnection(mysql_url, username, password);
-        this.inputUsername = inputUsername;
-        this.inputPassword = inputPassword;
+    public LoginRegist() throws SQLException{
+        this.conn = DriverManager.getConnection(config.MYSQL_url, config.MYSQL_username, config.MYSQL_password);
     }
     
-    public void login() throws SQLException{
+    public void login(String Username, String Password) throws SQLException{
         PreparedStatement syntax = conn.prepareStatement("SELECT * FROM akun WHERE username = ? AND password = ?");
-        syntax.setString(1, inputUsername);
-        syntax.setString(2, inputPassword);
+        syntax.setString(1, Username);
+        syntax.setString(2, Password);
         ResultSet hasil = syntax.executeQuery();
         Boolean status_login = hasil.next();
 
         if (status_login) {
 
-            System.out.print("\033[H\033[2J");
-            System.out.flush();
-
-            System.out.println("Selamat datang " + inputUsername);
-
+            JOptionPane.showMessageDialog(null,"Selamat Datang " + Username , "Login success!",1,null);
 
         } else {
 
-            System.out.print("\033[H\033[2J");
-            System.out.flush();
-            
-            System.out.println("Login gagal, Silahkan cek username dan password kembali!");
-
-            return;
+            JOptionPane.showMessageDialog(null, "FAILED, FATAL ERROR!", "Login failed!", 1, null);
 
         }
     }
     
     public void register() throws SQLException{
         PreparedStatement syntax = conn.prepareStatement("INSERT INTO akun (username, password) VALUES (?, ?)");
-        syntax.setString(1, inputUsername);
-        syntax.setString(2, inputPassword);
+        syntax.setString(1, Username);
+        syntax.setString(2, Password);
         syntax.executeUpdate();
 
         System.out.print("\033[H\033[2J");
