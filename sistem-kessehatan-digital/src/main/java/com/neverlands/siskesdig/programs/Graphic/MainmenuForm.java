@@ -1,4 +1,4 @@
-package com.neverlands.siskesdig.programs;
+package com.neverlands.siskesdig.programs.Graphic;
 
 public class MainmenuForm extends javax.swing.JFrame {
 

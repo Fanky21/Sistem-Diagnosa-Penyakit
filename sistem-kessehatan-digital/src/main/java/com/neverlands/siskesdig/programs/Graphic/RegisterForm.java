@@ -1,4 +1,4 @@
-package com.neverlands.siskesdig.programs;
+package com.neverlands.siskesdig.programs.Graphic;
 
 import java.awt.Color;
 
