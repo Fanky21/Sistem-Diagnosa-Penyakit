@@ -40,6 +40,7 @@ public class LoginForm extends javax.swing.JFrame {
         inputUsername.setBackground(new java.awt.Color(255, 255, 255));
         inputUsername.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
         inputUsername.setForeground(new java.awt.Color(0, 0, 0));
+        inputUsername.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         inputUsername.setText("Username");
         inputUsername.setToolTipText("");
         inputUsername.setBorder(null);
@@ -63,6 +64,7 @@ public class LoginForm extends javax.swing.JFrame {
         inputPassword.setBackground(new java.awt.Color(255, 255, 255));
         inputPassword.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
         inputPassword.setForeground(new java.awt.Color(0, 0, 0));
+        inputPassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         inputPassword.setText("Password");
         inputPassword.setBorder(null);
         inputPassword.setCaretColor(new java.awt.Color(0, 0, 0));
@@ -84,6 +86,11 @@ public class LoginForm extends javax.swing.JFrame {
         Login.setBackground(new java.awt.Color(255, 255, 255));
         Login.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\Loginbttn.png")); // NOI18N
         Login.setBorder(null);
+        Login.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LoginMouseClicked(evt);
+            }
+        });
         Login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LoginActionPerformed(evt);
@@ -104,6 +111,7 @@ public class LoginForm extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 800));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void inputUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputUsernameActionPerformed
@@ -151,6 +159,11 @@ public class LoginForm extends javax.swing.JFrame {
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void LoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_LoginMouseClicked
 
     /**
      * @param args the command line arguments

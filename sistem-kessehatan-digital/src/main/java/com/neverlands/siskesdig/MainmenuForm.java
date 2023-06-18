@@ -26,14 +26,72 @@ public class MainmenuForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        User = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        More = new javax.swing.JLabel();
+        RiwayatPenyakit = new javax.swing.JLabel();
+        DatabasePenyakit = new javax.swing.JLabel();
+        HubungiDokter = new javax.swing.JLabel();
+        DaftarPenyakit = new javax.swing.JLabel();
+        DiagnosaPenyakit = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 800));
+
+        User.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
+        User.setForeground(new java.awt.Color(47, 143, 38));
+        User.setText("User");
+        getContentPane().add(User, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 70, 60));
+
+        jLabel4.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(82, 124, 136));
+        jLabel4.setText("Selamat Datang,");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 250, 60));
+
+        More.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        More.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\more.png")); // NOI18N
+        getContentPane().add(More, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 80, 50));
+
+        RiwayatPenyakit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        RiwayatPenyakit.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\Riwayat_Penyakit.png")); // NOI18N
+        getContentPane().add(RiwayatPenyakit, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 600, 440, 150));
+
+        DatabasePenyakit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        DatabasePenyakit.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\Database_Penyakit.png")); // NOI18N
+        getContentPane().add(DatabasePenyakit, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, 230, 200));
+
+        HubungiDokter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        HubungiDokter.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\Hubungi_Dokter.png")); // NOI18N
+        getContentPane().add(HubungiDokter, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 230, 200));
+
+        DaftarPenyakit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        DaftarPenyakit.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\Daftar_Penyakit.png")); // NOI18N
+        getContentPane().add(DaftarPenyakit, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 220, 200));
+
+        DiagnosaPenyakit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        DiagnosaPenyakit.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\Diagnosa_Penyakit.png")); // NOI18N
+        DiagnosaPenyakit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DiagnosaPenyakitMouseClicked(evt);
+            }
+        });
+        getContentPane().add(DiagnosaPenyakit, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 196, 210, 190));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\Background.png")); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 800));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\Main_Menu.png")); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 800));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void DiagnosaPenyakitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DiagnosaPenyakitMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DiagnosaPenyakitMouseClicked
 
     /**
      * @param args the command line arguments
@@ -71,6 +129,15 @@ public class MainmenuForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel DaftarPenyakit;
+    private javax.swing.JLabel DatabasePenyakit;
+    private javax.swing.JLabel DiagnosaPenyakit;
+    private javax.swing.JLabel HubungiDokter;
+    private javax.swing.JLabel More;
+    private javax.swing.JLabel RiwayatPenyakit;
+    private javax.swing.JLabel User;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }
