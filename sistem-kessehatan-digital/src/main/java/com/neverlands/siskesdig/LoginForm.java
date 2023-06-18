@@ -4,6 +4,8 @@
  */
 package com.neverlands.siskesdig;
 
+import java.awt.Color;
+
 /**
  *
  * @author Zenith
@@ -26,21 +28,129 @@ public class LoginForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        inputUsername = new javax.swing.JTextField();
+        inputPassword = new javax.swing.JTextField();
+        Login = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        inputUsername.setBackground(new java.awt.Color(255, 255, 255));
+        inputUsername.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
+        inputUsername.setForeground(new java.awt.Color(0, 0, 0));
+        inputUsername.setText("Username");
+        inputUsername.setToolTipText("");
+        inputUsername.setBorder(null);
+        inputUsername.setCaretColor(new java.awt.Color(0, 0, 0));
+        inputUsername.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        inputUsername.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                inputUsernameFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                inputUsernameFocusLost(evt);
+            }
+        });
+        inputUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputUsernameActionPerformed(evt);
+            }
+        });
+        getContentPane().add(inputUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, 280, 50));
+
+        inputPassword.setBackground(new java.awt.Color(255, 255, 255));
+        inputPassword.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
+        inputPassword.setForeground(new java.awt.Color(0, 0, 0));
+        inputPassword.setText("Password");
+        inputPassword.setBorder(null);
+        inputPassword.setCaretColor(new java.awt.Color(0, 0, 0));
+        inputPassword.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                inputPasswordFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                inputPasswordFocusLost(evt);
+            }
+        });
+        inputPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputPasswordActionPerformed(evt);
+            }
+        });
+        getContentPane().add(inputPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 280, 50));
+
+        Login.setBackground(new java.awt.Color(255, 255, 255));
+        Login.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\Loginbttn.png")); // NOI18N
+        Login.setBorder(null);
+        Login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LoginActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 610, 300, 60));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\create one.png")); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 720, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\Login.png")); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 800));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void inputUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputUsernameActionPerformed
+
+    private void inputPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputPasswordActionPerformed
+
+    private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LoginActionPerformed
+
+    private void inputUsernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_inputUsernameFocusGained
+        if(inputUsername.getText().equals("Username")){
+            inputUsername.setText("");
+            inputUsername.setForeground(new Color(0, 0, 0));
+        }
+    }//GEN-LAST:event_inputUsernameFocusGained
+
+    private void inputUsernameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_inputUsernameFocusLost
+        if(inputUsername.getText().equals("")){
+            inputUsername.setText("Username");
+            inputUsername.setForeground(new Color(0, 0, 0));
+        }
+    }//GEN-LAST:event_inputUsernameFocusLost
+
+    private void inputPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_inputPasswordFocusGained
+        // TODO add your handling code here:
+        if(inputPassword.getText().equals("Password")){
+            inputPassword.setText("");
+            inputPassword.setForeground(new Color(0, 0, 0));
+        }
+    }//GEN-LAST:event_inputPasswordFocusGained
+
+    private void inputPasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_inputPasswordFocusLost
+        // TODO add your handling code here:
+        if(inputPassword.getText().equals("")){
+            inputPassword.setText("Password");
+            inputPassword.setForeground(new Color(0, 0, 0));
+        }
+    }//GEN-LAST:event_inputPasswordFocusLost
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -78,5 +188,10 @@ public class LoginForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Login;
+    private javax.swing.JTextField inputPassword;
+    private javax.swing.JTextField inputUsername;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
