@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.neverlands.siskesdig;
+package com.neverlands.siskesdig.programs.Graphic;
 
 /**
  *
@@ -38,6 +38,7 @@ public class DatabasePenyakitForm extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Deskripsi.setBackground(new java.awt.Color(255, 255, 255));
+        Deskripsi.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
         Deskripsi.setForeground(new java.awt.Color(0, 0, 0));
         Deskripsi.setBorder(null);
         Deskripsi.addActionListener(new java.awt.event.ActionListener() {
@@ -48,6 +49,7 @@ public class DatabasePenyakitForm extends javax.swing.JFrame {
         getContentPane().add(Deskripsi, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 266, 290, 215));
 
         Gejala.setBackground(new java.awt.Color(255, 255, 255));
+        Gejala.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
         Gejala.setForeground(new java.awt.Color(0, 0, 0));
         Gejala.setBorder(null);
         Gejala.addActionListener(new java.awt.event.ActionListener() {
@@ -58,6 +60,7 @@ public class DatabasePenyakitForm extends javax.swing.JFrame {
         getContentPane().add(Gejala, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 183, 330, 35));
 
         Nama_Penyakit.setBackground(new java.awt.Color(255, 255, 255));
+        Nama_Penyakit.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
         Nama_Penyakit.setForeground(new java.awt.Color(0, 0, 0));
         Nama_Penyakit.setBorder(null);
         Nama_Penyakit.addActionListener(new java.awt.event.ActionListener() {

@@ -43,7 +43,7 @@ public class DaftarPenyakitForm extends javax.swing.JFrame {
                 Nama_PenyakitActionPerformed(evt);
             }
         });
-        getContentPane().add(Nama_Penyakit, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 330, 35));
+        getContentPane().add(Nama_Penyakit, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 330, 30));
 
         Deskripsi.setBackground(new java.awt.Color(255, 255, 255));
         Deskripsi.setFont(new java.awt.Font("Concert One", 0, 12)); // NOI18N
