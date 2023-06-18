@@ -84,7 +84,7 @@ public class LoginForm extends javax.swing.JFrame {
         getContentPane().add(inputPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 280, 50));
 
         Login.setBackground(new java.awt.Color(255, 255, 255));
-        Login.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\Loginbttn.png")); // NOI18N
+        Login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/Loginbttn.png"))); // NOI18N
         Login.setBorder(null);
         Login.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -98,7 +98,7 @@ public class LoginForm extends javax.swing.JFrame {
         });
         getContentPane().add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 610, 300, 60));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\create one.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/create one.png"))); // NOI18N
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
@@ -106,7 +106,7 @@ public class LoginForm extends javax.swing.JFrame {
         });
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 720, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\Login.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/Login.png"))); // NOI18N
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 800));
 

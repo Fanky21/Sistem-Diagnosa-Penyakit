@@ -27,7 +27,7 @@
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\Tugbes GUI\Back.png"/>
+          <Image iconType="3" name="/com/neverlands/siskesdig/Back.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -39,7 +39,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\Tugbes GUI\logingreen.png"/>
+          <Image iconType="3" name="/com/neverlands/siskesdig/logingreen.png"/>
         </Property>
       </Properties>
       <Events>
@@ -57,7 +57,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\Tugbes GUI\Registerbttn.png"/>
+          <Image iconType="3" name="/com/neverlands/siskesdig/Registerbttn.png"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
@@ -142,7 +142,7 @@
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\Tugbes GUI\Register.png"/>
+          <Image iconType="3" name="/com/neverlands/siskesdig/Register.png"/>
         </Property>
       </Properties>
       <Constraints>

@@ -51,19 +51,19 @@ public class MainmenuForm extends javax.swing.JFrame {
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 250, 60));
 
         More.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        More.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\more.png")); // NOI18N
+        More.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/more.png"))); // NOI18N
         getContentPane().add(More, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 80, 50));
 
         RiwayatPenyakit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        RiwayatPenyakit.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\Riwayat_Penyakit.png")); // NOI18N
+        RiwayatPenyakit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/Riwayat_Penyakit.png"))); // NOI18N
         getContentPane().add(RiwayatPenyakit, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 600, 440, 150));
 
         DatabasePenyakit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        DatabasePenyakit.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\Database_Penyakit.png")); // NOI18N
+        DatabasePenyakit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/Database_Penyakit.png"))); // NOI18N
         getContentPane().add(DatabasePenyakit, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, 230, 200));
 
         HubungiDokter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        HubungiDokter.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\Hubungi_Dokter.png")); // NOI18N
+        HubungiDokter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/Hubungi_Dokter.png"))); // NOI18N
         getContentPane().add(HubungiDokter, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 230, 200));
 
         DaftarPenyakit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -71,7 +71,7 @@ public class MainmenuForm extends javax.swing.JFrame {
         getContentPane().add(DaftarPenyakit, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 220, 200));
 
         DiagnosaPenyakit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        DiagnosaPenyakit.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\Diagnosa_Penyakit.png")); // NOI18N
+        DiagnosaPenyakit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/Diagnosa_Penyakit.png"))); // NOI18N
         DiagnosaPenyakit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DiagnosaPenyakitMouseClicked(evt);

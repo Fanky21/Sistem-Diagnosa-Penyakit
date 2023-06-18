@@ -38,10 +38,10 @@ public class RegisterForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\Back.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/Back.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\logingreen.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/logingreen.png"))); // NOI18N
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
@@ -50,7 +50,7 @@ public class RegisterForm extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 719, -1, -1));
 
         Login.setBackground(new java.awt.Color(255, 255, 255));
-        Login.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\Registerbttn.png")); // NOI18N
+        Login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/Registerbttn.png"))); // NOI18N
         Login.setBorder(null);
         Login.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -110,7 +110,7 @@ public class RegisterForm extends javax.swing.JFrame {
         });
         getContentPane().add(inputPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 280, 50));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\Tugbes GUI\\Register.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/Register.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();

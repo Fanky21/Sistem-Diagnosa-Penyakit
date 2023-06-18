@@ -61,7 +61,7 @@
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\Tugbes GUI\more.png"/>
+          <Image iconType="3" name="/com/neverlands/siskesdig/more.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -74,7 +74,7 @@
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\Tugbes GUI\Riwayat_Penyakit.png"/>
+          <Image iconType="3" name="/com/neverlands/siskesdig/Riwayat_Penyakit.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -87,7 +87,7 @@
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\Tugbes GUI\Database_Penyakit.png"/>
+          <Image iconType="3" name="/com/neverlands/siskesdig/Database_Penyakit.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -100,7 +100,7 @@
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\Tugbes GUI\Hubungi_Dokter.png"/>
+          <Image iconType="3" name="/com/neverlands/siskesdig/Hubungi_Dokter.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -126,7 +126,7 @@
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\Tugbes GUI\Diagnosa_Penyakit.png"/>
+          <Image iconType="3" name="/com/neverlands/siskesdig/Diagnosa_Penyakit.png"/>
         </Property>
       </Properties>
       <Events>
