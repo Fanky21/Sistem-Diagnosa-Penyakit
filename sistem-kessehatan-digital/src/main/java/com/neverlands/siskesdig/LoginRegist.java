@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.neverlands.siskesdig;
 
 import java.sql.Connection;
@@ -9,11 +5,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-/**
- *
- * @author Fakhrizal
- */
 
 public class LoginRegist {
 
@@ -34,41 +25,41 @@ public class LoginRegist {
     
     public void login() throws SQLException{
         PreparedStatement syntax = conn.prepareStatement("SELECT * FROM akun WHERE username = ? AND password = ?");
-                syntax.setString(1, inputUsername);
-                syntax.setString(2, inputPassword);
-                ResultSet hasil = syntax.executeQuery();
-                Boolean status_login = hasil.next();
+        syntax.setString(1, inputUsername);
+        syntax.setString(2, inputPassword);
+        ResultSet hasil = syntax.executeQuery();
+        Boolean status_login = hasil.next();
 
-                if (status_login) {
+        if (status_login) {
 
-                    System.out.print("\033[H\033[2J");
-                    System.out.flush();
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
 
-                    System.out.println("Selamat datang " + inputUsername);
+            System.out.println("Selamat datang " + inputUsername);
 
 
-                } else {
+        } else {
 
-                    System.out.print("\033[H\033[2J");
-                    System.out.flush();
-                    
-                    System.out.println("Login gagal, Silahkan cek username dan password kembali!");
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
+            
+            System.out.println("Login gagal, Silahkan cek username dan password kembali!");
 
-                    return;
+            return;
 
-                }
+        }
     }
     
     public void register() throws SQLException{
         PreparedStatement syntax = conn.prepareStatement("INSERT INTO akun (username, password) VALUES (?, ?)");
-                syntax.setString(1, inputUsername);
-                syntax.setString(2, inputPassword);
-                syntax.executeUpdate();
+        syntax.setString(1, inputUsername);
+        syntax.setString(2, inputPassword);
+        syntax.executeUpdate();
 
-                System.out.print("\033[H\033[2J");
-                System.out.flush();
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
 
-                System.out.println("Akun berhasil dibuat, silahkan login!");
+        System.out.println("Akun berhasil dibuat, silahkan login!");
     }
 }
 
