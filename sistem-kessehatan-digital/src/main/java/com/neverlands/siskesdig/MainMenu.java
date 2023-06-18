@@ -18,27 +18,27 @@ public class MainMenu {
 
         String pilihan = scanner.nextLine();
 
-        if(pilihan.equals(1)){
+        if(pilihan.equals("1")){
             System.out.println("Silahkan masukan gejala anda dengan jelas!");
             String inputGejala = scanner.nextLine();
         }
 
-        else if(pilihan.equals(2)){
+        else if(pilihan.equals("2")){
             System.out.println("Penyakit - penyakit yang terdaftar");
         }
 
-        else if(pilihan.equals(3)){
+        else if(pilihan.equals("3")){
             System.out.println("Hubungi kami di:\n"+
             "support@alodokter.com\n"+
             "WA: 081288880256\n"+
             "02130000256");
         }
 
-        else if(pilihan.equals(4)){
+        else if(pilihan.equals("4")){
             System.out.println("Database Penyakit:");
         }
 
-        else if(pilihan.equals(5)){
+        else if(pilihan.equals("5")){
             System.out.println("Riwayat:");
         }
 
