@@ -3,6 +3,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.time.LocalDate;
 
 public class DiagnosaPenyakit {
 
@@ -32,8 +33,6 @@ public class DiagnosaPenyakit {
 
         String output_data = filteredWords.toString();
 
-        System.out.println(output_data);
-
         StringBuilder queryBuilder = new StringBuilder("SELECT nama_penyakit FROM penyakit WHERE");
         List<String> placeholders = new ArrayList<>();
 
@@ -57,11 +56,7 @@ public class DiagnosaPenyakit {
         ResultSet hasil = syntax.executeQuery();
         boolean status_hasil = hasil.next();
 
-        System.out.println(status_hasil);
-
         if (status_hasil) {
-
-            System.out.println("Proses!");
 
             List<String> penyakitList = new ArrayList<>();
 
@@ -78,17 +73,32 @@ public class DiagnosaPenyakit {
 
             } else if (counter <= 3) {
 
-                System.out.println("Penyakit kamu adalah: ");
-
                 if (counter == 0) {
 
                     System.out.println("Tidak ada penyakit yang cocok dengan gejala yang diberikan.");
 
                 } else {
+
+                    System.out.println("Penyakit kamu adalah: ");
                     
                     for (String penyakit : penyakitList) {
                         System.out.println(penyakit);
                     }
+
+                    int persentage = 100/counter;
+                    System.out.println("Persentase terkena penyakit diatas adalah: " + persentage + "%");
+
+                    LocalDate currentDate = LocalDate.now();
+
+                    PreparedStatement riwayat_penyakit = conn.prepareStatement("INSERT INTO riwayat_penyakit (username, tanggal_diagnosa, penyakit) VALUES (?,?,?)");
+                    riwayat_penyakit.setString(1, Main.username);
+                    riwayat_penyakit.setString(2, currentDate.toString());
+
+                    for (String penyakit : penyakitList) {
+                        riwayat_penyakit.setString(3, penyakit);
+                        riwayat_penyakit.executeUpdate();
+                    }
+
                 }
             }
 

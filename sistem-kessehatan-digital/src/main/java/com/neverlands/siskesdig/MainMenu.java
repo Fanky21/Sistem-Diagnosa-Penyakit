@@ -19,7 +19,7 @@ public class MainMenu {
 
         String pilihan = scanner.nextLine();
 
-        if(pilihan.equals(1)){
+        if(pilihan.equals("1")){
             DiagnosaPenyakit.main(args);
 
         }
