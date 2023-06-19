@@ -4,11 +4,12 @@
  */
 package com.neverlands.siskesdig.programs.Graphic;
 
+import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.sql.SQLException;
-import java.util.List;
 
 import com.neverlands.siskesdig.programs.DiagnosaPenyakit;
-import java.awt.Color;
 
 /**
  *
@@ -16,6 +17,8 @@ import java.awt.Color;
  */
 public class DiagnosaForm extends javax.swing.JFrame {
 
+    private int xOffset;
+    private int yOffset;
     /**
      * Creates new form DiagnosaForm
      */
@@ -23,6 +26,29 @@ public class DiagnosaForm extends javax.swing.JFrame {
         setUndecorated(true);
         initComponents();
         this.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.0f));
+
+        // Tambahkan mouse listener pada JFrame
+        addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                // Dapatkan koordinat awal saat tombol mouse ditekan
+                xOffset = e.getX();
+                yOffset = e.getY();
+            }
+        });
+
+        // Tambahkan mouse motion listener pada JFrame
+        addMouseMotionListener(new MouseAdapter() {
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                // Hitung perubahan koordinat saat mouse digeser
+                int newX = getLocation().x + e.getX() - xOffset;
+                int newY = getLocation().y + e.getY() - yOffset;
+
+                // Set posisi baru untuk JFrame
+                setLocation(newX, newY);
+            }
+        });
     }
 
     /**
@@ -37,6 +63,8 @@ public class DiagnosaForm extends javax.swing.JFrame {
         Search = new javax.swing.JLabel();
         Back = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -60,6 +88,21 @@ public class DiagnosaForm extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/diagnosa_penyakit.gif"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, 220, 200));
+
+        jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Bahnschrift", 1, 20)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
+        jTextArea1.setLineWrap(true); // Mengatur agar teks pindah baris
+        jTextArea1.setWrapStyleWord(true);
+        jTextArea1.setRows(5);
+        jTextArea1.setBorder(null);
+
+        jScrollPane1.setViewportView(jTextArea1); // Menambahkan jTextArea1 ke dalam jScrollPane1
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        getContentPane().add(jTextArea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 360, 360));
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 360, 360));
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/diagnosa_penyakit_frame.png"))); // NOI18N
         getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 800));
@@ -86,8 +129,8 @@ public class DiagnosaForm extends javax.swing.JFrame {
             // Terhubung ke database
             diagnosa.connectToDatabase();
 
-            // Ambil kalimat untuk diagnostik dari suatu sumber input, misalnya JTextField bernama inputTextField
-            // String kalimat = jTextField1.getText();
+            // Ambil kalimat untuk diagnostik dari suatu sumber input, misalnya JTextField bernama inputTextArea
+            // String kalimat = jTextArea1.getText();
 
             // Jalankan diagnosa
             // List<String> penyakitList = diagnosa.StartDiagnosa(kalimat);
@@ -154,5 +197,7 @@ public class DiagnosaForm extends javax.swing.JFrame {
     private javax.swing.JLabel Background;
     private javax.swing.JLabel Search;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
