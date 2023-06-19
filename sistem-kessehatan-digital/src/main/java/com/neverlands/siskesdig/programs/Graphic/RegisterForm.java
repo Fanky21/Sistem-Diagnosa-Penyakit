@@ -7,8 +7,6 @@ package com.neverlands.siskesdig.programs.Graphic;
 import java.awt.Color;
 import java.sql.SQLException;
 
-import javax.swing.*;
-
 import com.neverlands.siskesdig.programs.LoginRegist;
 
 /**
@@ -21,7 +19,9 @@ public class RegisterForm extends javax.swing.JFrame {
      * Creates new form RegisterForm
      */
     public RegisterForm() {
+        setUndecorated(true);
         initComponents();
+        this.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.0f));
     }
 
     /**
@@ -36,8 +36,8 @@ public class RegisterForm extends javax.swing.JFrame {
         inputUsername = new javax.swing.JTextField();
         inputPassword = new javax.swing.JTextField();
         Login = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        GreenLogin = new javax.swing.JLabel();
+        Exit = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -106,23 +106,23 @@ public class RegisterForm extends javax.swing.JFrame {
         });
         getContentPane().add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 600, 310, 80));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/logingreen.png"))); // NOI18N
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        GreenLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/logingreen.png"))); // NOI18N
+        GreenLogin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
+                GreenLoginMouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 720, -1, -1));
+        getContentPane().add(GreenLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 720, -1, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Back.png"))); // NOI18N
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        Exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/exit.png"))); // NOI18N
+        Exit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
+                ExitMouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, -1, -1));
+        getContentPane().add(Exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Register.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Register1.png"))); // NOI18N
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 800));
 
@@ -186,7 +186,7 @@ public class RegisterForm extends javax.swing.JFrame {
 
     }//GEN-LAST:event_LoginActionPerformed
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+    private void GreenLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GreenLoginMouseClicked
         // TODO add your handling code here:
 
         LoginForm LoginForm = new LoginForm();
@@ -194,17 +194,13 @@ public class RegisterForm extends javax.swing.JFrame {
 
         dispose();
 
-    }//GEN-LAST:event_jLabel1MouseClicked
+    }//GEN-LAST:event_GreenLoginMouseClicked
 
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+    private void ExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitMouseClicked
         // TODO add your handling code here:
-
-        LoginForm LoginForm = new LoginForm();
-        LoginForm.setVisible(true);
-
         dispose();
 
-    }//GEN-LAST:event_jLabel3MouseClicked
+    }//GEN-LAST:event_ExitMouseClicked
 
     /**
      * @param args the command line arguments
@@ -242,11 +238,11 @@ public class RegisterForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Exit;
+    private javax.swing.JLabel GreenLogin;
     private javax.swing.JButton Login;
     private javax.swing.JTextField inputPassword;
     private javax.swing.JTextField inputUsername;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

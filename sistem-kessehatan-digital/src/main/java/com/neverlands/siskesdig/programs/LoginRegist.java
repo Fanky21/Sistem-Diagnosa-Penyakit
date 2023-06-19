@@ -53,5 +53,9 @@ public class LoginRegist {
 
         JOptionPane.showMessageDialog(null,"Akun berhasil dibuat!" + Username , "Success!",1,null);
     }
+
+    public String getUsername(){
+        return config.MYSQL_username;
+    }
 }
 
