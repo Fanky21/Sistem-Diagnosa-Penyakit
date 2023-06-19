@@ -7,6 +7,8 @@ package com.neverlands.siskesdig.programs.Graphic;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import com.neverlands.siskesdig.programs.DiagnosaPenyakit;
 import java.awt.Color;
 
