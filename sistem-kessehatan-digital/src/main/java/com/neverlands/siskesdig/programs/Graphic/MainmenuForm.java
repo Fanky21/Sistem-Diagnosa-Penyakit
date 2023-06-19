@@ -40,13 +40,14 @@ public class MainmenuForm extends javax.swing.JFrame {
         RiwayatP = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
+        String username = LoginForm.getUsername();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         User.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
         User.setForeground(new java.awt.Color(47, 143, 38));
-        User.setText("User");
+        User.setText(username);
         getContentPane().add(User, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 240, 50));
 
         Selamat1.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N

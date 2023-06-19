@@ -200,7 +200,7 @@ public class LoginForm extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_ExitMouseClicked
     
-    public String getUsername(){
+    public static String getUsername(){
         return inputUsername.getText();
     }
     
@@ -243,7 +243,7 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JLabel Exit;
     private javax.swing.JButton Login;
     private javax.swing.JTextField inputPassword;
-    private javax.swing.JTextField inputUsername;
+    private static javax.swing.JTextField inputUsername;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables

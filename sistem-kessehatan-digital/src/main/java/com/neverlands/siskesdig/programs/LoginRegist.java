@@ -5,12 +5,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import javax.swing.JFrame;
 
 import javax.swing.JOptionPane;
-import java.awt.Window;
 
-import com.neverlands.siskesdig.programs.Graphic.LoginForm;
 import com.neverlands.siskesdig.programs.Graphic.MainmenuForm;
 import com.neverlands.siskesdig.programs.controller.config;
 
@@ -54,8 +51,5 @@ public class LoginRegist {
         JOptionPane.showMessageDialog(null,"Akun berhasil dibuat!" + Username , "Success!",1,null);
     }
 
-    public String getUsername(){
-        return config.MYSQL_username;
-    }
 }
 
