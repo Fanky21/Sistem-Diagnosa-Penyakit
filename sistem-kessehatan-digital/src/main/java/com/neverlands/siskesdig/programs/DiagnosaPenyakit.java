@@ -10,6 +10,7 @@ public class DiagnosaPenyakit {
     private String mysqlUrl;
     private String mysqlUsername;
     private String mysqlPassword;
+    
 
     public DiagnosaPenyakit(String mysqlUrl, String mysqlUsername, String mysqlPassword, String username) {
         this.mysqlUrl = mysqlUrl;
@@ -28,8 +29,7 @@ public class DiagnosaPenyakit {
         }
     }
 
-    public void StartDiagnosa(String sentence) throws SQLException {
-
+    public List<String> StartDiagnosa(String sentence) throws SQLException {
         StringBuilder filteredWords = new StringBuilder();
         String gejala = "Radang,Bersin,Sesak,Nyeri sendi,Kelelahan,Demam,Penurunan berat badan,Sakit kepala,Muntah,lemas,Sesak napas,Berat badan menurun,Lemas,kaku,Kejang,Mudah lelah,Penglihatan kabur,Gangguan penglihatan,Mual,muntah,Sulit berkonsentrasi,Diare,Pusing,Pingsan,Nyeri,panas,Hilang nafsu makan,Linglung,Lemah otot,Penurunan kesadaran,Mata merah,Mata bengkak,Sakit tenggorokan,Jantung berdebar,Nyeri dada,Mual,Tubuh mudah lelah,Pembengkakan,Keringat dingin";
         String[] filterArray = gejala.split(",\\s*");
@@ -69,9 +69,9 @@ public class DiagnosaPenyakit {
         ResultSet hasil = syntax.executeQuery();
         boolean status_hasil = hasil.next();
 
-        if (status_hasil) {
-            List<String> penyakitList = new ArrayList<>();
+        List<String> penyakitList = new ArrayList<>();
 
+        if (status_hasil) {
             while (hasil.next()) {
                 String data = hasil.getString("nama_penyakit");
                 penyakitList.add(data);
@@ -80,21 +80,14 @@ public class DiagnosaPenyakit {
             int counter = penyakitList.size();
 
             if (counter > 3) {
-
                 System.out.println("Mohon masukkan gejala yang lebih spesifik!");
-
             } else if (counter <= 3) {
-
                 if (counter == 0) {
-
                     System.out.println("Tidak ada penyakit yang cocok dengan gejala yang diberikan.");
-
                 } else {
-
                     System.out.println("Penyakit kamu adalah: ");
                     for (String penyakit : penyakitList) {
                         System.out.println(penyakit);
-
                     }
 
                     int persentage = 100 / counter;
@@ -110,16 +103,13 @@ public class DiagnosaPenyakit {
                         riwayat_penyakit.setString(3, penyakit);
                         riwayat_penyakit.executeUpdate();
                     }
-
                 }
-
             }
-
         } else {
-
             System.out.println("Data Penyakit Tidak Ditemukan!");
+        }
+
+        return penyakitList;
 
         }
     }
-
-}

@@ -29,9 +29,39 @@ public class DatabasePenyakitForm extends javax.swing.JFrame{
 
     public DatabasePenyakitForm() {
         setUndecorated(true);
+<<<<<<< HEAD
+        initComponents();    
+
+        // Tambahkan mouse listener pada JFrame
+        addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                // Dapatkan koordinat awal saat tombol mouse ditekan
+                xOffset = e.getX();
+                yOffset = e.getY();
+            }
+        });
+
+        // Tambahkan mouse motion listener pada JFrame
+        addMouseMotionListener(new MouseAdapter() {
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                // Hitung perubahan koordinat saat mouse digeser
+                int newX = getLocation().x + e.getX() - xOffset;
+                int newY = getLocation().y + e.getY() - yOffset;
+
+                // Set posisi baru untuk JFrame
+                setLocation(newX, newY);
+            }
+        });
+
+=======
         initComponents();
 
         this.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.0f));
+<<<<<<< HEAD
+>>>>>>> ccbd4f8614b25bbba50ca41a62e9e9e1840b6e48
+=======
     
         // Tambahkan mouse listener pada JFrame
         addMouseListener(new MouseAdapter() {
@@ -56,6 +86,7 @@ public class DatabasePenyakitForm extends javax.swing.JFrame{
             }
         });
 
+>>>>>>> f8293733e5ad982a81f6e518c4f52686ab2c11ec
     }
 
     /**
