@@ -8,11 +8,10 @@ import java.sql.SQLException;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import javax.swing.JOptionPane;
-
 import com.neverlands.siskesdig.programs.Graphic.LoginForm;
 import com.neverlands.siskesdig.programs.Graphic.MainmenuForm;
 import com.neverlands.siskesdig.programs.Graphic.RegisterForm;
+import com.neverlands.siskesdig.programs.controller.MessageBox;
 import com.neverlands.siskesdig.programs.controller.config;
 
 public class LoginRegist {
@@ -20,6 +19,7 @@ public class LoginRegist {
     private Connection conn;
     private String Username;
     private String Password;
+    private static String newtext;
     
     public LoginRegist() throws SQLException{
         this.conn = DriverManager.getConnection(config.MYSQL_url, config.MYSQL_username, config.MYSQL_password);
@@ -49,33 +49,38 @@ public class LoginRegist {
             }, 3000);
 
 
-            } else {
 
-                JOptionPane.showMessageDialog(null, "Username/Password Salah!", "Login failed!", 1, null);
+            } else {
+                newtext ="Username atau password salah!";
+
+                LoginForm loginForm = new LoginForm();
+                loginForm.setVisible(true);
+                MessageBox MessageBox = new MessageBox();
+                MessageBox.setVisible(true);
 
             }
 
+        }
+
+        public static String getText(){
+            return newtext;
         }
 
 
     
     public void register(String Username, String Password) throws SQLException{
 
-        if (RegisterForm.getUsername().equals("")) {
+        if (RegisterForm.getUsername().equals("") || (RegisterForm.getPassword().equals("Username"))) {
 
-            JOptionPane.showMessageDialog(null,"Username Tidak Boleh Kosong!" , "Error!",1,null);
+            newtext ="Username Tidak Boleh Kosong!";
+            MessageBox MessageBox = new MessageBox();
+            MessageBox.setVisible(true);
 
-        } else if (RegisterForm.getUsername().equals("Username")) {
+        } else if (RegisterForm.getPassword().equals("") || (RegisterForm.getPassword().equals("Password"))){
 
-            JOptionPane.showMessageDialog(null,"Username Tidak Boleh Kosong!" , "Error!",1,null);
-
-        } else if (RegisterForm.getPassword().equals("")){
-
-            JOptionPane.showMessageDialog(null,"Password Tidak Boleh Kosong!" , "Error!",1,null);
-
-        } else if (RegisterForm.getPassword().equals("Password")){
-            
-            JOptionPane.showMessageDialog(null,"Password Tidak Boleh Kosong!" , "Error!",1,null);
+            newtext ="Password Tidak Boleh Kosong!";
+            MessageBox MessageBox = new MessageBox();
+            MessageBox.setVisible(true);
 
         } else {
             
@@ -87,7 +92,9 @@ public class LoginRegist {
 
             if (cek_akun) {
 
-                JOptionPane.showMessageDialog(null,"Username Telah Digunakan!" , "Error!",1,null);
+                newtext ="Username Telah Dipakai!";
+                MessageBox MessageBox = new MessageBox();
+                MessageBox.setVisible(true);
 
             } else {
 
@@ -96,7 +103,20 @@ public class LoginRegist {
                 syntax1.setString(2, Password);
                 syntax1.executeUpdate();
 
-                JOptionPane.showMessageDialog(null,"Akun berhasil dibuat! " + Username , "Success!",1,null);
+                RegisterForm.jLabel3.setVisible(true);
+                RegisterForm.jLabel4.setVisible(true);
+                RegisterForm.jLabel5.setVisible(true);
+
+                Timer timer = new Timer();
+
+                timer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                RegisterForm.jLabel3.setVisible(false);
+                RegisterForm.jLabel4.setVisible(false);
+                RegisterForm.jLabel5.setVisible(false);
+                }
+            }, 3000);
                 }
         }
     }

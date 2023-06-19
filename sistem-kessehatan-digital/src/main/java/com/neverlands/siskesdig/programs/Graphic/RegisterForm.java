@@ -61,6 +61,9 @@ public class RegisterForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         inputUsername = new javax.swing.JTextField();
         inputPassword = new javax.swing.JTextField();
         Login = new javax.swing.JButton();
@@ -70,6 +73,23 @@ public class RegisterForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/LoadingSuccess.gif"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 190, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Ellipse 3.png"))); // NOI18N
+        jLabel5.setText("jLabel5");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, -1));
+
+        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/LoadingSplash2.png"))); // NOI18N
+        jLabel3.setText("jLabel4");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, -1));
+
+        jLabel3.setVisible(false);
+        jLabel4.setVisible(false);
+        jLabel5.setVisible(false);
 
         inputUsername.setBackground(new java.awt.Color(255, 255, 255));
         inputUsername.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
@@ -280,5 +300,8 @@ public class RegisterForm extends javax.swing.JFrame {
     private static javax.swing.JTextField inputPassword;
     private static javax.swing.JTextField inputUsername;
     private javax.swing.JLabel jLabel2;
+    public static javax.swing.JLabel jLabel3;
+    public static javax.swing.JLabel jLabel4;
+    public static javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 }
