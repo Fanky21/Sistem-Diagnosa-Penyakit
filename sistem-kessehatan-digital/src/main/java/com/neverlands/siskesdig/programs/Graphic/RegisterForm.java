@@ -5,9 +5,9 @@
 package com.neverlands.siskesdig.programs.Graphic;
 
 import java.awt.Color;
-import java.sql.SQLException;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.SQLException;
 
 import com.neverlands.siskesdig.programs.LoginRegist;
 
@@ -230,6 +230,14 @@ public class RegisterForm extends javax.swing.JFrame {
 
     }//GEN-LAST:event_ExitMouseClicked
 
+    public static String getUsername(){
+        return inputUsername.getText();
+    }
+    
+    public static String getPassword(){
+        return inputPassword.getText();
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -269,8 +277,8 @@ public class RegisterForm extends javax.swing.JFrame {
     private javax.swing.JLabel Exit;
     private javax.swing.JLabel GreenLogin;
     private javax.swing.JButton Login;
-    private javax.swing.JTextField inputPassword;
-    private javax.swing.JTextField inputUsername;
+    private static javax.swing.JTextField inputPassword;
+    private static javax.swing.JTextField inputUsername;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
