@@ -5,11 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.concurrent.TimeUnit;
 
-import javax.swing.JDialog;
 import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
 
 import com.neverlands.siskesdig.programs.Graphic.LoginForm;
 import com.neverlands.siskesdig.programs.Graphic.MainmenuForm;
@@ -36,7 +33,9 @@ public class LoginRegist {
 
             if (status_login) {
 
-                JOptionPane.showMessageDialog(null,"Selamat Datang " + Username , "Login success!",1,null);
+                LoginForm.getLoad();
+
+                // JOptionPane.showMessageDialog(null,"Selamat Datang " + Username , "Login success!",1,null);
 
                 MainmenuForm MainmenuForm = new MainmenuForm();
                 MainmenuForm.setVisible(true);
