@@ -55,7 +55,7 @@ public class DiagnosaForm extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 216, 290, 55));
 
-        Search.setIcon(new javax.swing.ImageIcon("F:\\ITK\\Semester 2\\PBO\\new\\Sistem-Diagnosa-Penyakit\\sistem-kessehatan-digital\\src\\main\\java\\com\\neverlands\\siskesdig\\bin\\Search.png")); // NOI18N
+        Search.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Search.png"))); // NOI18N
         Search.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 SearchMouseClicked(evt);
@@ -63,7 +63,7 @@ public class DiagnosaForm extends javax.swing.JFrame {
         });
         getContentPane().add(Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(398, 213, 60, 60));
 
-        Back.setIcon(new javax.swing.ImageIcon("F:\\ITK\\Semester 2\\PBO\\new\\Sistem-Diagnosa-Penyakit\\sistem-kessehatan-digital\\src\\main\\java\\com\\neverlands\\siskesdig\\bin\\Back.png")); // NOI18N
+        Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Back.png"))); // NOI18N
         Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BackMouseClicked(evt);
@@ -86,7 +86,7 @@ public class DiagnosaForm extends javax.swing.JFrame {
         Penyakit1.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(Penyakit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 370, 50));
 
-        Background.setIcon(new javax.swing.ImageIcon("F:\\ITK\\Semester 2\\PBO\\new\\Sistem-Diagnosa-Penyakit\\sistem-kessehatan-digital\\src\\main\\java\\com\\neverlands\\siskesdig\\bin\\Diagnosa_Penyakit2.png")); // NOI18N
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Diagnosa_Penyakit2.png"))); // NOI18N
         getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 800));
 
         pack();
