@@ -8,6 +8,8 @@ import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import com.neverlands.siskesdig.programs.LoginRegist;
 
@@ -184,42 +186,34 @@ public class LoginForm extends javax.swing.JFrame {
 
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) throws SQLException, InterruptedException {//GEN-FIRST:event_LoginActionPerformed
         // TODO add your handling code here:
+        jLabel3.setVisible(true);
+        jLabel4.setVisible(true);
+        jLabel5.setVisible(true);
 
 
-        String Username = inputUsername.getText();
-        String Password = inputPassword.getText();
+        Timer timer = new Timer();
+            String Username = inputUsername.getText();
+            String Password = inputPassword.getText();
+            LoginRegist loginRegist = new LoginRegist();
 
-        LoginRegist loginRegist = new LoginRegist();
-
-        try {
-
-            // jLabel3.setVisible(true);
-            // jLabel4.setVisible(true);
-            // jLabel5.setVisible(true);
-
-            // Add the sleep statements here if necessary
-            // Thread.sleep(3000);
-
-            // Timer timer = new Timer(3000, new ActionListener() {
-                
-            //     @Override
-            //     public void actionPerformed(ActionEvent e) {
-            //         JOptionPane.getRootFrame().dispose();
-            //     }
-            // });
-
-            // timer.setRepeats(false);
-            // timer.start();
-
-            // Thread.sleep(1000);
-
-            loginRegist.login(Username, Password);
-            // dispose();
-        } catch (SQLException e) {
-            // Handle any exceptions
-            e.printStackTrace();
-        }
-
+            timer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    
+                    // String Username = inputUsername.getText();
+                    // String Password = inputPassword.getText();
+                    // LoginRegist loginRegist = new LoginRegist();
+                    
+                    try {
+                        loginRegist.login(Username, Password);
+                        dispose();
+                    } catch (SQLException e) {
+                        // Handle any exceptions
+                        e.printStackTrace();
+                    }
+                    
+                }
+            }, 3000);
 
     }//GEN-LAST:event_LoginActionPerformed
 
@@ -272,12 +266,6 @@ public class LoginForm extends javax.swing.JFrame {
         return inputUsername.getText();
     }
 
-    public static void getLoad(){
-        jLabel3.setVisible(true);
-        jLabel4.setVisible(true);
-        jLabel5.setVisible(true);
-    }
-
 
     
     /**
@@ -323,8 +311,8 @@ public class LoginForm extends javax.swing.JFrame {
     private static javax.swing.JTextField inputUsername;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private static javax.swing.JLabel jLabel3;
-    private static javax.swing.JLabel jLabel4;
-    private static javax.swing.JLabel jLabel5;
+    public static javax.swing.JLabel jLabel3;
+    public static javax.swing.JLabel jLabel4;
+    public static javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 }

@@ -8,7 +8,6 @@ import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 
-import com.neverlands.siskesdig.programs.Graphic.LoginForm;
 import com.neverlands.siskesdig.programs.Graphic.MainmenuForm;
 import com.neverlands.siskesdig.programs.Graphic.RegisterForm;
 import com.neverlands.siskesdig.programs.controller.config;
@@ -33,12 +32,12 @@ public class LoginRegist {
 
             if (status_login) {
 
-                LoginForm.getLoad();
+            
 
                 // JOptionPane.showMessageDialog(null,"Selamat Datang " + Username , "Login success!",1,null);
-
                 MainmenuForm MainmenuForm = new MainmenuForm();
                 MainmenuForm.setVisible(true);
+                
 
             } else {
 
