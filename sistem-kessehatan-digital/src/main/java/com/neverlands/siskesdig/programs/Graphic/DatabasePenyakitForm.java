@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.neverlands.siskesdig.programs.Graphic;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  *
@@ -10,11 +12,38 @@ package com.neverlands.siskesdig.programs.Graphic;
  */
 public class DatabasePenyakitForm extends javax.swing.JFrame {
 
+    private int xOffset;
+    private int yOffset;
+
     /**
      * Creates new form DatabasePenyakitForm
      */
     public DatabasePenyakitForm() {
         initComponents();
+    
+
+        // Tambahkan mouse listener pada JFrame
+        addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                // Dapatkan koordinat awal saat tombol mouse ditekan
+                xOffset = e.getX();
+                yOffset = e.getY();
+            }
+        });
+
+        // Tambahkan mouse motion listener pada JFrame
+        addMouseMotionListener(new MouseAdapter() {
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                // Hitung perubahan koordinat saat mouse digeser
+                int newX = getLocation().x + e.getX() - xOffset;
+                int newY = getLocation().y + e.getY() - yOffset;
+
+                // Set posisi baru untuk JFrame
+                setLocation(newX, newY);
+            }
+        });
     }
 
     /**
