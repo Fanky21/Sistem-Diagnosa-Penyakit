@@ -7,6 +7,8 @@ import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import com.neverlands.siskesdig.programs.DiagnosaPenyakit;
+
 /**
  *
  * @author Fakhrizal
@@ -89,6 +91,11 @@ public class MainmenuForm extends javax.swing.JFrame {
         getContentPane().add(Logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, -1, -1));
 
         DiagnosaP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Diagnosa_Penyakit.png"))); // NOI18N
+        DiagnosaP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DiagnosaPMouseClicked(evt);
+            }
+        });
         getContentPane().add(DiagnosaP, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
         DaftarP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Daftar_Penyakit.png"))); // NOI18N
@@ -143,6 +150,14 @@ public class MainmenuForm extends javax.swing.JFrame {
         
         dispose();
     }//GEN-LAST:event_HubungiDMouseClicked
+
+    private void DiagnosaPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DiagnosaPMouseClicked
+        // TODO add your handling code here:
+        DiagnosaForm DiagnosaForm = new DiagnosaForm();
+        DiagnosaForm.setVisible(true);
+
+        dispose();
+    }//GEN-LAST:event_DiagnosaPMouseClicked
 
     /**
      * @param args the command line arguments
