@@ -3,25 +3,28 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.neverlands.siskesdig.programs.Graphic;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-
 import java.awt.Color;
+import java.sql.SQLException;
+import java.util.Random;
+
+import javax.swing.JOptionPane;
+
+import com.neverlands.siskesdig.programs.DatabasePenyakit;
+
+
 
 /**
  *
  * @author Idin
  */
-public class DatabasePenyakitForm extends javax.swing.JFrame {
-
-    private int xOffset;
-    private int yOffset;
-
+public class DatabasePenyakitForm extends javax.swing.JFrame{
     /**
      * Creates new form DatabasePenyakitForm
      */
+
     public DatabasePenyakitForm() {
         setUndecorated(true);
+<<<<<<< HEAD
         initComponents();    
 
         // Tambahkan mouse listener pada JFrame
@@ -47,6 +50,13 @@ public class DatabasePenyakitForm extends javax.swing.JFrame {
             }
         });
 
+=======
+        initComponents();
+
+
+
+        this.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.0f));
+>>>>>>> ccbd4f8614b25bbba50ca41a62e9e9e1840b6e48
     }
 
     /**
@@ -63,14 +73,16 @@ public class DatabasePenyakitForm extends javax.swing.JFrame {
         Delete = new javax.swing.JLabel();
         Add = new javax.swing.JLabel();
         Back = new javax.swing.JLabel();
-        jTextArea1 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
+
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Nama_Penyakit.setBackground(new java.awt.Color(255, 255, 255));
-        Nama_Penyakit.setFont(new java.awt.Font("Concert One", 0, 25)); // NOI18N
+        Nama_Penyakit.setFont(new java.awt.Font("Bahnschrift", 1, 25)); // NOI18N
         Nama_Penyakit.setForeground(new java.awt.Color(0, 0, 0));
         Nama_Penyakit.setBorder(null);
         Nama_Penyakit.addActionListener(new java.awt.event.ActionListener() {
@@ -78,10 +90,10 @@ public class DatabasePenyakitForm extends javax.swing.JFrame {
                 Nama_PenyakitActionPerformed(evt);
             }
         });
-        getContentPane().add(Nama_Penyakit, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 320, 30));
+        getContentPane().add(Nama_Penyakit, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 112, 320, 30));
 
         Gejala.setBackground(new java.awt.Color(255, 255, 255));
-        Gejala.setFont(new java.awt.Font("Concert One", 0, 25)); // NOI18N
+        Gejala.setFont(new java.awt.Font("Bahnschrift", 1, 25)); // NOI18N
         Gejala.setForeground(new java.awt.Color(0, 0, 0));
         Gejala.setBorder(null);
         Gejala.addActionListener(new java.awt.event.ActionListener() {
@@ -117,16 +129,39 @@ public class DatabasePenyakitForm extends javax.swing.JFrame {
 
         jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
+        jTextArea1.setFont(new java.awt.Font("Bahnschrift", 1, 20)); // NOI18N
         jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
+        jTextArea1.setLineWrap(true); // Mengatur agar teks pindah baris
+        jTextArea1.setWrapStyleWord(true);
         jTextArea1.setRows(5);
+        jTextArea1.setBorder(null);
+
+        jScrollPane1.setViewportView(jTextArea1); // Menambahkan jTextArea1 ke dalam jScrollPane1
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         getContentPane().add(jTextArea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 310, 200));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Database Penyakit1.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 310, 200));
 
         pack();
         setLocationRelativeTo(null);
+    }
+
+        private String generateRandomCode() {
+    String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    StringBuilder sb = new StringBuilder();
+    Random random = new Random();
+
+    for (int i = 0; i < 5; i++) {
+        int index = random.nextInt(characters.length());
+        char randomChar = characters.charAt(index);
+        sb.append(randomChar);
+    }
+
+    return sb.toString();
+
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void Nama_PenyakitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nama_PenyakitActionPerformed
@@ -135,14 +170,53 @@ public class DatabasePenyakitForm extends javax.swing.JFrame {
 
     private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
         // TODO add your handling code here:
+        MainmenuForm MainmenuForm = new MainmenuForm();
+        MainmenuForm.setVisible(true);
+
+        dispose();
     }//GEN-LAST:event_BackMouseClicked
 
     private void AddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AddMouseClicked
+        // TODO add your handling code here
+        String inputKode = generateRandomCode(); // Isi dengan kode yang sesuai
+        String inputPenyakit = Nama_Penyakit.getText();
+        String inputDeskripsi = jTextArea1.getText();
+        String inputGejala = Gejala.getText();
+
+    try {
+        DatabasePenyakit penyakit = new DatabasePenyakit(inputKode, inputPenyakit, inputDeskripsi, inputGejala);
+        
+        penyakit.add();
+        
+        JOptionPane.showMessageDialog(null,"Database berhasil ditambahkan" , "Success!",1,null);
+        
+        // Reset
+        Nama_Penyakit.setText("");
+        jTextArea1.setText("");
+        Gejala.setText("");
+    } catch (SQLException ex) {
+        ex.printStackTrace();
+    }
+        }//GEN-LAST:event_AddMouseClicked
 
     private void DeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteMouseClicked
         // TODO add your handling code here:
+        String inputPenyakit = Nama_Penyakit.getText();
+
+        try {
+        DatabasePenyakit penyakit = new DatabasePenyakit(inputPenyakit, inputPenyakit, inputPenyakit, inputPenyakit);
+        
+        penyakit.delete();
+        
+        JOptionPane.showMessageDialog(null,"Database berhasil dihapus" , "Success!",1,null);
+        
+        // Reset
+        Nama_Penyakit.setText("");
+        jTextArea1.setText("");
+        Gejala.setText("");
+    } catch (SQLException ex) {
+        ex.printStackTrace();
+    }
     }//GEN-LAST:event_DeleteMouseClicked
 
     private void GejalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GejalaActionPerformed
@@ -192,5 +266,6 @@ public class DatabasePenyakitForm extends javax.swing.JFrame {
     private javax.swing.JTextField Nama_Penyakit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

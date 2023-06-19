@@ -8,12 +8,10 @@ import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
-import javax.swing.JFrame;
 
 import com.neverlands.siskesdig.programs.LoginRegist;
 
 public class LoginForm extends javax.swing.JFrame {
-
     private int xOffset;
     private int yOffset;
 
