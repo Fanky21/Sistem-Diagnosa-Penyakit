@@ -5,9 +5,13 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.concurrent.TimeUnit;
 
+import javax.swing.JDialog;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 
+import com.neverlands.siskesdig.programs.Graphic.LoginForm;
 import com.neverlands.siskesdig.programs.Graphic.MainmenuForm;
 import com.neverlands.siskesdig.programs.controller.config;
 
@@ -21,7 +25,7 @@ public class LoginRegist {
         this.conn = DriverManager.getConnection(config.MYSQL_url, config.MYSQL_username, config.MYSQL_password);
     }
     
-    public void login(String Username, String Password) throws SQLException{
+    public void login(String Username, String Password) throws SQLException, InterruptedException{
         PreparedStatement syntax = conn.prepareStatement("SELECT * FROM akun WHERE username = ? AND password = ?");
         syntax.setString(1, Username);
         syntax.setString(2, Password);
@@ -30,10 +34,13 @@ public class LoginRegist {
 
         if (status_login) {
 
-            JOptionPane.showMessageDialog(null,"Selamat Datang " + Username , "Login success!",1,null);
+            JOptionPane.showMessageDialog(null, null);
 
-            MainmenuForm MainmenuForm = new MainmenuForm();
-            MainmenuForm.setVisible(true);
+            SwingUtilities.invokeLater(() -> {
+                MainmenuForm mainmenuForm = new MainmenuForm();
+                mainmenuForm.setVisible(true);
+
+            });
 
         } else {
 
