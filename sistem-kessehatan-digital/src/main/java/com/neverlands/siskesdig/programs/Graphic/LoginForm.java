@@ -23,7 +23,6 @@ import javax.swing.SwingUtilities;
 import com.neverlands.siskesdig.programs.LoginRegist;
 
 public class LoginForm extends javax.swing.JFrame {
-
     private int xOffset;
     private int yOffset;
 
