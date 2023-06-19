@@ -4,10 +4,18 @@
  */
 package com.neverlands.siskesdig;
 
+import com.neverlands.siskesdig.programs.controller.SplashScreen;
+
 /**
  *
  * @author Fakhrizal
  */
 public class App {
+    
+    public static void main(String[] args) {
+        
+        SplashScreen.main(args);
+
+    }
     
 }
