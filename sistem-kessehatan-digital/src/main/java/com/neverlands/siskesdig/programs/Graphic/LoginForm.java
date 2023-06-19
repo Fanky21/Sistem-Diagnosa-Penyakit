@@ -186,36 +186,32 @@ public class LoginForm extends javax.swing.JFrame {
 
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) throws SQLException, InterruptedException {//GEN-FIRST:event_LoginActionPerformed
         // TODO add your handling code here:
-        jLabel3.setVisible(true);
-        jLabel4.setVisible(true);
-        jLabel5.setVisible(true);
+        // jLabel3.setVisible(true);
+        // jLabel4.setVisible(true);
+        // jLabel5.setVisible(true);
 
-
-        Timer timer = new Timer();
-            String Username = inputUsername.getText();
+        String Username = inputUsername.getText();
             String Password = inputPassword.getText();
             LoginRegist loginRegist = new LoginRegist();
 
-            timer.schedule(new TimerTask() {
+            try {
+                loginRegist.login(Username, Password);
+
+                Timer timer = new Timer();
+
+                timer.schedule(new TimerTask() {
                 @Override
                 public void run() {
-                    
-                    // String Username = inputUsername.getText();
-                    // String Password = inputPassword.getText();
-                    // LoginRegist loginRegist = new LoginRegist();
-                    
-                    try {
-                        loginRegist.login(Username, Password);
-                        dispose();
-                    } catch (SQLException e) {
-                        // Handle any exceptions
-                        e.printStackTrace();
-                    }
-                    
+                dispose();
                 }
             }, 3000);
-
+                
+            } catch (SQLException e) {
+                // Handle any exceptions
+                e.printStackTrace();
+            }
     }//GEN-LAST:event_LoginActionPerformed
+
 
     private void inputUsernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_inputUsernameFocusGained
         if(inputUsername.getText().equals("Username")){
