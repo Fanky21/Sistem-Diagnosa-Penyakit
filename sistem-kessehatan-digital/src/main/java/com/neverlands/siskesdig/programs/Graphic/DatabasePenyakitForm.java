@@ -22,11 +22,7 @@ public class DatabasePenyakitForm extends javax.swing.JFrame {
      */
     public DatabasePenyakitForm() {
         setUndecorated(true);
-        initComponents();
-<<<<<<< HEAD
-        this.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.0f));
-=======
-    
+        initComponents();    
 
         // Tambahkan mouse listener pada JFrame
         addMouseListener(new MouseAdapter() {
@@ -50,7 +46,7 @@ public class DatabasePenyakitForm extends javax.swing.JFrame {
                 setLocation(newX, newY);
             }
         });
->>>>>>> bedee2e49a788a3b86377629e59c58800fd1a624
+
     }
 
     /**
