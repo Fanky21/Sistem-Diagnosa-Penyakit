@@ -3,15 +3,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.neverlands.siskesdig.programs.Graphic;
-
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.Color;
-
 
 /**
  *
  * @author Fakhrizal
  */
 public class MainmenuForm extends javax.swing.JFrame {
+
+    private int xOffset;
+    private int yOffset;
+
     /**
      * Creates new form MainmenuForm
      */
@@ -19,6 +23,29 @@ public class MainmenuForm extends javax.swing.JFrame {
         setUndecorated(true);
         initComponents();
         this.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.0f));
+    
+        // Tambahkan mouse listener pada JFrame
+        addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                // Dapatkan koordinat awal saat tombol mouse ditekan
+                xOffset = e.getX();
+                yOffset = e.getY();
+            }
+        });
+
+        // Tambahkan mouse motion listener pada JFrame
+        addMouseMotionListener(new MouseAdapter() {
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                // Hitung perubahan koordinat saat mouse digeser
+                int newX = getLocation().x + e.getX() - xOffset;
+                int newY = getLocation().y + e.getY() - yOffset;
+
+                // Set posisi baru untuk JFrame
+                setLocation(newX, newY);
+            }
+        });
     }
 
     /**
@@ -40,13 +67,14 @@ public class MainmenuForm extends javax.swing.JFrame {
         RiwayatP = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
+        String username = LoginForm.getUsername();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         User.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
         User.setForeground(new java.awt.Color(47, 143, 38));
-        User.setText("User");
+        User.setText(username);
         getContentPane().add(User, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 240, 50));
 
         Selamat1.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N

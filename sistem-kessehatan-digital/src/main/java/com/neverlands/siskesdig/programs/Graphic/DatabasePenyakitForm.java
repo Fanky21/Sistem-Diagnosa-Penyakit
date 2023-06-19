@@ -3,6 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.neverlands.siskesdig.programs.Graphic;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+import java.awt.Color;
 
 /**
  *
@@ -10,11 +14,43 @@ package com.neverlands.siskesdig.programs.Graphic;
  */
 public class DatabasePenyakitForm extends javax.swing.JFrame {
 
+    private int xOffset;
+    private int yOffset;
+
     /**
      * Creates new form DatabasePenyakitForm
      */
     public DatabasePenyakitForm() {
+        setUndecorated(true);
         initComponents();
+<<<<<<< HEAD
+        this.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.0f));
+=======
+    
+
+        // Tambahkan mouse listener pada JFrame
+        addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                // Dapatkan koordinat awal saat tombol mouse ditekan
+                xOffset = e.getX();
+                yOffset = e.getY();
+            }
+        });
+
+        // Tambahkan mouse motion listener pada JFrame
+        addMouseMotionListener(new MouseAdapter() {
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                // Hitung perubahan koordinat saat mouse digeser
+                int newX = getLocation().x + e.getX() - xOffset;
+                int newY = getLocation().y + e.getY() - yOffset;
+
+                // Set posisi baru untuk JFrame
+                setLocation(newX, newY);
+            }
+        });
+>>>>>>> bedee2e49a788a3b86377629e59c58800fd1a624
     }
 
     /**
@@ -26,41 +62,19 @@ public class DatabasePenyakitForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Deskripsi = new javax.swing.JTextField();
-        Gejala = new javax.swing.JTextField();
         Nama_Penyakit = new javax.swing.JTextField();
+        Gejala = new javax.swing.JTextField();
         Delete = new javax.swing.JLabel();
         Add = new javax.swing.JLabel();
         Back = new javax.swing.JLabel();
+        jTextArea1 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Deskripsi.setBackground(new java.awt.Color(255, 255, 255));
-        Deskripsi.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
-        Deskripsi.setForeground(new java.awt.Color(0, 0, 0));
-        Deskripsi.setBorder(null);
-        Deskripsi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DeskripsiActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Deskripsi, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 266, 290, 215));
-
-        Gejala.setBackground(new java.awt.Color(255, 255, 255));
-        Gejala.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
-        Gejala.setForeground(new java.awt.Color(0, 0, 0));
-        Gejala.setBorder(null);
-        Gejala.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GejalaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Gejala, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 183, 330, 35));
-
         Nama_Penyakit.setBackground(new java.awt.Color(255, 255, 255));
-        Nama_Penyakit.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
+        Nama_Penyakit.setFont(new java.awt.Font("Concert One", 0, 25)); // NOI18N
         Nama_Penyakit.setForeground(new java.awt.Color(0, 0, 0));
         Nama_Penyakit.setBorder(null);
         Nama_Penyakit.addActionListener(new java.awt.event.ActionListener() {
@@ -68,7 +82,18 @@ public class DatabasePenyakitForm extends javax.swing.JFrame {
                 Nama_PenyakitActionPerformed(evt);
             }
         });
-        getContentPane().add(Nama_Penyakit, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 330, 35));
+        getContentPane().add(Nama_Penyakit, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 320, 30));
+
+        Gejala.setBackground(new java.awt.Color(255, 255, 255));
+        Gejala.setFont(new java.awt.Font("Concert One", 0, 25)); // NOI18N
+        Gejala.setForeground(new java.awt.Color(0, 0, 0));
+        Gejala.setBorder(null);
+        Gejala.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GejalaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Gejala, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 185, 320, 30));
 
         Delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Delete.png"))); // NOI18N
         Delete.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -92,25 +117,25 @@ public class DatabasePenyakitForm extends javax.swing.JFrame {
                 BackMouseClicked(evt);
             }
         });
-        getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, -1, -1));
+        getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(412, 34, -1, 60));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Database Penyakit.jpg"))); // NOI18N
+        jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
+        jTextArea1.setRows(5);
+        getContentPane().add(jTextArea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 310, 200));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Database Penyakit1.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void Nama_PenyakitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nama_PenyakitActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Nama_PenyakitActionPerformed
-
-    private void GejalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GejalaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GejalaActionPerformed
-
-    private void DeskripsiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeskripsiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DeskripsiActionPerformed
 
     private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
         // TODO add your handling code here:
@@ -123,6 +148,10 @@ public class DatabasePenyakitForm extends javax.swing.JFrame {
     private void DeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_DeleteMouseClicked
+
+    private void GejalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GejalaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_GejalaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,9 +192,9 @@ public class DatabasePenyakitForm extends javax.swing.JFrame {
     private javax.swing.JLabel Add;
     private javax.swing.JLabel Back;
     private javax.swing.JLabel Delete;
-    private javax.swing.JTextField Deskripsi;
     private javax.swing.JTextField Gejala;
     private javax.swing.JTextField Nama_Penyakit;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
