@@ -6,6 +6,10 @@ package com.neverlands.siskesdig.programs.Graphic;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import com.neverlands.siskesdig.programs.controller.MessageBox;
 
 /**
  *
@@ -57,6 +61,13 @@ public class MainmenuForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        LDiagnosa = new javax.swing.JLabel();
+        LHubungi = new javax.swing.JLabel();
+        LRiwayat = new javax.swing.JLabel();
+        LDPenyakit = new javax.swing.JLabel();
+        LDFPenyakit = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         User = new javax.swing.JLabel();
         Selamat1 = new javax.swing.JLabel();
         Logout = new javax.swing.JLabel();
@@ -67,15 +78,46 @@ public class MainmenuForm extends javax.swing.JFrame {
         RiwayatP = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
-        String Username = LoginForm.getUsername();
-
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        LDiagnosa.setVisible(false);
+        LHubungi.setVisible(false);
+        LRiwayat.setVisible(false);
+        LDPenyakit.setVisible(false);
+        LDFPenyakit.setVisible(false);
+        jLabel5.setVisible(false);
+        jLabel3.setVisible(false);
+
+        LDiagnosa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/diagnosa_penyakit.gif"))); // NOI18N
+        getContentPane().add(LDiagnosa, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 190, -1));
+
+        LHubungi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/hubungi_kami.gif"))); // NOI18N
+        getContentPane().add(LHubungi, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 190, -1));
+
+        LRiwayat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/riwayat_penyakit.gif"))); // NOI18N
+        LRiwayat.setText("jLabel4");
+        getContentPane().add(LRiwayat, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 190, -1));
+
+        LDPenyakit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/database_penyakit.gif"))); // NOI18N
+        LDPenyakit.setText("jLabel4");
+        getContentPane().add(LDPenyakit, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 190, -1));
+
+        LDFPenyakit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/LoadingSuccess.gif"))); // NOI18N
+        LDFPenyakit.setText("jLabel4");
+        getContentPane().add(LDFPenyakit, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 190, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Ellipse 3.png"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, -1));
+
+        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/LoadingSplash2.png"))); // NOI18N
+        jLabel3.setText("jLabel4");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, -1));
+
         User.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
         User.setForeground(new java.awt.Color(47, 143, 38));
-        User.setText(Username);
+        User.setText("User");
         getContentPane().add(User, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 240, 50));
 
         Selamat1.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
@@ -103,7 +145,29 @@ public class MainmenuForm extends javax.swing.JFrame {
         DatabaseP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Database_Penyakit.png"))); // NOI18N
         DatabaseP.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                DatabasePMouseClicked(evt);
+
+                LDPenyakit.setVisible(true);
+                jLabel5.setVisible(true);
+                jLabel3.setVisible(true);
+                
+                Timer timer = new Timer();
+
+                timer.schedule(new TimerTask() {
+
+                @Override
+                public void run() {
+
+                LDPenyakit.setVisible(false);
+                jLabel5.setVisible(false);
+                jLabel3.setVisible(false);
+
+                DatabasePenyakitForm DatabasePenyakitForm = new DatabasePenyakitForm();
+                DatabasePenyakitForm.setVisible(true);
+
+                }
+                }, 2000);
+
+
             }
         });
         getContentPane().add(DatabaseP, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, -1, -1));
@@ -174,11 +238,18 @@ public class MainmenuForm extends javax.swing.JFrame {
     private javax.swing.JLabel DatabaseP;
     private javax.swing.JLabel DiagnosaP;
     private javax.swing.JLabel HubungiD;
+    private javax.swing.JLabel LDFPenyakit;
+    private javax.swing.JLabel LDPenyakit;
+    private javax.swing.JLabel LDiagnosa;
+    private javax.swing.JLabel LHubungi;
+    private javax.swing.JLabel LRiwayat;
     private javax.swing.JLabel Logout;
     private javax.swing.JLabel RiwayatP;
     private javax.swing.JLabel Selamat1;
     private javax.swing.JLabel User;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 
 }

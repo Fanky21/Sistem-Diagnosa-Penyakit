@@ -70,7 +70,7 @@ public class LoginRegist {
     
     public void register(String Username, String Password) throws SQLException{
 
-        if (RegisterForm.getUsername().equals("") || (RegisterForm.getPassword().equals("Username"))) {
+        if (RegisterForm.getUsername().equals("") || (RegisterForm.getUsername().equals("Username"))) {
 
             newtext ="Username Tidak Boleh Kosong!";
             MessageBox MessageBox = new MessageBox();
@@ -83,21 +83,20 @@ public class LoginRegist {
             MessageBox.setVisible(true);
 
         } else {
-            
-            PreparedStatement syntax = conn.prepareStatement("SELECT * FROM akun WHERE username = ? AND password = ?");
-            syntax.setString(1, Username);
-            syntax.setString(2, Password);
-            ResultSet akun = syntax.executeQuery();
-            Boolean cek_akun = akun.next();
 
-            if (cek_akun) {
+            PreparedStatement syntax = conn.prepareStatement("SELECT * FROM akun WHERE username = ?");
+            syntax.setString(1, Username);
+            ResultSet verivikasi_username = syntax.executeQuery();
+            Boolean cek_username = verivikasi_username.next();
+
+            if (cek_username) {
 
                 newtext ="Username Telah Dipakai!";
                 MessageBox MessageBox = new MessageBox();
                 MessageBox.setVisible(true);
 
             } else {
-
+                
                 PreparedStatement syntax1 = conn.prepareStatement("INSERT INTO akun (username, password) VALUES (?, ?)");
                 syntax1.setString(1, Username);
                 syntax1.setString(2, Password);
@@ -117,7 +116,8 @@ public class LoginRegist {
                 RegisterForm.jLabel5.setVisible(false);
                 }
             }, 3000);
-                }
+        }
+    
         }
     }
 }
