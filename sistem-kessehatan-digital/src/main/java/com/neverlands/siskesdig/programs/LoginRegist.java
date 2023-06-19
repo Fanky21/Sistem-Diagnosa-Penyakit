@@ -5,9 +5,12 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.swing.JOptionPane;
 
+import com.neverlands.siskesdig.programs.Graphic.LoginForm;
 import com.neverlands.siskesdig.programs.Graphic.MainmenuForm;
 import com.neverlands.siskesdig.programs.Graphic.RegisterForm;
 import com.neverlands.siskesdig.programs.controller.config;
@@ -31,13 +34,20 @@ public class LoginRegist {
             Boolean status_login = hasil.next();
 
             if (status_login) {
+                LoginForm.jLabel3.setVisible(true);
+                LoginForm.jLabel4.setVisible(true);
+                LoginForm.jLabel5.setVisible(true);
 
-            
+                Timer timer = new Timer();
 
-                // JOptionPane.showMessageDialog(null,"Selamat Datang " + Username , "Login success!",1,null);
+                timer.schedule(new TimerTask() {
+                @Override
+                public void run() {
                 MainmenuForm MainmenuForm = new MainmenuForm();
                 MainmenuForm.setVisible(true);
-                
+                }
+            }, 3000);
+
 
             } else {
 
