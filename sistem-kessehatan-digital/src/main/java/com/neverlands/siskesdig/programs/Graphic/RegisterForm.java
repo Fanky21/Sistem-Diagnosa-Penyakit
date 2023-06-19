@@ -91,6 +91,7 @@ public class RegisterForm extends javax.swing.JFrame {
         getContentPane().add(inputPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 280, 50));
 
         Login.setBackground(new java.awt.Color(255, 255, 255));
+        Login.setForeground(new java.awt.Color(255, 255, 255));
         Login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Registerbttn.png"))); // NOI18N
         Login.setBorder(null);
         Login.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +104,7 @@ public class RegisterForm extends javax.swing.JFrame {
                 }
             }
         });
-        getContentPane().add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 610, 300, 60));
+        getContentPane().add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 600, 310, 80));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/logingreen.png"))); // NOI18N
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {

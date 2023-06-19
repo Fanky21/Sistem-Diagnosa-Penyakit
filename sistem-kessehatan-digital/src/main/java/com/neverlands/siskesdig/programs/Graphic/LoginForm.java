@@ -38,14 +38,32 @@ public class LoginForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         inputUsername = new javax.swing.JTextField();
         inputPassword = new javax.swing.JTextField();
         Login = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
+        setResizable(false);
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153, 40));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 500, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 800, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 800));
 
         inputUsername.setBackground(new java.awt.Color(255, 255, 255));
         inputUsername.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
@@ -69,7 +87,7 @@ public class LoginForm extends javax.swing.JFrame {
                 inputUsernameActionPerformed(evt);
             }
         });
-        getContentPane().add(inputUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, 280, 50));
+        getContentPane().add(inputUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, 270, 40));
 
         inputPassword.setBackground(new java.awt.Color(255, 255, 255));
         inputPassword.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
@@ -96,6 +114,7 @@ public class LoginForm extends javax.swing.JFrame {
         Login.setBackground(new java.awt.Color(255, 255, 255));
         Login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Loginbttn.png"))); // NOI18N
         Login.setBorder(null);
+        Login.setBorderPainted(false);
         Login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 try {
@@ -106,7 +125,7 @@ public class LoginForm extends javax.swing.JFrame {
                 }
             }
         });
-        getContentPane().add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 610, 300, 60));
+        getContentPane().add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 600, 280, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/create_one.png"))); // NOI18N
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -114,11 +133,14 @@ public class LoginForm extends javax.swing.JFrame {
                 jLabel1MouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 720, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 710, -1, 60));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Login.png"))); // NOI18N
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 800));
+
+        jLabel3.setText("jLabel3");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -231,5 +253,7 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JTextField inputUsername;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
