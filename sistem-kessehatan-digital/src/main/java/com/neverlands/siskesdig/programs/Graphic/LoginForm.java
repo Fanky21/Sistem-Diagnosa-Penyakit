@@ -5,10 +5,20 @@
 package com.neverlands.siskesdig.programs.Graphic;
 
 import java.awt.Color;
+import java.awt.Container;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
+import java.util.concurrent.TimeUnit;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.Timer;
+
+import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 
 import com.neverlands.siskesdig.programs.LoginRegist;
 
@@ -58,6 +68,8 @@ public class LoginForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         inputUsername = new javax.swing.JTextField();
         inputPassword = new javax.swing.JTextField();
         Login = new javax.swing.JButton();
@@ -67,6 +79,18 @@ public class LoginForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        
+        jLabel3.setVisible(false);
+        jLabel4.setVisible(false);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/LoadingSuccess.gif")));
+        jLabel4.setText("jLabel4");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 190, -1));
+
+        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/LoadingSplash2.png")));
+        jLabel3.setText("jLabel4");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, -1));
 
         inputUsername.setBackground(new java.awt.Color(255, 255, 255));
         inputUsername.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
@@ -125,6 +149,9 @@ public class LoginForm extends javax.swing.JFrame {
                 } catch (SQLException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
+                } catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
                 }
             }
         });
@@ -162,20 +189,40 @@ public class LoginForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_inputPasswordActionPerformed
 
-    private void LoginActionPerformed(java.awt.event.ActionEvent evt) throws SQLException {//GEN-FIRST:event_LoginActionPerformed
+    private void LoginActionPerformed(java.awt.event.ActionEvent evt) throws SQLException, InterruptedException {//GEN-FIRST:event_LoginActionPerformed
         // TODO add your handling code here:
 
         String Username = inputUsername.getText();
         String Password = inputPassword.getText();
 
         LoginRegist loginRegist = new LoginRegist();
+
         try {
+
+            jLabel3.setVisible(true);
+            jLabel4.setVisible(true);
+
+            // Add the sleep statements here if necessary
+            Thread.sleep(3000);
+
+            Timer timer = new Timer(3000, new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    JOptionPane.getRootFrame().dispose();
+                }
+            });
+
+            timer.setRepeats(false);
+            timer.start();
+
+            Thread.sleep(1000);
+
             loginRegist.login(Username, Password);
             dispose();
         } catch (SQLException e) {
             // Handle any exceptions
             e.printStackTrace();
-        }
+        }  
 
 
     }//GEN-LAST:event_LoginActionPerformed
@@ -271,5 +318,7 @@ public class LoginForm extends javax.swing.JFrame {
     private static javax.swing.JTextField inputUsername;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }
