@@ -3,9 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.neverlands.siskesdig.programs.Graphic;
+import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.Color;
 
 /**
  *
@@ -67,14 +67,15 @@ public class MainmenuForm extends javax.swing.JFrame {
         RiwayatP = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
-        String username = LoginForm.getUsername();
+        String Username = LoginForm.getUsername();
+
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         User.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
         User.setForeground(new java.awt.Color(47, 143, 38));
-        User.setText(username);
+        User.setText(Username);
         getContentPane().add(User, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 240, 50));
 
         Selamat1.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
@@ -100,6 +101,11 @@ public class MainmenuForm extends javax.swing.JFrame {
         getContentPane().add(HubungiD, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, -1, -1));
 
         DatabaseP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Database_Penyakit.png"))); // NOI18N
+        DatabaseP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DatabasePMouseClicked(evt);
+            }
+        });
         getContentPane().add(DatabaseP, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, -1, -1));
 
         RiwayatP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Riwayat_Penyakit.png"))); // NOI18N
@@ -119,6 +125,14 @@ public class MainmenuForm extends javax.swing.JFrame {
 
         dispose();
     }//GEN-LAST:event_LogoutMouseClicked
+
+    private void DatabasePMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DatabasePMouseClicked
+        // TODO add your handling code here:
+        DatabasePenyakitForm DatabasePenyakitForm = new DatabasePenyakitForm();
+        DatabasePenyakitForm.setVisible(true);
+
+        dispose();
+    }//GEN-LAST:event_DatabasePMouseClicked
 
     /**
      * @param args the command line arguments

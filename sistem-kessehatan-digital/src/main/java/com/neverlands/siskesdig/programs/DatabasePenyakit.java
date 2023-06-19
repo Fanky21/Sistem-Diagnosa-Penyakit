@@ -1,6 +1,10 @@
 package com.neverlands.siskesdig.programs;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 import com.neverlands.siskesdig.programs.controller.config;
-import java.sql.*;
 
 public class DatabasePenyakit {
     private String inputKode;
