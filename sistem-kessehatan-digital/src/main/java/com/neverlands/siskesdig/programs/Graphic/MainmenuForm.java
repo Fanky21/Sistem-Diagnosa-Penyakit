@@ -67,15 +67,12 @@ public class MainmenuForm extends javax.swing.JFrame {
         RiwayatP = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
-        String Username = LoginForm.getUsername();
-
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         User.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
         User.setForeground(new java.awt.Color(47, 143, 38));
-        User.setText(Username);
+        User.setText("User");
         getContentPane().add(User, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 240, 50));
 
         Selamat1.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
@@ -98,6 +95,11 @@ public class MainmenuForm extends javax.swing.JFrame {
         getContentPane().add(DaftarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, -1, -1));
 
         HubungiD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Hubungi_Dokter.png"))); // NOI18N
+        HubungiD.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HubungiDMouseClicked(evt);
+            }
+        });
         getContentPane().add(HubungiD, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, -1, -1));
 
         DatabaseP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Database_Penyakit.png"))); // NOI18N
@@ -133,6 +135,14 @@ public class MainmenuForm extends javax.swing.JFrame {
 
         dispose();
     }//GEN-LAST:event_DatabasePMouseClicked
+
+    private void HubungiDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HubungiDMouseClicked
+        // TODO add your handling code here:
+        HubungiDokterForm HubungiDokterForm = new HubungiDokterForm();
+        HubungiDokterForm.setVisible(true);
+        
+        dispose();
+    }//GEN-LAST:event_HubungiDMouseClicked
 
     /**
      * @param args the command line arguments

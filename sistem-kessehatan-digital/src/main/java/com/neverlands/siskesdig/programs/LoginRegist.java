@@ -46,9 +46,7 @@ public class LoginRegist {
                 JOptionPane.showMessageDialog(null, "Username/Password Salah!", "Login failed!", 1, null);
 
             }
-
-        }
-
+    }
 
     
     public void register(String Username, String Password) throws SQLException{
@@ -93,4 +91,3 @@ public class LoginRegist {
         }
     }
 }
-

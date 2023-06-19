@@ -13,7 +13,12 @@ public class HubungiDokterForm extends javax.swing.JFrame {
     /**
      * Creates new form HubungiDokterForm
      */
+
+    private int xOffset;
+    private int yOffset;
+    
     public HubungiDokterForm() {
+        setUndecorated(true);
         initComponents();
     }
 
@@ -48,6 +53,10 @@ public class HubungiDokterForm extends javax.swing.JFrame {
 
     private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
         // TODO add your handling code here:
+        MainmenuForm MainmenuForm = new MainmenuForm();
+        MainmenuForm.setVisible(true);
+
+        dispose();
     }//GEN-LAST:event_BackMouseClicked
 
     /**
