@@ -29,33 +29,7 @@ public class DatabasePenyakitForm extends javax.swing.JFrame{
 
     public DatabasePenyakitForm() {
         setUndecorated(true);
-        initComponents();    
-
-        // Tambahkan mouse listener pada JFrame
-        addMouseListener(new MouseAdapter() {
-            @Override
-            public void mousePressed(MouseEvent e) {
-                // Dapatkan koordinat awal saat tombol mouse ditekan
-                xOffset = e.getX();
-                yOffset = e.getY();
-            }
-        });
-
-        // Tambahkan mouse motion listener pada JFrame
-        addMouseMotionListener(new MouseAdapter() {
-            @Override
-            public void mouseDragged(MouseEvent e) {
-                // Hitung perubahan koordinat saat mouse digeser
-                int newX = getLocation().x + e.getX() - xOffset;
-                int newY = getLocation().y + e.getY() - yOffset;
-
-                // Set posisi baru untuk JFrame
-                setLocation(newX, newY);
-            }
-        });
-
         initComponents();
-
         this.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.0f));
     
         // Tambahkan mouse listener pada JFrame
@@ -146,7 +120,12 @@ public class DatabasePenyakitForm extends javax.swing.JFrame{
         Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Back.png"))); // NOI18N
         Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BackMouseClicked(evt);
+                
+                MainmenuForm MainmenuForm = new MainmenuForm();
+                MainmenuForm.setVisible(true);
+
+                dispose();
+
             }
         });
         getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(412, 34, -1, 60));
@@ -173,17 +152,17 @@ public class DatabasePenyakitForm extends javax.swing.JFrame{
     }
 
         private String generateRandomCode() {
-    String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    StringBuilder sb = new StringBuilder();
-    Random random = new Random();
+            String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            StringBuilder sb = new StringBuilder();
+            Random random = new Random();
 
-    for (int i = 0; i < 5; i++) {
-        int index = random.nextInt(characters.length());
-        char randomChar = characters.charAt(index);
-        sb.append(randomChar);
-    }
+        for (int i = 0; i < 5; i++) {
+            int index = random.nextInt(characters.length());
+            char randomChar = characters.charAt(index);
+            sb.append(randomChar);
+        }
 
-    return sb.toString();
+        return sb.toString();
 
 
     }// </editor-fold>//GEN-END:initComponents
@@ -208,6 +187,7 @@ public class DatabasePenyakitForm extends javax.swing.JFrame{
         String inputGejala = Gejala.getText();
 
     try {
+
         DatabasePenyakit penyakit = new DatabasePenyakit(inputKode, inputPenyakit, inputDeskripsi, inputGejala);
         
         penyakit.add();
@@ -218,16 +198,18 @@ public class DatabasePenyakitForm extends javax.swing.JFrame{
         Nama_Penyakit.setText("");
         jTextArea1.setText("");
         Gejala.setText("");
-    } catch (SQLException ex) {
-        ex.printStackTrace();
-    }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
         }//GEN-LAST:event_AddMouseClicked
 
     private void DeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteMouseClicked
         // TODO add your handling code here:
+
         String inputPenyakit = Nama_Penyakit.getText();
 
         try {
+
         DatabasePenyakit penyakit = new DatabasePenyakit(inputPenyakit, inputPenyakit, inputPenyakit, inputPenyakit);
         
         penyakit.delete();
@@ -238,8 +220,11 @@ public class DatabasePenyakitForm extends javax.swing.JFrame{
         Nama_Penyakit.setText("");
         jTextArea1.setText("");
         Gejala.setText("");
+
     } catch (SQLException ex) {
+
         ex.printStackTrace();
+
     }
     }//GEN-LAST:event_DeleteMouseClicked
 
