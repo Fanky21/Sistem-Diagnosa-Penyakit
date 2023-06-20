@@ -336,7 +336,7 @@ public class MainmenuForm extends javax.swing.JFrame {
                 jLabel3.setVisible(false);
 
                 RiwayatForm RiwayatForm = new RiwayatForm();
-                RiwayatForm.setVisible(true);
+                RiwayatForm.run();
                 
 
                 }

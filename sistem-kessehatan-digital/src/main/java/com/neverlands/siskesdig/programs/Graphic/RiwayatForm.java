@@ -203,4 +203,36 @@ public class RiwayatForm extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private static javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+
+    public void run() {
+            new RiwayatForm().setVisible(true);
+
+            String username = LoginForm.getUsername();
+            Connection conn;
+
+            try {
+                conn = DriverManager.getConnection(Config.MYSQL_url, Config.MYSQL_username, Config.MYSQL_password);
+
+                PreparedStatement syntax = conn.prepareStatement("SELECT * FROM riwayat_penyakit WHERE username = ?");
+                syntax.setString(1, username);
+
+                ResultSet resultSet = syntax.executeQuery();
+
+                DefaultTableModel model = new DefaultTableModel(new Object[]{"Tanggal Penyakit", "Penyakit"}, 0);
+
+                while (resultSet.next()) {
+                    String column1Value = resultSet.getString("tanggal_diagnosa");
+                    String column2Value = resultSet.getString("penyakit");
+
+                    model.addRow(new Object[]{column1Value, column2Value});
+                }
+
+                // Set the model to your JTable
+                jTable1.setModel(model);
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
 }

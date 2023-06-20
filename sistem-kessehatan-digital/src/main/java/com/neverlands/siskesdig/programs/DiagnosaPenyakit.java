@@ -8,6 +8,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.neverlands.siskesdig.programs.Graphic.HasilDiagnosaForm;
+
 public class DiagnosaPenyakit extends Mysql{
     private Connection conn;
     private String username;
