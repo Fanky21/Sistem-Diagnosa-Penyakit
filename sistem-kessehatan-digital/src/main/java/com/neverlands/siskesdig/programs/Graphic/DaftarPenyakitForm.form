@@ -100,22 +100,10 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="Gif">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="F:\ITK\Semester 2\PBO\new\YANG INI\Sistem-Diagnosa-Penyakit\sistem-kessehatan-digital\src\main\java\com\neverlands\siskesdig\bin\daftar_penyakit2.gif"/>
-        </Property>
-      </Properties>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="255" y="10" width="150" height="150"/>
-        </Constraint>
-      </Constraints>
-    </Component>
     <Component class="javax.swing.JLabel" name="Back">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="F:\ITK\Semester 2\PBO\new\YANG INI\Sistem-Diagnosa-Penyakit\sistem-kessehatan-digital\src\main\java\com\neverlands\siskesdig\bin\Back.png"/>
+          <Image iconType="3" name="/com/neverlands/siskesdig/bin/Back.png"/>
         </Property>
       </Properties>
       <Events>
@@ -127,10 +115,22 @@
         </Constraint>
       </Constraints>
     </Component>
+    <Component class="javax.swing.JLabel" name="Gif">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/com/neverlands/siskesdig/bin/daftarpenyakitasli.gif"/>
+        </Property>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="210" y="10" width="200" height="130"/>
+        </Constraint>
+      </Constraints>
+    </Component>
     <Component class="javax.swing.JLabel" name="Search">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="F:\ITK\Semester 2\PBO\new\YANG INI\Sistem-Diagnosa-Penyakit\sistem-kessehatan-digital\src\main\java\com\neverlands\siskesdig\bin\Search.png"/>
+          <Image iconType="3" name="/com/neverlands/siskesdig/bin/Search.png"/>
         </Property>
       </Properties>
       <Events>
