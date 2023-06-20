@@ -6,6 +6,11 @@ package com.neverlands.siskesdig.programs.Graphic;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.SQLException;
+
+import org.w3c.dom.Text;
+
+import com.neverlands.siskesdig.programs.DaftarPenyakit;
 
 /**
  *
@@ -75,25 +80,26 @@ public class DaftarPenyakitForm extends javax.swing.JFrame {
 
         jTextArea2.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea2.setColumns(20);
+        jTextArea2.setFont(new java.awt.Font("Bahnschrift", 1, 18)); // NOI18N
+        jTextArea2.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea2.setRows(5);
+        jTextArea2.setBorder(null);
         jScrollPane2.setViewportView(jTextArea2);
-        jTextArea2.setEditable(false);
-        jTextArea2.setEnabled(false);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 420, 130));
 
         jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Bahnschrift", 1, 18)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea1.setRows(5);
-        jTextArea1.setLineWrap(true);
+        jTextArea1.setBorder(null);
         jScrollPane1.setViewportView(jTextArea1);
-        jTextArea1.setEditable(false);
-        jTextArea1.setEnabled(false);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, 420, 300));
 
         Nama_Penyakit.setBackground(new java.awt.Color(255, 255, 255));
-        Nama_Penyakit.setFont(new java.awt.Font("Bahnschrift", 1, 20)); // NOI18N
+        Nama_Penyakit.setFont(new java.awt.Font("Bahnschrift", 1, 18)); // NOI18N
         Nama_Penyakit.setForeground(new java.awt.Color(0, 0, 0));
         Nama_Penyakit.setBorder(null);
         Nama_Penyakit.addActionListener(new java.awt.event.ActionListener() {
@@ -126,8 +132,6 @@ public class DaftarPenyakitForm extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
-        setLocationRelativeTo(null);
-
     }// </editor-fold>//GEN-END:initComponents
 
     private void Nama_PenyakitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nama_PenyakitActionPerformed
@@ -145,7 +149,16 @@ public class DaftarPenyakitForm extends javax.swing.JFrame {
 
     private void SearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchMouseClicked
         // TODO add your handling code here:
-        
+        String nama_penyakit = Nama_Penyakit.getText();
+
+        DaftarPenyakit daftarPenyakit = new DaftarPenyakit("jdbc:mysql://51.161.134.32/sistem_kesehatan", "database_pbo", "pbo331");
+        try {
+            daftarPenyakit.showInfo(nama_penyakit);
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
     }//GEN-LAST:event_SearchMouseClicked
 
     /**
@@ -183,15 +196,19 @@ public class DaftarPenyakitForm extends javax.swing.JFrame {
         });
     }
 
+    public static String GetNamaPenyakit() {
+        return Nama_Penyakit.getText();
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Back;
     private javax.swing.JLabel Gif;
-    private javax.swing.JTextField Nama_Penyakit;
+    private static javax.swing.JTextField Nama_Penyakit;
     private javax.swing.JLabel Search;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
+    public static javax.swing.JTextArea jTextArea1;
+    public static javax.swing.JTextArea jTextArea2;
     // End of variables declaration//GEN-END:variables
 }

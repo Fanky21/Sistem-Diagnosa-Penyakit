@@ -47,6 +47,8 @@ public class LoginForm extends javax.swing.JFrame {
                 setLocation(newX, newY);
             }
         });
+
+        inputUsername = this.inputUsername;
     }
 
     /**
