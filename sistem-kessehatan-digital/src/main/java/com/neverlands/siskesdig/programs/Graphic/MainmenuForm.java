@@ -99,6 +99,11 @@ public class MainmenuForm extends javax.swing.JFrame {
         getContentPane().add(DiagnosaP, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
         DaftarP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Daftar_Penyakit.png"))); // NOI18N
+        DaftarP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DaftarPMouseClicked(evt);
+            }
+        });
         getContentPane().add(DaftarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, -1, -1));
 
         HubungiD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Hubungi_Dokter.png"))); // NOI18N
@@ -158,6 +163,14 @@ public class MainmenuForm extends javax.swing.JFrame {
 
         dispose();
     }//GEN-LAST:event_DiagnosaPMouseClicked
+
+    private void DaftarPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DaftarPMouseClicked
+        // TODO add your handling code here:
+        DaftarPenyakitForm DaftarPenyakitForm = new DaftarPenyakitForm();
+        DaftarPenyakitForm.setVisible(true);
+
+        dispose();
+    }//GEN-LAST:event_DaftarPMouseClicked
 
     /**
      * @param args the command line arguments
