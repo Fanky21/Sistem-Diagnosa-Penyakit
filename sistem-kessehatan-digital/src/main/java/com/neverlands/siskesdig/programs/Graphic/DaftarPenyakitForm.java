@@ -63,8 +63,8 @@ public class DaftarPenyakitForm extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         Nama_Penyakit = new javax.swing.JTextField();
-        Gif = new javax.swing.JLabel();
         Back = new javax.swing.JLabel();
+        Gif = new javax.swing.JLabel();
         Search = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -98,10 +98,7 @@ public class DaftarPenyakitForm extends javax.swing.JFrame {
         });
         getContentPane().add(Nama_Penyakit, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 173, 330, 35));
 
-        Gif.setIcon(new javax.swing.ImageIcon("F:\\ITK\\Semester 2\\PBO\\new\\YANG INI\\Sistem-Diagnosa-Penyakit\\sistem-kessehatan-digital\\src\\main\\java\\com\\neverlands\\siskesdig\\bin\\daftar_penyakit2.gif")); // NOI18N
-        getContentPane().add(Gif, new org.netbeans.lib.awtextra.AbsoluteConstraints(255, 10, 150, 150));
-
-        Back.setIcon(new javax.swing.ImageIcon("F:\\ITK\\Semester 2\\PBO\\new\\YANG INI\\Sistem-Diagnosa-Penyakit\\sistem-kessehatan-digital\\src\\main\\java\\com\\neverlands\\siskesdig\\bin\\Back.png")); // NOI18N
+        Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Back.png"))); // NOI18N
         Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BackMouseClicked(evt);
@@ -109,7 +106,10 @@ public class DaftarPenyakitForm extends javax.swing.JFrame {
         });
         getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, -1, -1));
 
-        Search.setIcon(new javax.swing.ImageIcon("F:\\ITK\\Semester 2\\PBO\\new\\YANG INI\\Sistem-Diagnosa-Penyakit\\sistem-kessehatan-digital\\src\\main\\java\\com\\neverlands\\siskesdig\\bin\\Search.png")); // NOI18N
+        Gif.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/daftarpenyakitasli.gif"))); // NOI18N
+        getContentPane().add(Gif, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 200, 130));
+
+        Search.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Search.png"))); // NOI18N
         Search.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 SearchMouseClicked(evt);

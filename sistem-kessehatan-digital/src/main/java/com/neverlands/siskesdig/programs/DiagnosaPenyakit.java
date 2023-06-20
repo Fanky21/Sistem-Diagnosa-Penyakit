@@ -6,7 +6,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+<<<<<<< HEAD
 public class DiagnosaPenyakit extends Mysql {
+=======
+public class DiagnosaPenyakit extends Mysql{
+    private Connection conn;
+>>>>>>> 99650a4a314e06e4cf78bfbbf0eff790cc6be886
     private String username;
 
     public DiagnosaPenyakit(String mysqlUrl, String mysqlUsername, String mysqlPassword) {

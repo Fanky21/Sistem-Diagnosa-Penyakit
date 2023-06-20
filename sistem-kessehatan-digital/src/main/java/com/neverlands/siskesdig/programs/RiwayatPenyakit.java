@@ -27,9 +27,20 @@ public class RiwayatPenyakit extends Mysql {
             String column1Value = resultSet.getString("tanggal_diagnosa");
             String column2Value = resultSet.getString("penyakit");
 
+<<<<<<< HEAD
 
         }
 
 
     }
+=======
+            System.out.println("Tanggal Penyakit : " + column1Value);
+            System.out.println("Penyakit : " + column2Value);
+        }
+
+        resultSet.close();
+        syntax.close();
+    }
+    
+>>>>>>> 99650a4a314e06e4cf78bfbbf0eff790cc6be886
 }
