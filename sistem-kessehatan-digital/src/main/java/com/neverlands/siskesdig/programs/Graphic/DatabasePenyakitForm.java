@@ -5,11 +5,11 @@
 package com.neverlands.siskesdig.programs.Graphic;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
-import java.awt.event.MouseListener;
+import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 import java.util.Random;
-import java.awt.event.MouseEvent;
-import javax.swing.JOptionPane;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import com.neverlands.siskesdig.programs.DatabasePenyakit;
 
@@ -66,6 +66,9 @@ public class DatabasePenyakitForm extends javax.swing.JFrame{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         Nama_Penyakit = new javax.swing.JTextField();
         Gejala = new javax.swing.JTextField();
         Delete = new javax.swing.JLabel();
@@ -78,6 +81,22 @@ public class DatabasePenyakitForm extends javax.swing.JFrame{
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/LoadingSuccess.gif"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 190, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Ellipse 3.png"))); // NOI18
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, -1));
+
+        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/LoadingSplash2.png"))); // NOI18N
+        jLabel3.setText("jLabel4");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, -1));
+
+        jLabel3.setVisible(false);
+        jLabel4.setVisible(false);
+        jLabel5.setVisible(false);
 
         Nama_Penyakit.setBackground(new java.awt.Color(255, 255, 255));
         Nama_Penyakit.setFont(new java.awt.Font("Bahnschrift", 1, 25)); // NOI18N
@@ -120,12 +139,7 @@ public class DatabasePenyakitForm extends javax.swing.JFrame{
         Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Back.png"))); // NOI18N
         Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                
-                MainmenuForm MainmenuForm = new MainmenuForm();
-                MainmenuForm.setVisible(true);
-
-                dispose();
-
+                BackMouseClicked(evt);
             }
         });
         getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(412, 34, -1, 60));
@@ -192,7 +206,20 @@ public class DatabasePenyakitForm extends javax.swing.JFrame{
         
         penyakit.add();
         
-        JOptionPane.showMessageDialog(null,"Database berhasil ditambahkan" , "Success!",1,null);
+        jLabel3.setVisible(true);
+        jLabel4.setVisible(true);
+        jLabel5.setVisible(true);
+
+        Timer timer = new Timer();
+
+                timer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                jLabel3.setVisible(false);
+                jLabel4.setVisible(false);
+                jLabel5.setVisible(false);
+                }
+            }, 3000);
         
         // Reset
         Nama_Penyakit.setText("");
@@ -214,7 +241,20 @@ public class DatabasePenyakitForm extends javax.swing.JFrame{
         
         penyakit.delete();
         
-        JOptionPane.showMessageDialog(null,"Database berhasil dihapus" , "Success!",1,null);
+        jLabel3.setVisible(true);
+        jLabel4.setVisible(true);
+        jLabel5.setVisible(true);
+
+        Timer timer = new Timer();
+
+                timer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                jLabel3.setVisible(false);
+                jLabel4.setVisible(false);
+                jLabel5.setVisible(false);
+                }
+            }, 3000);
         
         // Reset
         Nama_Penyakit.setText("");
@@ -274,6 +314,9 @@ public class DatabasePenyakitForm extends javax.swing.JFrame{
     private javax.swing.JTextField Gejala;
     private javax.swing.JTextField Nama_Penyakit;
     private javax.swing.JLabel jLabel1;
+    public static javax.swing.JLabel jLabel3;
+    public static javax.swing.JLabel jLabel4;
+    public static javax.swing.JLabel jLabel5;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

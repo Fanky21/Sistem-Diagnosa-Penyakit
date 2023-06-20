@@ -186,9 +186,6 @@ public class LoginForm extends javax.swing.JFrame {
 
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) throws SQLException, InterruptedException {//GEN-FIRST:event_LoginActionPerformed
         // TODO add your handling code here:
-        // jLabel3.setVisible(true);
-        // jLabel4.setVisible(true);
-        // jLabel5.setVisible(true);
 
         String Username = inputUsername.getText();
             String Password = inputPassword.getText();
