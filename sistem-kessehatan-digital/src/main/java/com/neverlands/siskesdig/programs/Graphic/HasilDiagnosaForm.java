@@ -65,24 +65,87 @@ public class HasilDiagnosaForm extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        Persen1 = new javax.swing.JLabel();
+        Penyakit1 = new javax.swing.JLabel();
+        Hasil1 = new javax.swing.JLabel();
+        Persen2 = new javax.swing.JLabel();
+        Penyakit2 = new javax.swing.JLabel();
+        Hasil2 = new javax.swing.JLabel();
+        Persen3 = new javax.swing.JLabel();
+        Penyakit3 = new javax.swing.JLabel();
+        Hasil3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/loadingsplash.gif"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, -1));
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/diagnosa_penyakit.gif"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, -1, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/loadingsplash.gif"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, -1));
+        Persen1.setBackground(new java.awt.Color(255, 255, 255));
+        Persen1.setFont(new java.awt.Font("Bahnschrift", 1, 20)); // NOI18N
+        Persen1.setForeground(new java.awt.Color(0, 0, 0));
+        Persen1.setText("");
+        getContentPane().add(Persen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 420, 50));
+
+        Penyakit1.setBackground(new java.awt.Color(255, 255, 255));
+        Penyakit1.setFont(new java.awt.Font("Bahnschrift", 1, 25)); // NOI18N
+        Penyakit1.setForeground(new java.awt.Color(0, 0, 0));
+        Penyakit1.setText("Penyakit 1 :");
+        Penyakit1.setVisible(false);
+        getContentPane().add(Penyakit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 420, 40));
+
+        Hasil1.setBackground(new java.awt.Color(255, 255, 255));
+        Hasil1.setFont(new java.awt.Font("Bahnschrift", 1, 20)); // NOI18N
+        Hasil1.setForeground(new java.awt.Color(0, 0, 0));
+        Hasil1.setText("");
+        getContentPane().add(Hasil1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 420, 40));
+
+        Persen2.setBackground(new java.awt.Color(255, 255, 255));
+        Persen2.setFont(new java.awt.Font("Bahnschrift", 1, 20)); // NOI18N
+        Persen2.setForeground(new java.awt.Color(0, 0, 0));
+        Persen2.setText("");
+        getContentPane().add(Persen2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 420, 50));
+
+        Penyakit2.setBackground(new java.awt.Color(255, 255, 255));
+        Penyakit2.setFont(new java.awt.Font("Bahnschrift", 1, 25)); // NOI18N
+        Penyakit2.setForeground(new java.awt.Color(0, 0, 0));
+        Penyakit2.setText("Penyakit 2 :");
+        Penyakit2.setVisible(false);
+        getContentPane().add(Penyakit2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 420, 40));
+
+        Hasil2.setBackground(new java.awt.Color(255, 255, 255));
+        Hasil2.setFont(new java.awt.Font("Bahnschrift", 1, 20)); // NOI18N
+        Hasil2.setForeground(new java.awt.Color(0, 0, 0));
+        Hasil2.setText("");
+        getContentPane().add(Hasil2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 420, 40));
+
+        Persen3.setBackground(new java.awt.Color(255, 255, 255));
+        Persen3.setFont(new java.awt.Font("Bahnschrift", 1, 20)); // NOI18N
+        Persen3.setForeground(new java.awt.Color(0, 0, 0));
+        Persen3.setText("");
+        getContentPane().add(Persen3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 610, 420, 50));
+
+        Penyakit3.setBackground(new java.awt.Color(255, 255, 255));
+        Penyakit3.setFont(new java.awt.Font("Bahnschrift", 1, 25)); // NOI18N
+        Penyakit3.setForeground(new java.awt.Color(0, 0, 0));
+        Penyakit3.setText("Penyakit 3 :");
+        Penyakit3.setVisible(false);
+        getContentPane().add(Penyakit3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 420, 40));
+
+        Hasil3.setBackground(new java.awt.Color(255, 255, 255));
+        Hasil3.setFont(new java.awt.Font("Bahnschrift", 1, 20)); // NOI18N
+        Hasil3.setForeground(new java.awt.Color(0, 0, 0));
+        Hasil3.setText("");
+        getContentPane().add(Hasil3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 570, 420, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Hasil_Diagnosa.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jLabel4.setText("jLabel4");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 420, 490));
 
         pack();
         setLocationRelativeTo(null);
@@ -95,7 +158,7 @@ public class HasilDiagnosaForm extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -129,7 +192,7 @@ public class HasilDiagnosaForm extends javax.swing.JFrame {
                 
                 jLabel3.setVisible(false);
 
-                DiagnosaPenyakit diagnosa = new DiagnosaPenyakit("jdbc:mysql://51.161.134.32/sistem_kesehatan", "database_pbo", "pbo331", "username");
+                DiagnosaPenyakit diagnosa = new DiagnosaPenyakit("jdbc:mysql://51.161.134.32/sistem_kesehatan", "database_pbo", "pbo331");
 
                 try {
                     diagnosa.connectToDatabase();
@@ -144,7 +207,7 @@ public class HasilDiagnosaForm extends javax.swing.JFrame {
                 try {
                     penyakitList = diagnosa.StartDiagnosa(kalimat);
 
-                    jLabel4.setText("TEST BERHASIL");
+                    Hasil1.setText("TEST BERHASIL");
                 } catch (SQLException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
@@ -159,10 +222,18 @@ public class HasilDiagnosaForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JLabel Hasil1;
+    public static javax.swing.JLabel Hasil2;
+    public static javax.swing.JLabel Hasil3;
+    private javax.swing.JLabel Penyakit1;
+    private javax.swing.JLabel Penyakit2;
+    private javax.swing.JLabel Penyakit3;
+    public static  javax.swing.JLabel Persen1;
+    public static  javax.swing.JLabel Persen2;
+    public static  javax.swing.JLabel Persen3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private static javax.swing.JLabel jLabel3;
-    public static javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 
     public void run() {
@@ -178,7 +249,7 @@ public class HasilDiagnosaForm extends javax.swing.JFrame {
         
         jLabel3.setVisible(false);
 
-        DiagnosaPenyakit diagnosa = new DiagnosaPenyakit("jdbc:mysql://51.161.134.32/sistem_kesehatan", "database_pbo", "pbo331", "username");
+        DiagnosaPenyakit diagnosa = new DiagnosaPenyakit("jdbc:mysql://51.161.134.32/sistem_kesehatan", "database_pbo", "pbo331");
 
         try {
             diagnosa.connectToDatabase();

@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
+import java.util.List;
 
 import com.neverlands.siskesdig.programs.DiagnosaPenyakit;
 
@@ -73,9 +74,7 @@ public class DiagnosaForm extends javax.swing.JFrame {
         Search.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/lakukan_diagnosa.png"))); // NOI18N
         Search.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                
-                HasilDiagnosaForm HasilDiagnosaForm = new HasilDiagnosaForm();
-                HasilDiagnosaForm.run();
+                SearchMouseClicked(evt);
 
             }
         });
@@ -127,32 +126,34 @@ public class DiagnosaForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             // Buat instance objek DiagnosaPenyakit
-            DiagnosaPenyakit diagnosa = new DiagnosaPenyakit("jdbc:mysql://51.161.134.32/sistem_kesehatan", "database_pbo", "pbo331", "username");
-
-            // Terhubung ke database
+            DiagnosaPenyakit diagnosa = new DiagnosaPenyakit("jdbc:mysql://51.161.134.32/sistem_kesehatan", "database_pbo", "pbo331");
             diagnosa.connectToDatabase();
+            HasilDiagnosaForm HasilDiagnosaForm = new HasilDiagnosaForm();
+            HasilDiagnosaForm.run();
+            // Terhubung ke database
 
             // Ambil kalimat untuk diagnostik dari suatu sumber input, misalnya JTextField bernama inputTextArea
-            // String kalimat = jTextArea1.getText();
+            String kalimat = jTextArea1.getText();
 
             // Jalankan diagnosa
-            // List<String> penyakitList = diagnosa.StartDiagnosa(kalimat);
+            List<String> penyakitList = diagnosa.StartDiagnosa(kalimat);
 
             // Tampilkan hasil diagnosa pada label Penyakit 1, Penyakit 2, dan Penyakit 3
-            // if (penyakitList.size() >= 1) {
-            //     Penyakit1.setText(penyakitList.get(0));
+            if (penyakitList.size() >= 1) {
+                HasilDiagnosaForm.Hasil1.setText(penyakitList.get(0));
 
-            // }
-            // if (penyakitList.size() >= 2) {
-            //     Penyakit2.setText(penyakitList.get(1));
+            }
+            if (penyakitList.size() >= 2) {
+                HasilDiagnosaForm.Hasil2.setText(penyakitList.get(1));
 
-            // }
-            // if (penyakitList.size() >= 3) {
-            //     Penyakit3.setText(penyakitList.get(2));
-            // }
+            }
+            if (penyakitList.size() >= 3) {
+                HasilDiagnosaForm.Hasil3.setText(penyakitList.get(2));
+            }
 
             // Tutup koneksi ke database
             diagnosa.closeConnection();
+            dispose();
         } catch (SQLException ex) {
             ex.printStackTrace();
             // Handle exception
