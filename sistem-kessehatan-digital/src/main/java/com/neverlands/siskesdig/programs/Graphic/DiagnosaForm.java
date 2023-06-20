@@ -115,8 +115,8 @@ public class DiagnosaForm extends javax.swing.JFrame {
 
     private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
         // TODO add your handling code here:
-        DiagnosaForm DiagnosaForm = new DiagnosaForm();
-        DiagnosaForm.setVisible(true);
+        MainmenuForm MainmenuForm = new MainmenuForm();
+        MainmenuForm.setVisible(true);
 
         dispose();
 
