@@ -8,13 +8,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-<<<<<<< HEAD
 public class DiagnosaPenyakit extends Mysql{
-=======
-import com.neverlands.siskesdig.programs.Graphic.HasilDiagnosaForm;
-
-public class DiagnosaPenyakit {
->>>>>>> 4fbd00ddcaabb468dc1f61068260e5518129c7e5
     private Connection conn;
     private String username;
 

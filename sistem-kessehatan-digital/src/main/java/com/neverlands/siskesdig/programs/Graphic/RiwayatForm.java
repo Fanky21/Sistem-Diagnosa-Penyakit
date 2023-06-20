@@ -7,6 +7,15 @@ package com.neverlands.siskesdig.programs.Graphic;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.swing.table.DefaultTableModel;
+
+import com.neverlands.siskesdig.programs.controller.Config;
 
 
 /**
@@ -72,7 +81,7 @@ public class RiwayatForm extends javax.swing.JFrame {
         jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
 
         jTable1.setBackground(new java.awt.Color(255, 255, 255));
-        jTable1.setFont(new java.awt.Font("Bahnschrift", 1, 20)); // NOI18N
+        jTable1.setFont(new java.awt.Font("Bahnschrift", 1, 13)); // NOI18N
         jTable1.setForeground(new java.awt.Color(0, 0, 0));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -154,8 +163,35 @@ public class RiwayatForm extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RiwayatForm().setVisible(true);
+            new RiwayatForm().setVisible(true);
+
+            String username = "username";
+            Connection conn;
+
+            try {
+                conn = DriverManager.getConnection(Config.MYSQL_url, Config.MYSQL_username, Config.MYSQL_password);
+
+                PreparedStatement syntax = conn.prepareStatement("SELECT * FROM riwayat_penyakit WHERE username = ?");
+                syntax.setString(1, username);
+
+                ResultSet resultSet = syntax.executeQuery();
+
+                DefaultTableModel model = new DefaultTableModel(new Object[]{"Tanggal Penyakit", "Penyakit"}, 0);
+
+                while (resultSet.next()) {
+                    String column1Value = resultSet.getString("tanggal_diagnosa");
+                    String column2Value = resultSet.getString("penyakit");
+
+                    model.addRow(new Object[]{column1Value, column2Value});
+                }
+
+                // Set the model to your JTable
+                jTable1.setModel(model);
+
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
+        }
         });
     }
 
@@ -165,6 +201,6 @@ public class RiwayatForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private static javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
