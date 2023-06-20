@@ -10,8 +10,13 @@ public abstract class Mysql {
     private String mysqlUsername;
     private String mysqlPassword;
     
-
     public Mysql(String mysqlUrl, String mysqlUsername, String mysqlPassword) {
+        try {
+            conn = DriverManager.getConnection(mysqlUrl, mysqlUsername, mysqlPassword);
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } 
         this.mysqlUrl = mysqlUrl;
         this.mysqlUsername = mysqlUsername;
         this.mysqlPassword = mysqlPassword;

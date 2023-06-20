@@ -124,40 +124,11 @@ public class DiagnosaForm extends javax.swing.JFrame {
 
     private void SearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchMouseClicked
         // TODO add your handling code here:
-        try {
-            // Buat instance objek DiagnosaPenyakit
-            DiagnosaPenyakit diagnosa = new DiagnosaPenyakit("jdbc:mysql://51.161.134.32/sistem_kesehatan", "database_pbo", "pbo331");
-            diagnosa.connectToDatabase();
-            HasilDiagnosaForm HasilDiagnosaForm = new HasilDiagnosaForm();
-            HasilDiagnosaForm.run();
-            // Terhubung ke database
 
-            // Ambil kalimat untuk diagnostik dari suatu sumber input, misalnya JTextField bernama inputTextArea
-            String kalimat = jTextArea1.getText();
+        HasilDiagnosaForm HasilDiagnosaForm = new HasilDiagnosaForm();
+        HasilDiagnosaForm.run();
 
-            // Jalankan diagnosa
-            List<String> penyakitList = diagnosa.StartDiagnosa(kalimat);
-
-            // Tampilkan hasil diagnosa pada label Penyakit 1, Penyakit 2, dan Penyakit 3
-            if (penyakitList.size() >= 1) {
-                HasilDiagnosaForm.Hasil1.setText(penyakitList.get(0));
-
-            }
-            if (penyakitList.size() >= 2) {
-                HasilDiagnosaForm.Hasil2.setText(penyakitList.get(1));
-
-            }
-            if (penyakitList.size() >= 3) {
-                HasilDiagnosaForm.Hasil3.setText(penyakitList.get(2));
-            }
-
-            // Tutup koneksi ke database
-            diagnosa.closeConnection();
-            dispose();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            // Handle exception
-        }
+        System.out.println("OKEEEE11111");
 
     }//GEN-LAST:event_SearchMouseClicked
 

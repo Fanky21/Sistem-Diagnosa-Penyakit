@@ -12,6 +12,8 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import javax.swing.JTextArea;
+
 import com.neverlands.siskesdig.programs.DiagnosaPenyakit;
 
 /**
@@ -192,7 +194,7 @@ public class HasilDiagnosaForm extends javax.swing.JFrame {
                 
                 jLabel3.setVisible(false);
 
-                DiagnosaPenyakit diagnosa = new DiagnosaPenyakit("jdbc:mysql://51.161.134.32/sistem_kesehatan", "database_pbo", "pbo331");
+                DiagnosaPenyakit diagnosa = new DiagnosaPenyakit("jdbc:mysql://51.161.134.32/sistem_kesehatan", "database_pbo", "pbo331",LoginForm.getUsername());
 
                 try {
                     diagnosa.connectToDatabase();
@@ -205,9 +207,20 @@ public class HasilDiagnosaForm extends javax.swing.JFrame {
 
                 List<String> penyakitList;
                 try {
-                    penyakitList = diagnosa.StartDiagnosa(kalimat);
+                    penyakitList = (List<String>) diagnosa.startDiagnosa(kalimat);
 
-                    Hasil1.setText("TEST BERHASIL");
+                    if (penyakitList.size() >= 1) {
+                    HasilDiagnosaForm.Hasil1.setText(penyakitList.get(0));
+
+                    }
+                    if (penyakitList.size() >= 2) {
+                        HasilDiagnosaForm.Hasil2.setText(penyakitList.get(1));
+
+                    }
+                    if (penyakitList.size() >= 3) {
+                        HasilDiagnosaForm.Hasil3.setText(penyakitList.get(2));
+                    }
+
                 } catch (SQLException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
@@ -249,32 +262,22 @@ public class HasilDiagnosaForm extends javax.swing.JFrame {
         
         jLabel3.setVisible(false);
 
-        DiagnosaPenyakit diagnosa = new DiagnosaPenyakit("jdbc:mysql://51.161.134.32/sistem_kesehatan", "database_pbo", "pbo331");
-
-        try {
-            diagnosa.connectToDatabase();
-        } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
         String kalimat = DiagnosaForm.jTextArea1.getText();
 
-        List<String> penyakitList;
-
         try {
+            DiagnosaPenyakit diagnosa = new DiagnosaPenyakit("jdbc:mysql://51.161.134.32/sistem_kesehatan", "database_pbo", "pbo331",LoginForm.getUsername());
 
-            penyakitList = diagnosa.StartDiagnosa(kalimat);
-            jLabel3.setText("TEST BERHASIL");
+            diagnosa.startDiagnosa(kalimat);
+
+            System.out.println("OKE");
 
         } catch (SQLException e) {
-
             // TODO Auto-generated catch block
             e.printStackTrace();
-
         }
 
         }
+
         }, 2000);
 
     }
