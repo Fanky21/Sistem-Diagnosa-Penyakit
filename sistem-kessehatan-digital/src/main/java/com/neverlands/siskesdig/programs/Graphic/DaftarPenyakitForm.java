@@ -77,18 +77,23 @@ public class DaftarPenyakitForm extends javax.swing.JFrame {
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
         jScrollPane2.setViewportView(jTextArea2);
+        jTextArea2.setEditable(false);
+        jTextArea2.setEnabled(false);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 420, 130));
 
         jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
+        jTextArea1.setLineWrap(true);
         jScrollPane1.setViewportView(jTextArea1);
+        jTextArea1.setEditable(false);
+        jTextArea1.setEnabled(false);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, 420, 300));
 
         Nama_Penyakit.setBackground(new java.awt.Color(255, 255, 255));
-        Nama_Penyakit.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
+        Nama_Penyakit.setFont(new java.awt.Font("Bahnschrift", 1, 20)); // NOI18N
         Nama_Penyakit.setForeground(new java.awt.Color(0, 0, 0));
         Nama_Penyakit.setBorder(null);
         Nama_Penyakit.addActionListener(new java.awt.event.ActionListener() {
@@ -140,6 +145,7 @@ public class DaftarPenyakitForm extends javax.swing.JFrame {
 
     private void SearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchMouseClicked
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_SearchMouseClicked
 
     /**
@@ -149,7 +155,7 @@ public class DaftarPenyakitForm extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
