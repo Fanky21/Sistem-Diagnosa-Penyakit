@@ -73,7 +73,10 @@ public class DiagnosaForm extends javax.swing.JFrame {
         Search.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/lakukan_diagnosa.png"))); // NOI18N
         Search.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                SearchMouseClicked(evt);
+                
+                HasilDiagnosaForm HasilDiagnosaForm = new HasilDiagnosaForm();
+                HasilDiagnosaForm.run();
+
             }
         });
         getContentPane().add(Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 660, 390, 110));
@@ -198,6 +201,6 @@ public class DiagnosaForm extends javax.swing.JFrame {
     private javax.swing.JLabel Search;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    static javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }

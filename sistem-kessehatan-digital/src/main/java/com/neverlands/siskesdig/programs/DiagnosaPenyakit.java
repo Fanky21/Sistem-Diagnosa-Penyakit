@@ -4,6 +4,8 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.util.*;
 
+import com.neverlands.siskesdig.programs.Graphic.HasilDiagnosaForm;
+
 public class DiagnosaPenyakit {
     private Connection conn;
     private String username;
@@ -30,6 +32,7 @@ public class DiagnosaPenyakit {
     }
 
     public List<String> StartDiagnosa(String sentence) throws SQLException {
+
         StringBuilder filteredWords = new StringBuilder();
         String gejala = "Radang,Bersin,Sesak,Nyeri sendi,Kelelahan,Demam,Penurunan berat badan,Sakit kepala,Muntah,lemas,Sesak napas,Berat badan menurun,Lemas,kaku,Kejang,Mudah lelah,Penglihatan kabur,Gangguan penglihatan,Mual,muntah,Sulit berkonsentrasi,Diare,Pusing,Pingsan,Nyeri,panas,Hilang nafsu makan,Linglung,Lemah otot,Penurunan kesadaran,Mata merah,Mata bengkak,Sakit tenggorokan,Jantung berdebar,Nyeri dada,Mual,Tubuh mudah lelah,Pembengkakan,Keringat dingin";
         String[] filterArray = gejala.split(",\\s*");
@@ -72,6 +75,7 @@ public class DiagnosaPenyakit {
         List<String> penyakitList = new ArrayList<>();
 
         if (status_hasil) {
+
             while (hasil.next()) {
                 String data = hasil.getString("nama_penyakit");
                 penyakitList.add(data);
@@ -80,11 +84,19 @@ public class DiagnosaPenyakit {
             int counter = penyakitList.size();
 
             if (counter > 3) {
-                System.out.println("Mohon masukkan gejala yang lebih spesifik!");
+
+                System.out.println("Kurang spesifik");
+
+                HasilDiagnosaForm.jLabel4.setText("Mohon masukkan gejala yang lebih spesifik!");
+
             } else if (counter <= 3) {
+
                 if (counter == 0) {
+
                     System.out.println("Tidak ada penyakit yang cocok dengan gejala yang diberikan.");
+
                 } else {
+
                     System.out.println("Penyakit kamu adalah: ");
                     for (String penyakit : penyakitList) {
                         System.out.println(penyakit);
@@ -103,10 +115,15 @@ public class DiagnosaPenyakit {
                         riwayat_penyakit.setString(3, penyakit);
                         riwayat_penyakit.executeUpdate();
                     }
+
                 }
             }
         } else {
+
             System.out.println("Data Penyakit Tidak Ditemukan!");
+
+            HasilDiagnosaForm.jLabel4.setText("Data Penyakit Tidak Ditemukan!");
+
         }
 
         return penyakitList;
