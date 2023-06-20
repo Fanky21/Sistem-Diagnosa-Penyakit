@@ -19,6 +19,7 @@ public class MessageBox extends javax.swing.JFrame {
 
     private int xOffset;
     private int yOffset;
+    private String info_text;
 
     /**
      * Creates new form MessageBox
@@ -53,6 +54,10 @@ public class MessageBox extends javax.swing.JFrame {
 
     }
 
+    public void messageinfo(String info_text) {
+        Text.setText(info_text);
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -84,7 +89,7 @@ public class MessageBox extends javax.swing.JFrame {
         Text.setBackground(new java.awt.Color(255, 255, 255));
         Text.setFont(new java.awt.Font("Concert One", 0, 20)); // NOI18N
         Text.setForeground(new java.awt.Color(78, 78, 78));
-        Text.setText(SystemLogin.getText());
+        Text.setText(info_text);
         getContentPane().add(Text, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 290, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/alert.png"))); // NOI18N

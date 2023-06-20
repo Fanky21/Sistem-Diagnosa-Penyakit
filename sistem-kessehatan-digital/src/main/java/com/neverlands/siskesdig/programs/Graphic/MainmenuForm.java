@@ -6,8 +6,16 @@ package com.neverlands.siskesdig.programs.Graphic;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import com.neverlands.siskesdig.programs.controller.Config;
+import com.neverlands.siskesdig.programs.controller.MessageBox;
 
 /**
  *
@@ -158,7 +166,12 @@ public class MainmenuForm extends javax.swing.JFrame {
         DatabaseP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Database_Penyakit.png"))); // NOI18N
         DatabaseP.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                DatabasePMouseClicked(evt);
+                try {
+                    DatabasePMouseClicked(evt);
+                } catch (SQLException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
             }
         });
         getContentPane().add(DatabaseP, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, -1, -1));
@@ -264,30 +277,53 @@ public class MainmenuForm extends javax.swing.JFrame {
                 }, 2000);
     }                                      
 
-    private void DatabasePMouseClicked(java.awt.event.MouseEvent evt) {                                       
+    private void DatabasePMouseClicked(java.awt.event.MouseEvent evt) throws SQLException {                                       
         // TODO add your handling code here:
-                LDPenyakit.setVisible(true);
-                jLabel5.setVisible(true);
-                jLabel3.setVisible(true);
-                
-                Timer timer = new Timer();
 
-                timer.schedule(new TimerTask() {
+                Connection conn;
+                conn = DriverManager.getConnection(Config.MYSQL_url, Config.MYSQL_username, Config.MYSQL_password);
 
-                @Override
-                public void run() {
-                
-                dispose();
-                LDPenyakit.setVisible(false);
-                jLabel5.setVisible(false);
-                jLabel3.setVisible(false);
+                PreparedStatement syntax_cek = conn.prepareStatement("SELECT * FROM akun WHERE username = ? AND role = ?");
+                syntax_cek.setString(1, LoginForm.getUsername());
+                syntax_cek.setString(2, "admin");
+                ResultSet hasil = syntax_cek.executeQuery();
 
-                DatabasePenyakitForm DatabasePenyakitForm = new DatabasePenyakitForm();
-                DatabasePenyakitForm.setVisible(true);
-                
+                Boolean hasil_boolean = hasil.next();
+
+                if (hasil_boolean) {
+
+                    LDPenyakit.setVisible(true);
+                    jLabel5.setVisible(true);
+                    jLabel3.setVisible(true);
+                    
+                    Timer timer = new Timer();
+
+                    timer.schedule(new TimerTask() {
+
+                    @Override
+                    public void run() {
+                    
+                    dispose();
+                    LDPenyakit.setVisible(false);
+                    jLabel5.setVisible(false);
+                    jLabel3.setVisible(false);
+
+                    DatabasePenyakitForm DatabasePenyakitForm = new DatabasePenyakitForm();
+                    DatabasePenyakitForm.setVisible(true);
+                    
+
+                    }
+                    }, 2000);
+
+                } else {
+
+                    String newtext = "Anda bukan admin!";
+                    MessageBox messageBox = new MessageBox();
+                    messageBox.messageinfo(newtext);
+                    messageBox.setVisible(true);
 
                 }
-                }, 2000);
+                
     }                                      
 
     private void RiwayatPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DatabasePMouseClicked

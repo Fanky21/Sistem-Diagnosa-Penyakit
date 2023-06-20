@@ -50,6 +50,7 @@ public class SystemLogin extends Mysql {
             LoginForm loginForm = new LoginForm();
             loginForm.setVisible(true);
             MessageBox messageBox = new MessageBox();
+            messageBox.messageinfo(newtext);
             messageBox.setVisible(true);
         }
 
@@ -66,12 +67,14 @@ public class SystemLogin extends Mysql {
 
             newtext = "Username Tidak Boleh Kosong!";
             MessageBox messageBox = new MessageBox();
+            messageBox.messageinfo(newtext);
             messageBox.setVisible(true);
 
         } else if (RegisterForm.getPassword().equals("") || (RegisterForm.getPassword().equals("Password"))) {
 
             newtext = "Password Tidak Boleh Kosong!";
             MessageBox messageBox = new MessageBox();
+            messageBox.messageinfo(newtext);
             messageBox.setVisible(true);
 
         } else {
@@ -87,6 +90,7 @@ public class SystemLogin extends Mysql {
 
                 newtext = "Username Telah Dipakai!";
                 MessageBox messageBox = new MessageBox();
+                messageBox.messageinfo(newtext);
                 messageBox.setVisible(true);
 
             } else {

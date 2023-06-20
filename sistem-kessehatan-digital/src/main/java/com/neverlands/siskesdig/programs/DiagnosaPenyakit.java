@@ -79,7 +79,7 @@ public class DiagnosaPenyakit extends Mysql {
 
                 System.out.println("lebih dari 3");
 
-            } else if (counter <= 3) {
+            } else {
 
                 if (counter == 0) {
                     HasilDiagnosaForm.Hasil2.setText("Tidak ada penyakit yang sesuai");
@@ -88,19 +88,19 @@ public class DiagnosaPenyakit extends Mysql {
 
                 } else {
 
-                    if (penyakitList.size() >= 1) {
+                    if (counter >= 1) {
                     HasilDiagnosaForm.Hasil1.setText(penyakitList.get(0));
 
                     System.out.println("cuma 1");
 
                     }
-                    if (penyakitList.size() >= 2) {
+                    if (counter >= 2) {
                         HasilDiagnosaForm.Hasil2.setText(penyakitList.get(1));
 
                         System.out.println("cuma 2");
 
                     }
-                    if (penyakitList.size() >= 3) {
+                    if (counter >= 3) {
                         HasilDiagnosaForm.Hasil3.setText(penyakitList.get(2));
 
                         System.out.println("cuma 3");
@@ -119,6 +119,7 @@ public class DiagnosaPenyakit extends Mysql {
 
                 }
             }
+            
         } else {
 
             System.out.println("Data Penyakit Tidak Ditemukan!");
