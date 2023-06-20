@@ -7,6 +7,12 @@ package com.neverlands.siskesdig.programs.Graphic;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import com.neverlands.siskesdig.programs.DiagnosaPenyakit;
 
 /**
  *
@@ -61,6 +67,7 @@ public class HasilDiagnosaForm extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -69,10 +76,13 @@ public class HasilDiagnosaForm extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/loadingsplash.gif"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Hasil_Diagnosa.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jLabel4.setText("jLabel4");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 420, 490));
 
         pack();
         setLocationRelativeTo(null);
@@ -109,6 +119,41 @@ public class HasilDiagnosaForm extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new HasilDiagnosaForm().setVisible(true);
+
+                Timer timer = new Timer();
+
+                timer.schedule(new TimerTask() {
+
+                @Override
+                public void run() {
+                
+                jLabel3.setVisible(false);
+
+                DiagnosaPenyakit diagnosa = new DiagnosaPenyakit("jdbc:mysql://51.161.134.32/sistem_kesehatan", "database_pbo", "pbo331", "username");
+
+                try {
+                    diagnosa.connectToDatabase();
+                } catch (SQLException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+
+                String kalimat = DiagnosaForm.jTextArea1.getText();
+
+                List<String> penyakitList;
+                try {
+                    penyakitList = diagnosa.StartDiagnosa(kalimat);
+
+                    jLabel4.setText("TEST BERHASIL");
+                } catch (SQLException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+
+                }
+                }, 2000);
+
+
             }
         });
     }
@@ -116,6 +161,51 @@ public class HasilDiagnosaForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private static javax.swing.JLabel jLabel3;
+    public static javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
+
+    public void run() {
+
+        new HasilDiagnosaForm().setVisible(true);
+
+        Timer timer = new Timer();
+
+        timer.schedule(new TimerTask() {
+
+        @Override
+        public void run() {
+        
+        jLabel3.setVisible(false);
+
+        DiagnosaPenyakit diagnosa = new DiagnosaPenyakit("jdbc:mysql://51.161.134.32/sistem_kesehatan", "database_pbo", "pbo331", "username");
+
+        try {
+            diagnosa.connectToDatabase();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        String kalimat = DiagnosaForm.jTextArea1.getText();
+
+        List<String> penyakitList;
+
+        try {
+
+            penyakitList = diagnosa.StartDiagnosa(kalimat);
+            jLabel3.setText("TEST BERHASIL");
+
+        } catch (SQLException e) {
+
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+
+        }
+
+        }
+        }, 2000);
+
+    }
+
 }
