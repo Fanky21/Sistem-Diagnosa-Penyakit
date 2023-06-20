@@ -78,7 +78,7 @@
     <Component class="javax.swing.JLabel" name="LDFPenyakit">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/neverlands/siskesdig/bin/LoadingSuccess.gif"/>
+          <Image iconType="3" name="/com/neverlands/siskesdig/bin/daftarpenyakitasli.gif"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel4"/>
       </Properties>

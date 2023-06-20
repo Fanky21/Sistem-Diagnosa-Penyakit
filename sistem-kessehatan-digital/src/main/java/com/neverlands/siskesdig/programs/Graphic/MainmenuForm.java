@@ -79,14 +79,6 @@ public class MainmenuForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        LDiagnosa.setVisible(false);
-        LHubungi.setVisible(false);
-        LRiwayat.setVisible(false);
-        LDPenyakit.setVisible(false);
-        LDFPenyakit.setVisible(false);
-        jLabel5.setVisible(false);
-        jLabel3.setVisible(false);
-
         LDiagnosa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/diagnosa_penyakit.gif"))); // NOI18N
         getContentPane().add(LDiagnosa, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 190, -1));
 
@@ -101,22 +93,29 @@ public class MainmenuForm extends javax.swing.JFrame {
         LDPenyakit.setText("jLabel4");
         getContentPane().add(LDPenyakit, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 190, -1));
 
-        LDFPenyakit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/LoadingSuccess.gif"))); // NOI18N
+        LDFPenyakit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/daftarpenyakitasli.gif"))); // NOI18N
         LDFPenyakit.setText("jLabel4");
         getContentPane().add(LDFPenyakit, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 190, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Ellipse 3.png"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, -1));
 
+        LDiagnosa.setVisible(false);
+        LDFPenyakit.setVisible(false);
+        LHubungi.setVisible(false);
+        LDPenyakit.setVisible(false);
+        LRiwayat.setVisible(false);
+        jLabel5.setVisible(false);
+        jLabel3.setVisible(false);
+
         jLabel3.setForeground(new java.awt.Color(204, 204, 204));
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/LoadingSplash2.png"))); // NOI18N
         jLabel3.setText("jLabel4");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, -1));
 
-
         User.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
         User.setForeground(new java.awt.Color(47, 143, 38));
-        User.setText(LoginForm.getUsername());
+        User.setText("User");
         getContentPane().add(User, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 240, 50));
 
         Selamat1.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
@@ -133,7 +132,7 @@ public class MainmenuForm extends javax.swing.JFrame {
         getContentPane().add(Logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, -1, -1));
 
         DiagnosaP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Diagnosa_Penyakit.png"))); // NOI18N
-        DiagnosaP.addMouseListener(new java.awt.event.MouseAdapter(){
+        DiagnosaP.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DiagnosaPMouseClicked(evt);
             }
@@ -141,7 +140,7 @@ public class MainmenuForm extends javax.swing.JFrame {
         getContentPane().add(DiagnosaP, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
         DaftarP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Daftar_Penyakit.png"))); // NOI18N
-        DaftarP.addMouseListener(new java.awt.event.MouseAdapter(){
+        DaftarP.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DaftarPMouseClicked(evt);
             }
@@ -154,38 +153,12 @@ public class MainmenuForm extends javax.swing.JFrame {
                 HubungiDMouseClicked(evt);
             }
         });
-        getContentPane().add(HubungiD, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, -1, -1));;
-        
+        getContentPane().add(HubungiD, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, -1, -1));
 
         DatabaseP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Database_Penyakit.png"))); // NOI18N
         DatabaseP.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DatabasePMouseClicked(evt);
-
-        //     //     LDPenyakit.setVisible(true);
-        //     //     jLabel5.setVisible(true);
-        //     //     jLabel3.setVisible(true);
-                
-        //     //     Timer timer = new Timer();
-
-        //     //     timer.schedule(new TimerTask() {
-
-        //     //     @Override
-        //     //     public void run() {
-
-        //     //     LDPenyakit.setVisible(false);
-        //     //     jLabel5.setVisible(false);
-        //     //     jLabel3.setVisible(false);
-
-        //     //     DatabasePenyakitForm DatabasePenyakitForm = new DatabasePenyakitForm();
-        //     //     DatabasePenyakitForm.setVisible(true);
-        //     //     dispose();
-
-        //     //     }
-        //     //     }, 2000);
-
-
-
             }
         });
         getContentPane().add(DatabaseP, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, -1, -1));
@@ -213,7 +186,7 @@ public class MainmenuForm extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_LogoutMouseClicked
 
-    private void DiagnosaPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DatabasePMouseClicked
+    private void DiagnosaPMouseClicked(java.awt.event.MouseEvent evt) {                                       
         // TODO add your handling code here:
         LDiagnosa.setVisible(true);
                 jLabel5.setVisible(true);
@@ -237,9 +210,9 @@ public class MainmenuForm extends javax.swing.JFrame {
 
                 }
                 }, 2000);
-    }//GEN-LAST:event_DatabasePMouseClicked
+    }                                      
 
-    private void DaftarPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DatabasePMouseClicked
+    private void DaftarPMouseClicked(java.awt.event.MouseEvent evt) {                                       
         // TODO add your handling code here:
                 LDFPenyakit.setVisible(true);
                 jLabel5.setVisible(true);
@@ -263,9 +236,9 @@ public class MainmenuForm extends javax.swing.JFrame {
 
                 }
                 }, 2000);
-    }//GEN-LAST:event_DatabasePMouseClicked
+    }                                      
 
-    private void HubungiDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DatabasePMouseClicked
+    private void HubungiDMouseClicked(java.awt.event.MouseEvent evt) {                                       
         // TODO add your handling code here:
                 LHubungi.setVisible(true);
                 jLabel5.setVisible(true);
@@ -289,9 +262,9 @@ public class MainmenuForm extends javax.swing.JFrame {
 
                 }
                 }, 2000);
-    }//GEN-LAST:event_DatabasePMouseClicked
+    }                                      
 
-    private void DatabasePMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DatabasePMouseClicked
+    private void DatabasePMouseClicked(java.awt.event.MouseEvent evt) {                                       
         // TODO add your handling code here:
                 LDPenyakit.setVisible(true);
                 jLabel5.setVisible(true);
@@ -315,7 +288,7 @@ public class MainmenuForm extends javax.swing.JFrame {
 
                 }
                 }, 2000);
-    }//GEN-LAST:event_DatabasePMouseClicked
+    }                                      
 
     private void RiwayatPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DatabasePMouseClicked
         // TODO add your handling code here:
