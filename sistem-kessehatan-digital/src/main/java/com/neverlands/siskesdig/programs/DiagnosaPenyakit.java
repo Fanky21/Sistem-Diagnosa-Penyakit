@@ -4,19 +4,20 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.neverlands.siskesdig.programs.Graphic.HasilDiagnosaForm;
+import com.neverlands.siskesdig.programs.Graphic.LoginForm;
 
 public class DiagnosaPenyakit extends Mysql {
-    
-    private Connection conn;
-    private String username;
+
+    String username;
 
     public DiagnosaPenyakit(String mysqlUrl, String mysqlUsername, String mysqlPassword) {
         super(mysqlUrl, mysqlUsername, mysqlPassword);
-        this.username = username;
+        this.username = LoginForm.getUsername();
     }
 
     public List<String> StartDiagnosa(String sentence) throws SQLException {
@@ -62,54 +63,54 @@ public class DiagnosaPenyakit extends Mysql {
 
         List<String> penyakitList = new ArrayList<>();
 
-        // if (status_hasil) {
+        if (status_hasil) {
 
-        //     while (hasil.next()) {
-        //         String data = hasil.getString("nama_penyakit");
-        //         penyakitList.add(data);
-        //     }
+            while (hasil.next()) {
+                String data = hasil.getString("nama_penyakit");
+                penyakitList.add(data);
+            }
 
-        //     int counter = penyakitList.size();
+            int counter = penyakitList.size();
 
-        //     if (counter > 3) {
+            if (counter > 3) {
 
-        //         HasilDiagnosaForm.Hasil2.setText("Mohon masukkan gejala yang lebih spesifik!");
+                HasilDiagnosaForm.Hasil2.setText("Mohon masukkan gejala yang lebih spesifik!");
 
-        //     } else if (counter <= 3) {
+            } else if (counter <= 3) {
 
-        //         if (counter == 0) {
-        //             HasilDiagnosaForm.Hasil2.setText("Tidak ada penyakit yang sesuai");
+                if (counter == 0) {
+                    HasilDiagnosaForm.Hasil2.setText("Tidak ada penyakit yang sesuai");
 
-        //         } else {
+                } else {
 
-        //             System.out.println("Penyakit kamu adalah: ");
-        //             for (String penyakit : penyakitList) {
-        //                 System.out.println(penyakit);
-        //             }
+                    System.out.println("Penyakit kamu adalah: ");
+                    for (String penyakit : penyakitList) {
+                        System.out.println(penyakit);
+                    }
 
-        //             int persentage = 100 / counter;
-        //             System.out.println("Persentase terkena penyakit di atas adalah: " + persentage + "%");
+                    int persentage = 100 / counter;
+                    System.out.println("Persentase terkena penyakit di atas adalah: " + persentage + "%");
 
-        //             LocalDate currentDate = LocalDate.now();
+                    LocalDate currentDate = LocalDate.now();
 
-        //             PreparedStatement riwayat_penyakit = conn.prepareStatement("INSERT INTO riwayat_penyakit (username, tanggal_diagnosa, penyakit) VALUES (?,?,?)");
-        //             riwayat_penyakit.setString(1, username);
-        //             riwayat_penyakit.setString(2, currentDate.toString());
+                    PreparedStatement riwayat_penyakit = conn.prepareStatement("INSERT INTO riwayat_penyakit (username, tanggal_diagnosa, penyakit) VALUES (?,?,?)");
+                    riwayat_penyakit.setString(1, username);
+                    riwayat_penyakit.setString(2, currentDate.toString());
 
-        //             for (String penyakit : penyakitList) {
-        //                 riwayat_penyakit.setString(3, penyakit);
-        //                 riwayat_penyakit.executeUpdate();
-        //             }
+                    for (String penyakit : penyakitList) {
+                        riwayat_penyakit.setString(3, penyakit);
+                        riwayat_penyakit.executeUpdate();
+                    }
 
-        //         }
-        //     }
-        // } else {
+                }
+            }
+        } else {
 
-        //     System.out.println("Data Penyakit Tidak Ditemukan!");
+            System.out.println("Data Penyakit Tidak Ditemukan!");
 
-        //     HasilDiagnosaForm.Hasil2.setText("Data Penyakit Tidak Ditemukan!");
+            HasilDiagnosaForm.Hasil2.setText("Data Penyakit Tidak Ditemukan!");
 
-        // }
+        }
 
         return penyakitList;
 
