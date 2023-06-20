@@ -9,8 +9,6 @@ import java.awt.event.MouseEvent;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import com.neverlands.siskesdig.programs.controller.MessageBox;
-
 /**
  *
  * @author Fakhrizal
@@ -115,9 +113,10 @@ public class MainmenuForm extends javax.swing.JFrame {
         jLabel3.setText("jLabel4");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, -1));
 
+
         User.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
         User.setForeground(new java.awt.Color(47, 143, 38));
-        User.setText("User");
+        User.setText(LoginForm.getUsername());
         getContentPane().add(User, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 240, 50));
 
         Selamat1.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
@@ -134,38 +133,57 @@ public class MainmenuForm extends javax.swing.JFrame {
         getContentPane().add(Logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, -1, -1));
 
         DiagnosaP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Diagnosa_Penyakit.png"))); // NOI18N
+        DiagnosaP.addMouseListener(new java.awt.event.MouseAdapter(){
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DiagnosaPMouseClicked(evt);
+            }
+        });
         getContentPane().add(DiagnosaP, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
         DaftarP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Daftar_Penyakit.png"))); // NOI18N
+        DaftarP.addMouseListener(new java.awt.event.MouseAdapter(){
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DaftarPMouseClicked(evt);
+            }
+        });
         getContentPane().add(DaftarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, -1, -1));
 
         HubungiD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Hubungi_Dokter.png"))); // NOI18N
-        getContentPane().add(HubungiD, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, -1, -1));
+        HubungiD.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HubungiDMouseClicked(evt);
+            }
+        });
+        getContentPane().add(HubungiD, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, -1, -1));;
+        
 
         DatabaseP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Database_Penyakit.png"))); // NOI18N
         DatabaseP.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DatabasePMouseClicked(evt);
 
-                LDPenyakit.setVisible(true);
-                jLabel5.setVisible(true);
-                jLabel3.setVisible(true);
+        //     //     LDPenyakit.setVisible(true);
+        //     //     jLabel5.setVisible(true);
+        //     //     jLabel3.setVisible(true);
                 
-                Timer timer = new Timer();
+        //     //     Timer timer = new Timer();
 
-                timer.schedule(new TimerTask() {
+        //     //     timer.schedule(new TimerTask() {
 
-                @Override
-                public void run() {
+        //     //     @Override
+        //     //     public void run() {
 
-                LDPenyakit.setVisible(false);
-                jLabel5.setVisible(false);
-                jLabel3.setVisible(false);
+        //     //     LDPenyakit.setVisible(false);
+        //     //     jLabel5.setVisible(false);
+        //     //     jLabel3.setVisible(false);
 
-                DatabasePenyakitForm DatabasePenyakitForm = new DatabasePenyakitForm();
-                DatabasePenyakitForm.setVisible(true);
+        //     //     DatabasePenyakitForm DatabasePenyakitForm = new DatabasePenyakitForm();
+        //     //     DatabasePenyakitForm.setVisible(true);
+        //     //     dispose();
 
-                }
-                }, 2000);
+        //     //     }
+        //     //     }, 2000);
+
 
 
             }
@@ -173,6 +191,11 @@ public class MainmenuForm extends javax.swing.JFrame {
         getContentPane().add(DatabaseP, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, -1, -1));
 
         RiwayatP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Riwayat_Penyakit.png"))); // NOI18N
+        RiwayatP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RiwayatPMouseClicked(evt);
+            }
+        });
         getContentPane().add(RiwayatP, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 600, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Main_Menu1.png"))); // NOI18N
@@ -190,12 +213,134 @@ public class MainmenuForm extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_LogoutMouseClicked
 
+    private void DiagnosaPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DatabasePMouseClicked
+        // TODO add your handling code here:
+        LDiagnosa.setVisible(true);
+                jLabel5.setVisible(true);
+                jLabel3.setVisible(true);
+                
+                Timer timer = new Timer();
+
+                timer.schedule(new TimerTask() {
+
+                @Override
+                public void run() {
+                
+                dispose();
+                LDiagnosa.setVisible(false);
+                jLabel5.setVisible(false);
+                jLabel3.setVisible(false);
+                
+                DiagnosaForm DiagnosaForm = new DiagnosaForm();
+                DiagnosaForm.setVisible(true);
+                
+
+                }
+                }, 2000);
+    }//GEN-LAST:event_DatabasePMouseClicked
+
+    private void DaftarPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DatabasePMouseClicked
+        // TODO add your handling code here:
+                LDFPenyakit.setVisible(true);
+                jLabel5.setVisible(true);
+                jLabel3.setVisible(true);
+                
+                Timer timer = new Timer();
+
+                timer.schedule(new TimerTask() {
+
+                @Override
+                public void run() {
+                
+                dispose();
+                LDFPenyakit.setVisible(false);
+                jLabel5.setVisible(false);
+                jLabel3.setVisible(false);
+                
+                DaftarPenyakitForm DaftarPenyakitForm = new DaftarPenyakitForm();
+                DaftarPenyakitForm.setVisible(true);
+                
+
+                }
+                }, 2000);
+    }//GEN-LAST:event_DatabasePMouseClicked
+
+    private void HubungiDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DatabasePMouseClicked
+        // TODO add your handling code here:
+                LHubungi.setVisible(true);
+                jLabel5.setVisible(true);
+                jLabel3.setVisible(true);
+                
+                Timer timer = new Timer();
+
+                timer.schedule(new TimerTask() {
+
+                @Override
+                public void run() {
+                
+                dispose();
+                LHubungi.setVisible(false);
+                jLabel5.setVisible(false);
+                jLabel3.setVisible(false);
+                
+                HubungiDokterForm HubungiDokterForm = new HubungiDokterForm();
+                HubungiDokterForm.setVisible(true);
+                
+
+                }
+                }, 2000);
+    }//GEN-LAST:event_DatabasePMouseClicked
+
     private void DatabasePMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DatabasePMouseClicked
         // TODO add your handling code here:
-        DatabasePenyakitForm DatabasePenyakitForm = new DatabasePenyakitForm();
-        DatabasePenyakitForm.setVisible(true);
+                LDPenyakit.setVisible(true);
+                jLabel5.setVisible(true);
+                jLabel3.setVisible(true);
+                
+                Timer timer = new Timer();
 
-        dispose();
+                timer.schedule(new TimerTask() {
+
+                @Override
+                public void run() {
+                
+                dispose();
+                LDPenyakit.setVisible(false);
+                jLabel5.setVisible(false);
+                jLabel3.setVisible(false);
+
+                DatabasePenyakitForm DatabasePenyakitForm = new DatabasePenyakitForm();
+                DatabasePenyakitForm.setVisible(true);
+                
+
+                }
+                }, 2000);
+    }//GEN-LAST:event_DatabasePMouseClicked
+
+    private void RiwayatPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DatabasePMouseClicked
+        // TODO add your handling code here:
+                LRiwayat.setVisible(true);
+                jLabel5.setVisible(true);
+                jLabel3.setVisible(true);
+                
+                Timer timer = new Timer();
+
+                timer.schedule(new TimerTask() {
+
+                @Override
+                public void run() {
+                
+                dispose();
+                LRiwayat.setVisible(false);
+                jLabel5.setVisible(false);
+                jLabel3.setVisible(false);
+
+                RiwayatForm RiwayatForm = new RiwayatForm();
+                RiwayatForm.setVisible(true);
+                
+
+                }
+                }, 2000);
     }//GEN-LAST:event_DatabasePMouseClicked
 
     /**
