@@ -4,7 +4,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import com.neverlands.siskesdig.programs.controller.config;
+import com.neverlands.siskesdig.programs.controller.Config;
 
 public class DatabasePenyakit {
     private String inputKode;
@@ -15,7 +15,7 @@ public class DatabasePenyakit {
     Connection conn;
     
     public DatabasePenyakit(String inputKode, String inputPenyakit, String inputDeskripsi, String inputGejala) throws SQLException{
-        this.conn = DriverManager.getConnection(config.MYSQL_url,config.MYSQL_username ,config.MYSQL_password);
+        this.conn = DriverManager.getConnection(Config.MYSQL_url,Config.MYSQL_username ,Config.MYSQL_password);
         this.inputKode = inputKode;
         this.inputPenyakit = inputPenyakit;
         this.inputDeskripsi = inputDeskripsi;

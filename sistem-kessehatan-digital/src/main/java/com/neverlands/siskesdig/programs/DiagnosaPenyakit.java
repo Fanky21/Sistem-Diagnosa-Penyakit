@@ -1,32 +1,20 @@
 package com.neverlands.siskesdig.programs;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-public class DiagnosaPenyakit {
+public class DiagnosaPenyakit extends Mysql{
     private Connection conn;
     private String username;
-    private String mysqlUrl;
-    private String mysqlUsername;
-    private String mysqlPassword;
-    
 
     public DiagnosaPenyakit(String mysqlUrl, String mysqlUsername, String mysqlPassword, String username) {
-        this.mysqlUrl = mysqlUrl;
-        this.mysqlUsername = mysqlUsername;
-        this.mysqlPassword = mysqlPassword;
+        super(mysqlUrl, mysqlUsername, mysqlPassword);
         this.username = username;
-    }
-
-    public void connectToDatabase() throws SQLException {
-        conn = DriverManager.getConnection(mysqlUrl, mysqlUsername, mysqlPassword);
-    }
-
-    public void closeConnection() throws SQLException {
-        if (conn != null) {
-            conn.close();
-        }
     }
 
     public List<String> StartDiagnosa(String sentence) throws SQLException {

@@ -6,7 +6,7 @@ package com.neverlands.siskesdig.programs.controller;
 
 import java.awt.Color;
 
-import com.neverlands.siskesdig.programs.LoginRegist;
+import com.neverlands.siskesdig.programs.SystemLogin;
 
 /**
  *
@@ -56,7 +56,7 @@ public class MessageBox extends javax.swing.JFrame {
         Text.setBackground(new java.awt.Color(255, 255, 255));
         Text.setFont(new java.awt.Font("Concert One", 0, 20)); // NOI18N
         Text.setForeground(new java.awt.Color(78, 78, 78));
-        Text.setText(LoginRegist.getText());
+        Text.setText(SystemLogin.getText());
         getContentPane().add(Text, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 290, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/alert.png"))); // NOI18N

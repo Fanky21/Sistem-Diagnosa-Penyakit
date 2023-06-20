@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import com.neverlands.siskesdig.programs.LoginRegist;
+import com.neverlands.siskesdig.programs.SystemLogin;
 
 public class LoginForm extends javax.swing.JFrame {
     private int xOffset;
@@ -187,9 +187,9 @@ public class LoginForm extends javax.swing.JFrame {
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) throws SQLException, InterruptedException {//GEN-FIRST:event_LoginActionPerformed
         // TODO add your handling code here:
 
-        String Username = inputUsername.getText();
+            String Username = inputUsername.getText();
             String Password = inputPassword.getText();
-            LoginRegist loginRegist = new LoginRegist();
+            SystemLogin loginRegist = new SystemLogin("jdbc:mysql://51.161.134.32/sistem_kesehatan", "database_pbo", "pbo331");
 
             try {
                 loginRegist.login(Username, Password);

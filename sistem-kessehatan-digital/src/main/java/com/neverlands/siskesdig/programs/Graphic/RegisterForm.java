@@ -9,7 +9,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 
-import com.neverlands.siskesdig.programs.LoginRegist;
+import com.neverlands.siskesdig.programs.SystemLogin;
 
 /**
  *
@@ -221,10 +221,10 @@ public class RegisterForm extends javax.swing.JFrame {
         String Username = inputUsername.getText();
         String Password = inputPassword.getText();
 
-        LoginRegist LoginRegist = new LoginRegist();
+        SystemLogin loginRegist = new SystemLogin("jdbc:mysql://51.161.134.32/sistem_kesehatan", "database_pbo", "pbo331");
         
         try {
-            LoginRegist.register(Username, Password);
+            loginRegist.register(Username, Password);
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
