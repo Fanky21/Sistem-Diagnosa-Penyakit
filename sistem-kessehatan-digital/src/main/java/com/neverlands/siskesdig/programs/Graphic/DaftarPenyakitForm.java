@@ -3,6 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.neverlands.siskesdig.programs.Graphic;
+import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseEvent;
 
 /**
  *
@@ -13,8 +17,37 @@ public class DaftarPenyakitForm extends javax.swing.JFrame {
     /**
      * Creates new form DaftarPenyakitForm
      */
+
+    private int xOffset;
+    private int yOffset;
+
     public DaftarPenyakitForm() {
+        setUndecorated(true);
         initComponents();
+        this.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.0f));
+
+        // Tambahkan mouse listener pada JFrame
+        addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                // Dapatkan koordinat awal saat tombol mouse ditekan
+                xOffset = e.getX();
+                yOffset = e.getY();
+            }
+        });
+
+        // Tambahkan mouse motion listener pada JFrame
+        addMouseMotionListener(new MouseAdapter() {
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                // Hitung perubahan koordinat saat mouse digeser
+                int newX = getLocation().x + e.getX() - xOffset;
+                int newY = getLocation().y + e.getY() - yOffset;
+
+                // Set posisi baru untuk JFrame
+                setLocation(newX, newY);
+            }
+        });
     }
 
     /**
@@ -27,6 +60,7 @@ public class DaftarPenyakitForm extends javax.swing.JFrame {
     private void initComponents() {
 
         Nama_Penyakit = new javax.swing.JTextField();
+        Back = new javax.swing.JLabel();
         Deskripsi = new javax.swing.JLabel();
         Gejala = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -43,13 +77,21 @@ public class DaftarPenyakitForm extends javax.swing.JFrame {
                 Nama_PenyakitActionPerformed(evt);
             }
         });
-        getContentPane().add(Nama_Penyakit, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 330, 30));
+        getContentPane().add(Nama_Penyakit, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 350, 30));
+
+        Back.setIcon(new javax.swing.ImageIcon("F:\\ITK\\Semester 2\\PBO\\new\\Sistem-Diagnosa-Penyakit\\sistem-kessehatan-digital\\src\\main\\java\\com\\neverlands\\siskesdig\\bin\\Back.png")); // NOI18N
+        Back.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BackMouseClicked(evt);
+            }
+        });
+        getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 20, -1, -1));
 
         Deskripsi.setBackground(new java.awt.Color(255, 255, 255));
         Deskripsi.setFont(new java.awt.Font("Concert One", 0, 12)); // NOI18N
         Deskripsi.setForeground(new java.awt.Color(0, 0, 0));
         Deskripsi.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        getContentPane().add(Deskripsi, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 310, 330));
+        getContentPane().add(Deskripsi, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 310, 350));
 
         Gejala.setBackground(new java.awt.Color(255, 255, 255));
         Gejala.setFont(new java.awt.Font("Concert One", 0, 12)); // NOI18N
@@ -57,15 +99,26 @@ public class DaftarPenyakitForm extends javax.swing.JFrame {
         Gejala.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         getContentPane().add(Gejala, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 310, 120));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Daftar Penyakit2.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/DaftarPenyakit.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
+        setLocationRelativeTo(null);
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void Nama_PenyakitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nama_PenyakitActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Nama_PenyakitActionPerformed
+
+    private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
+        // TODO add your handling code here:
+        MainmenuForm MainmenuForm = new MainmenuForm();
+        MainmenuForm.setVisible(true);
+
+        dispose();
+
+    }//GEN-LAST:event_BackMouseClicked
 
     /**
      * @param args the command line arguments
@@ -103,6 +156,7 @@ public class DaftarPenyakitForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Back;
     private javax.swing.JLabel Deskripsi;
     private javax.swing.JLabel Gejala;
     private javax.swing.JTextField Nama_Penyakit;
