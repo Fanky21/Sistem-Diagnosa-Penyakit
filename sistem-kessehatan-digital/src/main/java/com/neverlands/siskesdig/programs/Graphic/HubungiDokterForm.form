@@ -28,7 +28,7 @@
     <Component class="javax.swing.JLabel" name="Back">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="F:\ITK\Semester 2\PBO\new\Sistem-Diagnosa-Penyakit\sistem-kessehatan-digital\src\main\java\com\neverlands\siskesdig\bin\Back.png"/>
+          <Image iconType="3" name="/com/neverlands/siskesdig/bin/Back.png"/>
         </Property>
       </Properties>
       <Events>
@@ -43,7 +43,7 @@
     <Component class="javax.swing.JLabel" name="Background">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="F:\ITK\Semester 2\PBO\new\Sistem-Diagnosa-Penyakit\sistem-kessehatan-digital\src\main\java\com\neverlands\siskesdig\bin\Hubungi_Dokter1.png"/>
+          <Image iconType="3" name="/com/neverlands/siskesdig/bin/Hubungi_Dokter1.png"/>
         </Property>
       </Properties>
       <Constraints>

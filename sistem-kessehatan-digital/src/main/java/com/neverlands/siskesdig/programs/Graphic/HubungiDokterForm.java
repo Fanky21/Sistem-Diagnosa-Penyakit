@@ -64,7 +64,7 @@ public class HubungiDokterForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Back.setIcon(new javax.swing.ImageIcon("F:\\ITK\\Semester 2\\PBO\\new\\Sistem-Diagnosa-Penyakit\\sistem-kessehatan-digital\\src\\main\\java\\com\\neverlands\\siskesdig\\bin\\Back.png")); // NOI18N
+        Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Back.png"))); // NOI18N
         Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BackMouseClicked(evt);
@@ -72,13 +72,10 @@ public class HubungiDokterForm extends javax.swing.JFrame {
         });
         getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, -1, -1));
 
-        Background.setIcon(new javax.swing.ImageIcon("F:\\ITK\\Semester 2\\PBO\\new\\Sistem-Diagnosa-Penyakit\\sistem-kessehatan-digital\\src\\main\\java\\com\\neverlands\\siskesdig\\bin\\Hubungi_Dokter1.png")); // NOI18N
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Hubungi_Dokter1.png"))); // NOI18N
         getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
-
-        setLocationRelativeTo(null);
-
     }// </editor-fold>//GEN-END:initComponents
 
     private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
