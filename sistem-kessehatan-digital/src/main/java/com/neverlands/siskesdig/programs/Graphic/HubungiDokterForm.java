@@ -59,6 +59,7 @@ public class HubungiDokterForm extends javax.swing.JFrame {
     private void initComponents() {
 
         Back = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -70,9 +71,12 @@ public class HubungiDokterForm extends javax.swing.JFrame {
                 BackMouseClicked(evt);
             }
         });
-        getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, -1, -1));
+        getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, -1, -1));
 
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Hubungi_Dokter1.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/hubungi_kami.gif"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 200, 190));
+
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Hubungi_Dokterbeneran.png"))); // NOI18N
         getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -125,5 +129,6 @@ public class HubungiDokterForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Back;
     private javax.swing.JLabel Background;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
