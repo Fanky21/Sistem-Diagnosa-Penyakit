@@ -83,6 +83,7 @@ public class RiwayatForm extends javax.swing.JFrame {
         jTable1.setBackground(new java.awt.Color(255, 255, 255));
         jTable1.setFont(new java.awt.Font("Bahnschrift", 1, 13)); // NOI18N
         jTable1.setForeground(new java.awt.Color(0, 0, 0));
+        jTable1.setEnabled(false);
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null}
