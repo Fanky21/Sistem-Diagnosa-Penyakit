@@ -166,12 +166,23 @@ public class MainmenuForm extends javax.swing.JFrame {
         DatabaseP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Database_Penyakit.png"))); // NOI18N
         DatabaseP.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DatabaseP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/clickDatabase_Penyakit.png")));
+                Timer timer = new Timer();
+
+                timer.schedule(new TimerTask() {
+
+                @Override
+                public void run() {
+                
                 try {
                     DatabasePMouseClicked(evt);
                 } catch (SQLException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
+
+                }
+                }, 2000);
             }
         });
         getContentPane().add(DatabaseP, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, -1, -1));
@@ -199,7 +210,7 @@ public class MainmenuForm extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_LogoutMouseClicked
 
-    private void DiagnosaPMouseClicked(java.awt.event.MouseEvent evt) {                                       
+    private void DiagnosaPMouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
         LDiagnosa.setVisible(true);
                 jLabel5.setVisible(true);
@@ -223,9 +234,8 @@ public class MainmenuForm extends javax.swing.JFrame {
 
                 }
                 }, 2000);
-    }                                      
-
-    private void DaftarPMouseClicked(java.awt.event.MouseEvent evt) {                                       
+    }
+    private void DaftarPMouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
                 LDFPenyakit.setVisible(true);
                 jLabel5.setVisible(true);
@@ -249,9 +259,9 @@ public class MainmenuForm extends javax.swing.JFrame {
 
                 }
                 }, 2000);
-    }                                      
+    }
 
-    private void HubungiDMouseClicked(java.awt.event.MouseEvent evt) {                                       
+    private void HubungiDMouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
                 LHubungi.setVisible(true);
                 jLabel5.setVisible(true);
@@ -275,9 +285,9 @@ public class MainmenuForm extends javax.swing.JFrame {
 
                 }
                 }, 2000);
-    }                                      
+    }
 
-    private void DatabasePMouseClicked(java.awt.event.MouseEvent evt) throws SQLException {                                       
+    private void DatabasePMouseClicked(java.awt.event.MouseEvent evt) throws SQLException {
         // TODO add your handling code here:
 
                 Connection conn;
@@ -289,6 +299,8 @@ public class MainmenuForm extends javax.swing.JFrame {
                 ResultSet hasil = syntax_cek.executeQuery();
 
                 Boolean hasil_boolean = hasil.next();
+
+                DatabaseP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Database_Penyakit.png")));
 
                 if (hasil_boolean) {
 
@@ -310,6 +322,7 @@ public class MainmenuForm extends javax.swing.JFrame {
 
                     DatabasePenyakitForm DatabasePenyakitForm = new DatabasePenyakitForm();
                     DatabasePenyakitForm.setVisible(true);
+
                     
 
                     }
@@ -324,7 +337,7 @@ public class MainmenuForm extends javax.swing.JFrame {
 
                 }
                 
-    }                                      
+    }
 
     private void RiwayatPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DatabasePMouseClicked
         // TODO add your handling code here:
