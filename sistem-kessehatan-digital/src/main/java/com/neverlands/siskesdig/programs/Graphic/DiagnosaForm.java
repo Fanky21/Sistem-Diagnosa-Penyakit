@@ -7,10 +7,6 @@ package com.neverlands.siskesdig.programs.Graphic;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.sql.SQLException;
-import java.util.List;
-
-import com.neverlands.siskesdig.programs.DiagnosaPenyakit;
 
 /**
  *
@@ -127,6 +123,7 @@ public class DiagnosaForm extends javax.swing.JFrame {
 
         HasilDiagnosaForm HasilDiagnosaForm = new HasilDiagnosaForm();
         HasilDiagnosaForm.run();
+        dispose();
 
 
 
