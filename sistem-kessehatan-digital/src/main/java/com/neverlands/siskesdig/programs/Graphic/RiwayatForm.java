@@ -225,6 +225,9 @@ public class RiwayatForm extends javax.swing.JFrame {
                     String column1Value = resultSet.getString("tanggal_diagnosa");
                     String column2Value = resultSet.getString("penyakit");
 
+                    System.out.println("1: " + column1Value);
+                    System.out.println("2: " + column2Value);
+
                     model.addRow(new Object[]{column1Value, column2Value});
                 }
 

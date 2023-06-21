@@ -7,12 +7,19 @@ package com.neverlands.siskesdig.programs.Graphic;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import javax.swing.table.DefaultTableModel;
+
 import com.neverlands.siskesdig.programs.DiagnosaPenyakit;
+import com.neverlands.siskesdig.programs.controller.Config;
+import com.neverlands.siskesdig.programs.controller.MessageBox;
 
 /**
  *
@@ -64,22 +71,23 @@ public class HasilDiagnosaForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Back = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        Persen1 = new javax.swing.JLabel();
-        Penyakit1 = new javax.swing.JLabel();
-        Hasil1 = new javax.swing.JLabel();
-        Persen2 = new javax.swing.JLabel();
-        Penyakit2 = new javax.swing.JLabel();
-        Hasil2 = new javax.swing.JLabel();
-        Persen3 = new javax.swing.JLabel();
-        Penyakit3 = new javax.swing.JLabel();
-        Hasil3 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        Back = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/diagnosa_penyakit.gif"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/loadingsplash.gif"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 400, 350));
 
         Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Back.png"))); // NOI18N
         Back.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -89,72 +97,60 @@ public class HasilDiagnosaForm extends javax.swing.JFrame {
         });
         getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 30, -1, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/loadingsplash.gif"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, -1));
+        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/diagnosa_penyakit.gif"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, -1, -1));
+            jTable1.setBackground(new java.awt.Color(255, 255, 255));
+            jTable1.setFont(new java.awt.Font("Bahnschrift", 1, 13)); // NOI18N
+            jTable1.setForeground(new java.awt.Color(0, 0, 0));
+            jTable1.setEnabled(false);
+            jTable1.setModel(new javax.swing.table.DefaultTableModel(
+                new Object [][] {
+                    {null}
+                },
+                new String [] {
+                    "Penyakit yang mungkin sedang diderita!"
+                }
+            ) {
+                Class[] types = new Class [] {
+                    java.lang.String.class
+                };
+                boolean[] canEdit = new boolean [] {
+                    false
+                };
 
-        Persen1.setBackground(new java.awt.Color(255, 255, 255));
-        Persen1.setFont(new java.awt.Font("Bahnschrift", 1, 20)); // NOI18N
-        Persen1.setForeground(new java.awt.Color(0, 0, 0));
-        Persen1.setText("");
-        getContentPane().add(Persen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 420, 50));
+                public Class getColumnClass(int columnIndex) {
+                    return types [columnIndex];
+                }
 
-        Penyakit1.setBackground(new java.awt.Color(255, 255, 255));
-        Penyakit1.setFont(new java.awt.Font("Bahnschrift", 1, 25)); // NOI18N
-        Penyakit1.setForeground(new java.awt.Color(0, 0, 0));
-        Penyakit1.setText("Penyakit 1 :");
-        Penyakit1.setVisible(false);
-        getContentPane().add(Penyakit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 420, 40));
+                public boolean isCellEditable(int rowIndex, int columnIndex) {
+                    return canEdit [columnIndex];
+                }
+            });
+            jScrollPane1.setViewportView(jTable1);
+            if (jTable1.getColumnModel().getColumnCount() > 0) {
+                jTable1.getColumnModel().getColumn(0).setResizable(false);
+            }
 
-        Hasil1.setBackground(new java.awt.Color(255, 255, 255));
-        Hasil1.setFont(new java.awt.Font("Bahnschrift", 1, 20)); // NOI18N
-        Hasil1.setForeground(new java.awt.Color(0, 0, 0));
-        Hasil1.setText("");
-        getContentPane().add(Hasil1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 420, 40));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 460, 430));
 
-        Persen2.setBackground(new java.awt.Color(255, 255, 255));
-        Persen2.setFont(new java.awt.Font("Bahnschrift", 1, 20)); // NOI18N
-        Persen2.setForeground(new java.awt.Color(0, 0, 0));
-        Persen2.setText("");
-        getContentPane().add(Persen2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 420, 50));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/simpan_history_button.png"))); // NOI18N
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 680, -1, -1));
 
-        Penyakit2.setBackground(new java.awt.Color(255, 255, 255));
-        Penyakit2.setFont(new java.awt.Font("Bahnschrift", 1, 25)); // NOI18N
-        Penyakit2.setForeground(new java.awt.Color(0, 0, 0));
-        Penyakit2.setText("Penyakit 2 :");
-        Penyakit2.setVisible(false);
-        getContentPane().add(Penyakit2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 420, 40));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/cek_persentase_button.png"))); // NOI18N
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 680, -1, -1));
 
-        Hasil2.setBackground(new java.awt.Color(255, 255, 255));
-        Hasil2.setFont(new java.awt.Font("Bahnschrift", 1, 20)); // NOI18N
-        Hasil2.setForeground(new java.awt.Color(0, 0, 0));
-        Hasil2.setText("");
-        getContentPane().add(Hasil2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 420, 40));
-
-        Persen3.setBackground(new java.awt.Color(255, 255, 255));
-        Persen3.setFont(new java.awt.Font("Bahnschrift", 1, 20)); // NOI18N
-        Persen3.setForeground(new java.awt.Color(0, 0, 0));
-        Persen3.setText("");
-        getContentPane().add(Persen3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 610, 420, 50));
-
-        Penyakit3.setBackground(new java.awt.Color(255, 255, 255));
-        Penyakit3.setFont(new java.awt.Font("Bahnschrift", 1, 25)); // NOI18N
-        Penyakit3.setForeground(new java.awt.Color(0, 0, 0));
-        Penyakit3.setText("Penyakit 3 :");
-        Penyakit3.setVisible(false);
-        getContentPane().add(Penyakit3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 420, 40));
-
-        Hasil3.setBackground(new java.awt.Color(255, 255, 255));
-        Hasil3.setFont(new java.awt.Font("Bahnschrift", 1, 20)); // NOI18N
-        Hasil3.setForeground(new java.awt.Color(0, 0, 0));
-        Hasil3.setText("");
-        getContentPane().add(Hasil3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 570, 420, 40));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Hasil_Diagnosa.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/hasildiagnosa_new.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
 
         pack();
         setLocationRelativeTo(null);
@@ -168,6 +164,26 @@ public class HasilDiagnosaForm extends javax.swing.JFrame {
         dispose();
 
     }//GEN-LAST:event_BackMouseClicked
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        // TODO add your handling code here:
+
+        // DiagnosaPenyakit.SimpanHistory();
+
+    }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        // TODO add your handling code here:
+
+        DiagnosaPenyakit diagnose = new DiagnosaPenyakit(Config.MYSQL_url, Config.MYSQL_username, Config.MYSQL_password, LoginForm.getUsername());
+        int hasil = diagnose.GetCounter();
+
+        String newtext = "Persentase: " + hasil/100 + "%";
+        MessageBox messageBox = new MessageBox();
+        messageBox.messageinfo(newtext);
+        messageBox.setVisible(true);
+
+    }//GEN-LAST:event_jLabel5MouseClicked
 
     /**
      * @param args the command line arguments
@@ -225,21 +241,9 @@ public class HasilDiagnosaForm extends javax.swing.JFrame {
                 String kalimat = DiagnosaForm.jTextArea1.getText();
 
                 List<String> penyakitList;
+                
                 try {
                     penyakitList = (List<String>) diagnosa.startDiagnosa(kalimat);
-
-                    if (penyakitList.size() >= 1) {
-                    HasilDiagnosaForm.Hasil1.setText(penyakitList.get(0));
-
-                    }
-                    if (penyakitList.size() >= 2) {
-                        HasilDiagnosaForm.Hasil2.setText(penyakitList.get(1));
-
-                    }
-                    if (penyakitList.size() >= 3) {
-                        HasilDiagnosaForm.Hasil3.setText(penyakitList.get(2));
-                    }
-
                 } catch (SQLException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
@@ -248,25 +252,19 @@ public class HasilDiagnosaForm extends javax.swing.JFrame {
                 }
                 }, 2000);
 
-
-            }
-        });
-    }
+                }
+            });
+        }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Back;
-    public static javax.swing.JLabel Hasil1;
-    public static javax.swing.JLabel Hasil2;
-    public static javax.swing.JLabel Hasil3;
-    public static javax.swing.JLabel Penyakit1;
-    public static javax.swing.JLabel Penyakit2;
-    public static javax.swing.JLabel Penyakit3;
-    public static  javax.swing.JLabel Persen1;
-    public static  javax.swing.JLabel Persen2;
-    public static  javax.swing.JLabel Persen3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private static javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private static javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 
     public void run() {
@@ -301,5 +299,20 @@ public class HasilDiagnosaForm extends javax.swing.JFrame {
         }, 2000);
 
     }
+
+    public static void InsertTable(boolean status_hasil, List<String> penyakitList) {
+
+        System.out.println("List penyakit: "+ penyakitList);
+
+        DefaultTableModel model = new DefaultTableModel(new Object[]{"Penyakit yang mungkin diderita!"}, 0);
+
+            for (String data : penyakitList) {
+                System.out.println("Penyakit: " + data);
+                model.addRow(new Object[]{data});
+            }
+
+            jTable1.setModel(model);
+            
+        }
 
 }
