@@ -142,7 +142,20 @@ public class MainmenuForm extends javax.swing.JFrame {
         DiagnosaP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Diagnosa_Penyakit.png"))); // NOI18N
         DiagnosaP.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DiagnosaP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/clickDiagnosa_Penyakit.png")));
+
+                Timer timer = new Timer();
+
+                timer.schedule(new TimerTask() {
+
+                @Override
+                public void run() {
+                
                 DiagnosaPMouseClicked(evt);
+
+                }
+                }, 500);
+                
             }
         });
         getContentPane().add(DiagnosaP, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
@@ -182,7 +195,7 @@ public class MainmenuForm extends javax.swing.JFrame {
                 }
 
                 }
-                }, 2000);
+                }, 500);
             }
         });
         getContentPane().add(DatabaseP, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, -1, -1));
@@ -212,7 +225,8 @@ public class MainmenuForm extends javax.swing.JFrame {
 
     private void DiagnosaPMouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
-        LDiagnosa.setVisible(true);
+                DiagnosaP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Diagnosa_Penyakit.png")));
+                LDiagnosa.setVisible(true);
                 jLabel5.setVisible(true);
                 jLabel3.setVisible(true);
                 
