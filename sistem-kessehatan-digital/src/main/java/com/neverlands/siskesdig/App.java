@@ -14,7 +14,7 @@ public class App {
     
     public static void main(String[] args) {
         
-        SplashScreen.main(args);
+        SplashScreen.run();
 
     }
     

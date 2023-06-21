@@ -5,12 +5,10 @@
 package com.neverlands.siskesdig.programs.controller;
 
 import java.awt.Color;
-
 import java.util.Timer;
 import java.util.TimerTask;
 
 import com.neverlands.siskesdig.programs.Graphic.LoginForm;
-import com.neverlands.siskesdig.programs.Graphic.MainmenuForm;
 
 /**
  *
@@ -109,4 +107,24 @@ public class SplashScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
+    public static void run() {
+        SplashScreen splash = new SplashScreen();
+            splash.setVisible(true);
+
+            Timer timer = new Timer();
+
+            timer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    
+                    splash.dispose();
+
+                    LoginForm loginForm = new LoginForm();
+                    loginForm.setVisible(true);
+
+                    timer.cancel();
+                    
+                }
+            }, 5000);
+    }
 }
