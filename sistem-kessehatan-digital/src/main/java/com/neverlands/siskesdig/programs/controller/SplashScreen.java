@@ -8,6 +8,9 @@ import java.awt.Color;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 import com.neverlands.siskesdig.programs.Graphic.LoginForm;
 
 /**
@@ -109,22 +112,63 @@ public class SplashScreen extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     public static void run() {
         SplashScreen splash = new SplashScreen();
-            splash.setVisible(true);
 
-            Timer timer = new Timer();
+            boolean isConnected = checkInternetConnection();
 
-            timer.schedule(new TimerTask() {
-                @Override
-                public void run() {
-                    
-                    splash.dispose();
+            if (isConnected) {
 
-                    LoginForm loginForm = new LoginForm();
-                    loginForm.setVisible(true);
+                splash.setVisible(true);
 
-                    timer.cancel();
-                    
-                }
-            }, 5000);
+                Timer timer = new Timer();
+
+                timer.schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                        
+                        splash.dispose();
+
+                        LoginForm loginForm = new LoginForm();
+                        loginForm.setVisible(true);
+
+                        timer.cancel();
+                        
+                    }
+                }, 5000);
+
+            } else {
+
+                String newtext = "Aplikasi membutuhkan internet!";
+                MessageBox messageBox = new MessageBox();
+                messageBox.messageinfo(newtext);
+                messageBox.setVisible(true);
+    
+                splash.dispose();
+
+                Timer timer = new Timer();
+
+                timer.schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                        
+                        System.exit(0);
+
+                        timer.cancel();
+                        
+                    }
+                }, 3000);
+            }
+
+            
+    }
+
+    public static boolean checkInternetConnection() {
+        try {
+            InetAddress address = InetAddress.getByName("www.google.com");
+            return address.isReachable(5000); // Timeout of 5 seconds
+        } catch (UnknownHostException e) {
+            return false;
+        } catch (Exception e) {
+            return false;
+        }
     }
 }

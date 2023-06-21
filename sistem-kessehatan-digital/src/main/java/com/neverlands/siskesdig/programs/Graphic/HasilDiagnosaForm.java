@@ -7,6 +7,8 @@ package com.neverlands.siskesdig.programs.Graphic;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -29,6 +31,7 @@ public class HasilDiagnosaForm extends javax.swing.JFrame {
 
     private int xOffset;
     private int yOffset;
+    private Connection conn;
 
     /**
      * Creates new form HasilDiagnosa
@@ -136,7 +139,12 @@ public class HasilDiagnosaForm extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/simpan_history_button.png"))); // NOI18N
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
+                try {
+                    jLabel4MouseClicked(evt);
+                } catch (SQLException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
             }
         });
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 680, -1, -1));
@@ -165,20 +173,24 @@ public class HasilDiagnosaForm extends javax.swing.JFrame {
 
     }//GEN-LAST:event_BackMouseClicked
 
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) throws SQLException {//GEN-FIRST:event_jLabel4MouseClicked
         // TODO add your handling code here:
 
-        // DiagnosaPenyakit.SimpanHistory();
+        conn = DriverManager.getConnection(Config.MYSQL_url, Config.MYSQL_username, Config.MYSQL_password);
+
+        List<String> nama_penyakit = DiagnosaPenyakit.GetPenyakit();
+
+        DiagnosaPenyakit.SimpanHistory(LoginForm.getUsername(), conn, nama_penyakit);
 
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
 
-        DiagnosaPenyakit diagnose = new DiagnosaPenyakit(Config.MYSQL_url, Config.MYSQL_username, Config.MYSQL_password, LoginForm.getUsername());
-        int hasil = diagnose.GetCounter();
+        int hasil = DiagnosaPenyakit.GetCounter();
+        System.out.println("Hasil here:" + hasil);
 
-        String newtext = "Persentase: " + hasil/100 + "%";
+        String newtext = "Persentase: " + 100/hasil + "%";
         MessageBox messageBox = new MessageBox();
         messageBox.messageinfo(newtext);
         messageBox.setVisible(true);

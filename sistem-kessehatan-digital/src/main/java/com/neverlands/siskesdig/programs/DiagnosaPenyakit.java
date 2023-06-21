@@ -17,6 +17,7 @@ public class DiagnosaPenyakit extends Mysql {
 
     private String username;
     private static int counter;
+    private static List<String> penyakitList;
 
     public DiagnosaPenyakit(String mysqlUrl, String mysqlUsername, String mysqlPassword, String username) {
         super(mysqlUrl, mysqlUsername, mysqlPassword);
@@ -65,7 +66,7 @@ public class DiagnosaPenyakit extends Mysql {
         ResultSet hasil = syntax.executeQuery();
         boolean status_hasil = hasil.next();
 
-        List<String> penyakitList = new ArrayList<>();
+        penyakitList = new ArrayList<>();
 
         while (status_hasil) {
             String data = hasil.getString("nama_penyakit");
@@ -74,7 +75,7 @@ public class DiagnosaPenyakit extends Mysql {
             status_hasil = hasil.next();
         }
 
-        int counter = penyakitList.size();
+        counter = penyakitList.size();
 
         if (counter > 0) { 
             HasilDiagnosaForm.InsertTable(status_hasil, penyakitList);
@@ -90,7 +91,7 @@ public class DiagnosaPenyakit extends Mysql {
 
     }
 
-        public static void SimpanHistory(String username, Connection conn, List<String> penyakitList) {
+        public static void SimpanHistory(String username, Connection conn, List<String> nama_penyakit) {
             LocalDate currentDate = LocalDate.now();
 
             try {
@@ -98,10 +99,17 @@ public class DiagnosaPenyakit extends Mysql {
                 riwayat_penyakit.setString(1, username);
                 riwayat_penyakit.setString(2, currentDate.toString());
 
-                for (String penyakit : penyakitList) {
+                for (String penyakit : nama_penyakit) {
                     riwayat_penyakit.setString(3, penyakit);
                     riwayat_penyakit.executeUpdate();
                 }
+
+                String newtext = "Riwayat berhasil disimpan!";
+                MessageBox messageBox = new MessageBox();
+                messageBox.messageinfo(newtext);
+                messageBox.setVisible(true);
+
+
             } catch (SQLException e) {
                 // Handle any potential exceptions here
                 e.printStackTrace();
@@ -109,7 +117,13 @@ public class DiagnosaPenyakit extends Mysql {
         }
 
         public static int GetCounter() {
+            System.out.println("count: " + counter);
             return counter;
+        }
+
+        public static List<String> GetPenyakit() {
+            
+            return penyakitList;
         }
 
 
