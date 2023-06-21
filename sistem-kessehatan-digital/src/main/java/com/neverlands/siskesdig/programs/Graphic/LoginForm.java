@@ -254,7 +254,7 @@ public class LoginForm extends javax.swing.JFrame {
 
     private void ExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitMouseClicked
         // TODO add your handling code here:
-        dispose();
+        System.exit(0);
     }//GEN-LAST:event_ExitMouseClicked
     
     public static String getUsername(){

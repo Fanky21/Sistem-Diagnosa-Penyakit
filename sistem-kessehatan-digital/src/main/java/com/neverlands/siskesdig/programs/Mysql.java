@@ -11,15 +11,15 @@ public abstract class Mysql {
     private String mysqlPassword;
     
     public Mysql(String mysqlUrl, String mysqlUsername, String mysqlPassword) {
+        this.mysqlUrl = mysqlUrl;
+        this.mysqlUsername = mysqlUsername;
+        this.mysqlPassword = mysqlPassword;
         try {
             conn = DriverManager.getConnection(mysqlUrl, mysqlUsername, mysqlPassword);
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        } 
-        this.mysqlUrl = mysqlUrl;
-        this.mysqlUsername = mysqlUsername;
-        this.mysqlPassword = mysqlPassword;
+        }
     }
     public String getUsername(){
         return mysqlUsername;
