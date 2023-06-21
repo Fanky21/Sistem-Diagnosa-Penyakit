@@ -163,7 +163,19 @@ public class MainmenuForm extends javax.swing.JFrame {
         DaftarP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Daftar_Penyakit.png"))); // NOI18N
         DaftarP.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DaftarP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/clickDaftar_Penyakit.png")));
+                
+                Timer timer = new Timer();
+
+                timer.schedule(new TimerTask() {
+
+                @Override
+                public void run() {
+                DaftarP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/clickDaftar_Penyakit.png")));
                 DaftarPMouseClicked(evt);
+                }
+                }, 500);
+                
             }
         });
         getContentPane().add(DaftarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, -1, -1));
@@ -171,7 +183,18 @@ public class MainmenuForm extends javax.swing.JFrame {
         HubungiD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Hubungi_Dokter.png"))); // NOI18N
         HubungiD.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HubungiD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/clickHubungi_Dokter.png")));
+                
+                Timer timer = new Timer();
+
+                timer.schedule(new TimerTask() {
+
+                @Override
+                public void run() {
+                HubungiD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Hubungi_Dokter.png")));
                 HubungiDMouseClicked(evt);
+                }
+                }, 500);
             }
         });
         getContentPane().add(HubungiD, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, -1, -1));
@@ -203,7 +226,20 @@ public class MainmenuForm extends javax.swing.JFrame {
         RiwayatP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Riwayat_Penyakit.png"))); // NOI18N
         RiwayatP.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RiwayatP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/clickRiwayat_Penyakit.png")));
+                
+                Timer timer = new Timer();
+
+                timer.schedule(new TimerTask() {
+
+                @Override
+                public void run() {
+                RiwayatP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Riwayat_Penyakit.png")));
                 RiwayatPMouseClicked(evt);
+                }
+                }, 500);
+                
+                
             }
         });
         getContentPane().add(RiwayatP, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 600, -1, -1));
