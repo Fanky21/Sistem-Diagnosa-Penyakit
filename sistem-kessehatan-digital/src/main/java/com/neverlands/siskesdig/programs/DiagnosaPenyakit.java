@@ -64,63 +64,64 @@ public class DiagnosaPenyakit extends Mysql {
 
         List<String> penyakitList = new ArrayList<>();
 
-        if (status_hasil) {
+        while (status_hasil) {
+            String data = hasil.getString("nama_penyakit");
+            penyakitList.add(data);
+            System.out.println(data);
+            status_hasil = hasil.next();
+        }
 
-            while (hasil.next()) {
-                String data = hasil.getString("nama_penyakit");
-                penyakitList.add(data);
-                System.out.println(data);
-            }
+        int counter = penyakitList.size();
 
-            int counter = penyakitList.size();
+        if (counter > 0) {  
 
-            if (counter > 3) {
+            LocalDate currentDate = LocalDate.now();
 
-                HasilDiagnosaForm.Hasil2.setText("Mohon masukkan gejala yang lebih spesifik!");
+            if (counter >= 1) {
 
-                System.out.println("lebih dari 3");
+                HasilDiagnosaForm.Hasil1.setText(penyakitList.get(0));
+
+                PreparedStatement riwayat_penyakit = conn.prepareStatement("INSERT INTO riwayat_penyakit (username, tanggal_diagnosa, penyakit) VALUES (?,?,?)");
+                riwayat_penyakit.setString(1, username);
+                riwayat_penyakit.setString(2, currentDate.toString());
+
+                for (String penyakit : penyakitList) {
+                    riwayat_penyakit.setString(3, penyakit);
+                    riwayat_penyakit.executeUpdate();
+                }
+
+            } else if (counter >= 2) {
+
+                HasilDiagnosaForm.Hasil2.setText(penyakitList.get(1));
+
+                PreparedStatement riwayat_penyakit = conn.prepareStatement("INSERT INTO riwayat_penyakit (username, tanggal_diagnosa, penyakit) VALUES (?,?,?)");
+                riwayat_penyakit.setString(1, username);
+                riwayat_penyakit.setString(2, currentDate.toString());
+
+                for (String penyakit : penyakitList) {
+                    riwayat_penyakit.setString(3, penyakit);
+                    riwayat_penyakit.executeUpdate();
+                }
+
+            } else if (counter >= 3) {
+
+                HasilDiagnosaForm.Hasil3.setText(penyakitList.get(2));
+
+                PreparedStatement riwayat_penyakit = conn.prepareStatement("INSERT INTO riwayat_penyakit (username, tanggal_diagnosa, penyakit) VALUES (?,?,?)");
+                riwayat_penyakit.setString(1, username);
+                riwayat_penyakit.setString(2, currentDate.toString());
+
+                for (String penyakit : penyakitList) {
+                    riwayat_penyakit.setString(3, penyakit);
+                    riwayat_penyakit.executeUpdate();
+                }
 
             } else {
 
-                if (counter == 0) {
-                    HasilDiagnosaForm.Hasil2.setText("Tidak ada penyakit yang sesuai");
+                HasilDiagnosaForm.Hasil2.setText("Masukkan gejala yang lebih spesifik!");
 
-                    System.out.println("tidak ada sesuai");
-
-                } else {
-
-                    if (counter >= 1) {
-                    HasilDiagnosaForm.Hasil1.setText(penyakitList.get(0));
-
-                    System.out.println("cuma 1");
-
-                    }
-                    if (counter >= 2) {
-                        HasilDiagnosaForm.Hasil2.setText(penyakitList.get(1));
-
-                        System.out.println("cuma 2");
-
-                    }
-                    if (counter >= 3) {
-                        HasilDiagnosaForm.Hasil3.setText(penyakitList.get(2));
-
-                        System.out.println("cuma 3");
-                    }
-
-                    LocalDate currentDate = LocalDate.now();
-
-                    PreparedStatement riwayat_penyakit = conn.prepareStatement("INSERT INTO riwayat_penyakit (username, tanggal_diagnosa, penyakit) VALUES (?,?,?)");
-                    riwayat_penyakit.setString(1, username);
-                    riwayat_penyakit.setString(2, currentDate.toString());
-
-                    for (String penyakit : penyakitList) {
-                        riwayat_penyakit.setString(3, penyakit);
-                        riwayat_penyakit.executeUpdate();
-                    }
-
-                }
             }
-            
+
         } else {
 
             System.out.println("Data Penyakit Tidak Ditemukan!");
