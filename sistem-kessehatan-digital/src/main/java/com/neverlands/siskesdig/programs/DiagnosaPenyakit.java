@@ -1,6 +1,5 @@
 package com.neverlands.siskesdig.programs;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.neverlands.siskesdig.programs.Graphic.HasilDiagnosaForm;
-import com.neverlands.siskesdig.programs.Graphic.LoginForm;
 
 public class DiagnosaPenyakit extends Mysql {
 
@@ -80,6 +78,8 @@ public class DiagnosaPenyakit extends Mysql {
             if (counter >= 1) {
 
                 HasilDiagnosaForm.Hasil1.setText(penyakitList.get(0));
+                HasilDiagnosaForm.Persen1.setText("Persentase terkena penyakit 1 adalah"+ 100/counter +"%");
+                HasilDiagnosaForm.Penyakit1.setVisible(true);
 
                 PreparedStatement riwayat_penyakit = conn.prepareStatement("INSERT INTO riwayat_penyakit (username, tanggal_diagnosa, penyakit) VALUES (?,?,?)");
                 riwayat_penyakit.setString(1, username);
@@ -93,6 +93,8 @@ public class DiagnosaPenyakit extends Mysql {
             } else if (counter >= 2) {
 
                 HasilDiagnosaForm.Hasil2.setText(penyakitList.get(1));
+                HasilDiagnosaForm.Persen2.setText("Persentase terkena penyakit 2 adalah"+ 100/counter +"%");
+                HasilDiagnosaForm.Penyakit2.setVisible(true);
 
                 PreparedStatement riwayat_penyakit = conn.prepareStatement("INSERT INTO riwayat_penyakit (username, tanggal_diagnosa, penyakit) VALUES (?,?,?)");
                 riwayat_penyakit.setString(1, username);
@@ -106,6 +108,8 @@ public class DiagnosaPenyakit extends Mysql {
             } else if (counter >= 3) {
 
                 HasilDiagnosaForm.Hasil3.setText(penyakitList.get(2));
+                HasilDiagnosaForm.Persen3.setText("Persentase terkena penyakit 3 adalah"+ 100/counter +"%");
+                HasilDiagnosaForm.Penyakit3.setVisible(true);
 
                 PreparedStatement riwayat_penyakit = conn.prepareStatement("INSERT INTO riwayat_penyakit (username, tanggal_diagnosa, penyakit) VALUES (?,?,?)");
                 riwayat_penyakit.setString(1, username);

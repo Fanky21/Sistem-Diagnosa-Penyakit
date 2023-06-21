@@ -12,8 +12,6 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import javax.swing.JTextArea;
-
 import com.neverlands.siskesdig.programs.DiagnosaPenyakit;
 
 /**
@@ -66,6 +64,7 @@ public class HasilDiagnosaForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Back = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         Persen1 = new javax.swing.JLabel();
         Penyakit1 = new javax.swing.JLabel();
@@ -81,6 +80,14 @@ public class HasilDiagnosaForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Back.png"))); // NOI18N
+        Back.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BackMouseClicked(evt);
+            }
+        });
+        getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 30, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/loadingsplash.gif"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, -1));
@@ -152,6 +159,15 @@ public class HasilDiagnosaForm extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
+        // TODO add your handling code here:
+        DiagnosaForm DiagnosaForm = new DiagnosaForm();
+        DiagnosaForm.setVisible(true);
+
+        dispose();
+
+    }//GEN-LAST:event_BackMouseClicked
 
     /**
      * @param args the command line arguments
@@ -238,12 +254,13 @@ public class HasilDiagnosaForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Back;
     public static javax.swing.JLabel Hasil1;
     public static javax.swing.JLabel Hasil2;
     public static javax.swing.JLabel Hasil3;
-    private javax.swing.JLabel Penyakit1;
-    private javax.swing.JLabel Penyakit2;
-    private javax.swing.JLabel Penyakit3;
+    public static javax.swing.JLabel Penyakit1;
+    public static javax.swing.JLabel Penyakit2;
+    public static javax.swing.JLabel Penyakit3;
     public static  javax.swing.JLabel Persen1;
     public static  javax.swing.JLabel Persen2;
     public static  javax.swing.JLabel Persen3;

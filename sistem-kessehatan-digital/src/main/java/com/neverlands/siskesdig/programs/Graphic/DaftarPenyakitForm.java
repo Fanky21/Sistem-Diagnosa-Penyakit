@@ -8,8 +8,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 
-import org.w3c.dom.Text;
-
 import com.neverlands.siskesdig.programs.DaftarPenyakit;
 
 /**
@@ -83,6 +81,8 @@ public class DaftarPenyakitForm extends javax.swing.JFrame {
         jTextArea2.setFont(new java.awt.Font("Bahnschrift", 1, 18)); // NOI18N
         jTextArea2.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea2.setRows(5);
+        jTextArea2.setLineWrap(true);
+        jTextArea1.setWrapStyleWord(true);
         jTextArea2.setBorder(null);
         jScrollPane2.setViewportView(jTextArea2);
 
@@ -93,6 +93,8 @@ public class DaftarPenyakitForm extends javax.swing.JFrame {
         jTextArea1.setFont(new java.awt.Font("Bahnschrift", 1, 18)); // NOI18N
         jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea1.setRows(5);
+        jTextArea1.setLineWrap(true);
+        jTextArea1.setWrapStyleWord(true);
         jTextArea1.setBorder(null);
         jScrollPane1.setViewportView(jTextArea1);
 
@@ -132,6 +134,7 @@ public class DaftarPenyakitForm extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void Nama_PenyakitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nama_PenyakitActionPerformed
