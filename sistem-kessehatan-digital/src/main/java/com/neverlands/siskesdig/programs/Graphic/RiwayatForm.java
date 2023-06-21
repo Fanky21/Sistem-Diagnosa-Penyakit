@@ -16,6 +16,7 @@ import java.sql.SQLException;
 import javax.swing.table.DefaultTableModel;
 
 import com.neverlands.siskesdig.programs.controller.Config;
+import javax.swing.ImageIcon;
 
 
 /**
@@ -24,6 +25,7 @@ import com.neverlands.siskesdig.programs.controller.Config;
  */
 public class RiwayatForm extends javax.swing.JFrame {
 
+    ImageIcon ii;
     private int xOffset;
     private int yOffset;
 
@@ -81,9 +83,8 @@ public class RiwayatForm extends javax.swing.JFrame {
         jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
 
         jTable1.setBackground(new java.awt.Color(255, 255, 255));
-        jTable1.setFont(new java.awt.Font("Bahnschrift", 1, 13)); // NOI18N
+        jTable1.setFont(new java.awt.Font("Bahnschrift", 1, 20)); // NOI18N
         jTable1.setForeground(new java.awt.Color(0, 0, 0));
-        jTable1.setEnabled(false);
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null}
@@ -95,9 +96,16 @@ public class RiwayatForm extends javax.swing.JFrame {
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.String.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         jScrollPane1.setViewportView(jTable1);
@@ -116,6 +124,12 @@ public class RiwayatForm extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BackMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BackMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BackMouseExited(evt);
+            }
         });
         getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 30, 60, -1));
 
@@ -133,6 +147,18 @@ public class RiwayatForm extends javax.swing.JFrame {
 
         dispose();
     }//GEN-LAST:event_BackMouseClicked
+
+    private void BackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseEntered
+        // TODO add your handling code here:
+        ii = new ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/BackBesar.png"));
+        Back.setIcon(ii);
+    }//GEN-LAST:event_BackMouseEntered
+
+    private void BackMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseExited
+        // TODO add your handling code here:
+        ii = new ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Back.png"));
+        Back.setIcon(ii);
+    }//GEN-LAST:event_BackMouseExited
 
     /**
      * @param args the command line arguments
