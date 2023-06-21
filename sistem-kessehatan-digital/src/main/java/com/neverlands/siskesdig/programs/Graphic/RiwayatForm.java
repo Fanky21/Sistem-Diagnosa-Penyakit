@@ -13,10 +13,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 
 import com.neverlands.siskesdig.programs.controller.Config;
-import javax.swing.ImageIcon;
 
 
 /**
@@ -83,7 +83,7 @@ public class RiwayatForm extends javax.swing.JFrame {
         jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
 
         jTable1.setBackground(new java.awt.Color(255, 255, 255));
-        jTable1.setFont(new java.awt.Font("Bahnschrift", 1, 20)); // NOI18N
+        jTable1.setFont(new java.awt.Font("Bahnschrift", 1, 11)); // NOI18N
         jTable1.setForeground(new java.awt.Color(0, 0, 0));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
