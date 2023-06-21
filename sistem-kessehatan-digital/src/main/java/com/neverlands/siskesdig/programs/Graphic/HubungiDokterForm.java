@@ -6,6 +6,7 @@ package com.neverlands.siskesdig.programs.Graphic;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -16,7 +17,8 @@ public class HubungiDokterForm extends javax.swing.JFrame {
     /**
      * Creates new form HubungiDokterForm
      */
-
+    
+    ImageIcon ii;
     private int xOffset;
     private int yOffset;
 
@@ -70,6 +72,12 @@ public class HubungiDokterForm extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BackMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BackMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BackMouseExited(evt);
+            }
         });
         getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, -1, -1));
 
@@ -92,6 +100,18 @@ public class HubungiDokterForm extends javax.swing.JFrame {
         dispose();
         
     }//GEN-LAST:event_BackMouseClicked
+
+    private void BackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseEntered
+        // TODO add your handling code here:
+        ii = new ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/BackBesar.png"));
+        Back.setIcon(ii);
+    }//GEN-LAST:event_BackMouseEntered
+
+    private void BackMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseExited
+        // TODO add your handling code here:
+        ii = new ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Back.png"));
+        Back.setIcon(ii);
+    }//GEN-LAST:event_BackMouseExited
 
     /**
      * @param args the command line arguments
