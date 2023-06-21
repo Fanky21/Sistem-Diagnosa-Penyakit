@@ -9,6 +9,7 @@ import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 
 import com.neverlands.siskesdig.programs.DaftarPenyakit;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -20,6 +21,7 @@ public class DaftarPenyakitForm extends javax.swing.JFrame {
      * Creates new form DaftarPenyakitForm
      */
 
+    ImageIcon ii;
     private int xOffset;
     private int yOffset;
 
@@ -81,8 +83,6 @@ public class DaftarPenyakitForm extends javax.swing.JFrame {
         jTextArea2.setFont(new java.awt.Font("Bahnschrift", 1, 18)); // NOI18N
         jTextArea2.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea2.setRows(5);
-        jTextArea2.setLineWrap(true);
-        jTextArea1.setWrapStyleWord(true);
         jTextArea2.setBorder(null);
         jScrollPane2.setViewportView(jTextArea2);
 
@@ -93,15 +93,13 @@ public class DaftarPenyakitForm extends javax.swing.JFrame {
         jTextArea1.setFont(new java.awt.Font("Bahnschrift", 1, 18)); // NOI18N
         jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea1.setRows(5);
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setWrapStyleWord(true);
         jTextArea1.setBorder(null);
         jScrollPane1.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, 420, 300));
 
         Nama_Penyakit.setBackground(new java.awt.Color(255, 255, 255));
-        Nama_Penyakit.setFont(new java.awt.Font("Bahnschrift", 1, 18)); // NOI18N
+        Nama_Penyakit.setFont(new java.awt.Font("Concert One", 0, 35)); // NOI18N
         Nama_Penyakit.setForeground(new java.awt.Color(0, 0, 0));
         Nama_Penyakit.setBorder(null);
         Nama_Penyakit.addActionListener(new java.awt.event.ActionListener() {
@@ -116,6 +114,12 @@ public class DaftarPenyakitForm extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BackMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BackMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BackMouseExited(evt);
+            }
         });
         getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, -1, -1));
 
@@ -127,6 +131,12 @@ public class DaftarPenyakitForm extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 SearchMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SearchMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SearchMouseExited(evt);
+            }
         });
         getContentPane().add(Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 160, -1, -1));
 
@@ -134,7 +144,6 @@ public class DaftarPenyakitForm extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void Nama_PenyakitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nama_PenyakitActionPerformed
@@ -163,6 +172,30 @@ public class DaftarPenyakitForm extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_SearchMouseClicked
+
+    private void BackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseEntered
+        // TODO add your handling code here:
+        ii = new ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/BackBesar.png"));
+        Back.setIcon(ii);
+    }//GEN-LAST:event_BackMouseEntered
+
+    private void BackMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseExited
+        // TODO add your handling code here:
+        ii = new ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Back.png"));
+        Back.setIcon(ii);
+    }//GEN-LAST:event_BackMouseExited
+
+    private void SearchMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchMouseEntered
+        // TODO add your handling code here:
+        ii = new ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/SearchBesar.png"));
+        Search.setIcon(ii);
+    }//GEN-LAST:event_SearchMouseEntered
+
+    private void SearchMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchMouseExited
+        // TODO add your handling code here:
+        ii = new ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Search.png"));
+        Search.setIcon(ii);
+    }//GEN-LAST:event_SearchMouseExited
 
     /**
      * @param args the command line arguments
@@ -211,7 +244,7 @@ public class DaftarPenyakitForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    public static javax.swing.JTextArea jTextArea1;
-    public static javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
     // End of variables declaration//GEN-END:variables
 }
