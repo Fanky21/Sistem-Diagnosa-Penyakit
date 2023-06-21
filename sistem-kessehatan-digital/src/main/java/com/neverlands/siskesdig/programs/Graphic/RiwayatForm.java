@@ -12,6 +12,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
@@ -122,7 +124,18 @@ public class RiwayatForm extends javax.swing.JFrame {
         Back.setText("jLabel3");
         Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/BackBesarC.png")));
+                
+                Timer timer = new Timer();
+
+                timer.schedule(new TimerTask() {
+
+                @Override
+                public void run() {
+                Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/BackBesar.png")));
                 BackMouseClicked(evt);
+                }
+                }, 200);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 BackMouseEntered(evt);
