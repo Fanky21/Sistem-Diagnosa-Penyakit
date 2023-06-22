@@ -8,8 +8,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.table.DefaultTableModel;
-
 import com.neverlands.siskesdig.programs.Graphic.HasilDiagnosaForm;
 import com.neverlands.siskesdig.programs.controller.MessageBox;
 
@@ -77,7 +75,7 @@ public class DiagnosaPenyakit extends Mysql {
 
         counter = penyakitList.size();
 
-        if (counter > 0) { 
+        if (counter > 0) {
             HasilDiagnosaForm.InsertTable(status_hasil, penyakitList);
         } else {
             System.out.println("Data Penyakit Tidak Ditemukan!");

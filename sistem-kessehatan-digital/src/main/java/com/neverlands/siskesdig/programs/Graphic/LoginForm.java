@@ -138,6 +138,7 @@ public class LoginForm extends javax.swing.JFrame {
         Login.setBackground(new java.awt.Color(255, 255, 255));
         Login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/neverlands/siskesdig/bin/Loginbttn.png"))); // NOI18N
         Login.setBorder(null);
+        Login.setToolTipText(null);
         Login.setBorderPainted(false);
         Login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
